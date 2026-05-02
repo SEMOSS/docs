@@ -1,0 +1,71 @@
+---
+id: download-insight-image
+title: "Download insight image"
+description: "Returns the representative image for a specific insight within the project."
+sidebar_label: "Download insight image"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Project"],"description":"Returns the representative image for a specific insight within the project.","operationId":"downloadInsightImage","parameters":[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"rdbmsId","in":"query","schema":{"type":"string"}},{"name":"params","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Insight image returned"},"401":{"description":"Unauthorized","content":{"application/octet-stream":{},"application/svg+xml":{}}},"404":{"description":"Image not found","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/project-{projectId}/insightImage/download","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download insight image"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/project-{projectId}/insightImage/download"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the representative image for a specific insight within the project.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"rdbmsId","in":"query","schema":{"type":"string"}},{"name":"params","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Insight image returned"},"401":{"description":"Unauthorized","content":{"application/octet-stream":{},"application/svg+xml":{}}},"404":{"description":"Image not found","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

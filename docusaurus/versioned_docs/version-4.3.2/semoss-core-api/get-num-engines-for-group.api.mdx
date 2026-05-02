@@ -1,0 +1,71 @@
+---
+id: get-num-engines-for-group
+title: "Count engines for group"
+description: "Returns the number of engines assigned to the specified group."
+sidebar_label: "Count engines for group"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns the number of engines assigned to the specified group.","operationId":"getNumEnginesForGroup","parameters":[{"name":"groupId","in":"query","schema":{"type":"string"}},{"name":"groupType","in":"query","schema":{"type":"string"}},{"name":"searchTerm","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Count returned","content":{"application/json":{"schema":{"type":"integer","format":"int64"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"get","path":"/auth/admin/group/getNumEnginesForGroup","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Count engines for group","description":{"content":"Returns the number of engines assigned to the specified group.","type":"text/plain"},"url":{"path":["auth","admin","group","getNumEnginesForGroup"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"groupId","value":""},{"disabled":false,"key":"groupType","value":""},{"disabled":false,"key":"searchTerm","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Count engines for group"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/admin/group/getNumEnginesForGroup"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the number of engines assigned to the specified group.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"groupId","in":"query","schema":{"type":"string"}},{"name":"groupType","in":"query","schema":{"type":"string"}},{"name":"searchTerm","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Count returned","content":{"application/json":{"schema":{"type":"integer","format":"int64"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

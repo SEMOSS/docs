@@ -1,0 +1,9 @@
+{
+    "label": "Settings",
+    "position": 9,
+    "link": {
+      "type": "generated-index",
+  "description": "SEMOSS settings allow you to manage your resources"
+      }  
+    
+}

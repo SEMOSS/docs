@@ -1,0 +1,71 @@
+---
+id: get-engines-get
+title: "Get engines"
+description: "Returns engines with optional filters."
+sidebar_label: "Get engines"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns engines with optional filters.","operationId":"getEnginesGET","parameters":[{"name":"engineId","in":"query","description":"Filter by engineId","schema":{"type":"string"}},{"name":"engineTypes","in":"query","description":"Filter by engine types","schema":{"type":"string"}},{"name":"filterWord","in":"query","description":"Search term","schema":{"type":"string"}},{"name":"limit","in":"query","description":"Limit","schema":{"type":"string"}},{"name":"offset","in":"query","description":"Offset","schema":{"type":"string"}},{"name":"metaKeys","in":"query","description":"Meta keys to include","schema":{"type":"string"}},{"name":"noMeta","in":"query","description":"Exclude metadata","schema":{"type":"string"}},{"name":"userT","in":"query","description":"Include user tracking","schema":{"type":"string"}},{"name":"engineId","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"engineTypes","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"filterWord","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"metaKeys","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"noMeta","in":"query","schema":{"type":"boolean"}},{"name":"userT","in":"query","schema":{"type":"boolean"}}],"responses":{"200":{"description":"Engines retrieved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"method":"get","path":"/auth/admin/engine/getEngines","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get engines","description":{"content":"Returns engines with optional filters.","type":"text/plain"},"url":{"path":["auth","admin","engine","getEngines"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"Filter by engineId","type":"text/plain"},"key":"engineId","value":""},{"disabled":false,"description":{"content":"Filter by engine types","type":"text/plain"},"key":"engineTypes","value":""},{"disabled":false,"description":{"content":"Search term","type":"text/plain"},"key":"filterWord","value":""},{"disabled":false,"description":{"content":"Limit","type":"text/plain"},"key":"limit","value":""},{"disabled":false,"description":{"content":"Offset","type":"text/plain"},"key":"offset","value":""},{"disabled":false,"description":{"content":"Meta keys to include","type":"text/plain"},"key":"metaKeys","value":""},{"disabled":false,"description":{"content":"Exclude metadata","type":"text/plain"},"key":"noMeta","value":""},{"disabled":false,"description":{"content":"Include user tracking","type":"text/plain"},"key":"userT","value":""},{"disabled":false,"key":"engineId","value":""},{"disabled":false,"key":"engineTypes","value":""},{"disabled":false,"key":"filterWord","value":""},{"disabled":false,"key":"limit","value":""},{"disabled":false,"key":"offset","value":""},{"disabled":false,"key":"metaKeys","value":""},{"disabled":false,"key":"noMeta","value":""},{"disabled":false,"key":"userT","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get engines"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/admin/engine/getEngines"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns engines with optional filters.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"engineId","in":"query","description":"Filter by engineId","schema":{"type":"string"}},{"name":"engineTypes","in":"query","description":"Filter by engine types","schema":{"type":"string"}},{"name":"filterWord","in":"query","description":"Search term","schema":{"type":"string"}},{"name":"limit","in":"query","description":"Limit","schema":{"type":"string"}},{"name":"offset","in":"query","description":"Offset","schema":{"type":"string"}},{"name":"metaKeys","in":"query","description":"Meta keys to include","schema":{"type":"string"}},{"name":"noMeta","in":"query","description":"Exclude metadata","schema":{"type":"string"}},{"name":"userT","in":"query","description":"Include user tracking","schema":{"type":"string"}},{"name":"engineId","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"engineTypes","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"filterWord","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"metaKeys","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"noMeta","in":"query","schema":{"type":"boolean"}},{"name":"userT","in":"query","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Engines retrieved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

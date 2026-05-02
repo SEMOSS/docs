@@ -1,0 +1,71 @@
+---
+id: logout
+title: "Logout from specific provider"
+description: "Logs out the user from the specified authentication provider"
+sidebar_label: "Logout from specific provider"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Authentication"],"description":"Logs out the user from the specified authentication provider","operationId":"logout","parameters":[{"name":"provider","in":"path","description":"Authentication provider","required":true,"schema":{"type":"string","enum":["local","google","microsoft","github","okta","saml","ALL"]}},{"name":"disableRedirect","in":"query","description":"If true, disables redirect after logout","schema":{"type":"boolean","default":false}},{"name":"provider","in":"path","required":true,"schema":{"type":"string"}},{"name":"disableRedirect","in":"query","schema":{"type":"boolean"}}],"responses":{"200":{"description":"Logout successful"},"302":{"description":"Redirect to logout URL"},"400":{"description":"Bad request - no user in session"},"401":{"description":"Unauthorized"}},"method":"get","path":"/auth/logout/{provider}","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Logout from specific provider","description":{"content":"Logs out the user from the specified authentication provider","type":"text/plain"},"url":{"path":["auth","logout",":provider"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"If true, disables redirect after logout","type":"text/plain"},"key":"disableRedirect","value":""},{"disabled":false,"key":"disableRedirect","value":""}],"variable":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"provider"}]},"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-5.0.0/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Logout from specific provider"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/logout/{provider}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Logs out the user from the specified authentication provider
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"provider","in":"path","description":"Authentication provider","required":true,"schema":{"type":"string","enum":["local","google","microsoft","github","okta","saml","ALL"]}},{"name":"disableRedirect","in":"query","description":"If true, disables redirect after logout","schema":{"type":"boolean","default":false}},{"name":"provider","in":"path","required":true,"schema":{"type":"string"}},{"name":"disableRedirect","in":"query","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Logout successful"},"302":{"description":"Redirect to logout URL"},"400":{"description":"Bad request - no user in session"},"401":{"description":"Unauthorized"}}}
+>
+  
+</StatusCodes>
+
+
+      

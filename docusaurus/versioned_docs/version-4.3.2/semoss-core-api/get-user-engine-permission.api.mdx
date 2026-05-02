@@ -1,0 +1,71 @@
+---
+id: get-user-engine-permission
+title: "Get current user's permission for an engine"
+description: "Get current user's permission for an engine"
+sidebar_label: "Get current user's permission for an engine"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"operationId":"getUserEnginePermission","parameters":[{"name":"engineId","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Permission resolved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or no access","content":{"application/json":{"schema":{"type":"object"}}}}},"description":"Get current user's permission for an engine","method":"get","path":"/auth/engine/getUserEnginePermission","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get current user's permission for an engine","description":{"type":"text/plain"},"url":{"path":["auth","engine","getUserEnginePermission"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"engineId","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get current user's permission for an engine"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/engine/getUserEnginePermission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get current user's permission for an engine
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"engineId","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permission resolved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or no access","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

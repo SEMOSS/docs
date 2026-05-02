@@ -1,0 +1,63 @@
+---
+id: get-all-user-projects
+title: "List a user's projects"
+description: "Returns all projects the specified user has access to."
+sidebar_label: "List a user's projects"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns all projects the specified user has access to.","operationId":"getAllUserProjects","responses":{"200":{"description":"Projects retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/project/getAllUserProjects","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List a user's projects","description":{"content":"Returns all projects the specified user has access to.","type":"text/plain"},"url":{"path":["auth","admin","project","getAllUserProjects"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List a user's projects"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/project/getAllUserProjects"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns all projects the specified user has access to.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Projects retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

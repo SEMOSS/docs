@@ -1,0 +1,761 @@
+---
+id: engine
+title: "engine"
+sidebar_label: "engine"
+description: "Documentation for engine reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# engine
+
+This document contains multiple reactors in the engine category.
+
+---
+
+## ExecuteFunctionEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+ExecuteFunctionEngine(engine=[<engine>])
+```
+
+
+---
+
+## MyRemoteModelsStatus
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+MyRemoteModelsStatus()
+```
+
+
+---
+
+## CopyEnginePermissions
+
+### Required Keys
+- **sourceEngine**
+- **targetEngine**
+
+### Usage
+```javascript
+CopyEnginePermissions(sourceEngine=[<sourceEngine>], targetEngine=[<targetEngine>])
+```
+
+
+---
+
+## GetEngineAssetsBase64
+
+**Description:** 
+
+        Retrieve the contents of an image file as base64 encoded string in the engine
+
+### Required Keys
+- **engine**
+- **filePath**
+
+### Usage
+```javascript
+GetEngineAssetsBase64(engine=[<engine>], filePath=[<filePath>])
+```
+
+
+---
+
+## GetRemoteModelDeployConfigs
+
+### Optional Keys
+- **refresh**
+
+### Usage
+```javascript
+GetRemoteModelDeployConfigs(refresh=[<refresh>])
+```
+
+
+---
+
+## GetEngineMetakeyOptions
+
+### Required Keys
+- **metaKeys**
+
+### Usage
+```javascript
+GetEngineMetakeyOptions(metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## SetEngineMetadata
+
+**Description:** 
+
+        Define metadata on a datasource
+
+### Required Keys
+- **engine**
+- **meta**
+- **encoded**
+- **jsonCleanup**
+
+### Usage
+```javascript
+SetEngineMetadata(engine=[<engine>], meta=[<meta>], encoded=[<encoded>], jsonCleanup=[<jsonCleanup>])
+```
+
+
+---
+
+## EngineInfo
+
+### Required Keys
+- **engine**
+- **metaKeys**
+
+### Usage
+```javascript
+EngineInfo(engine=[<engine>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## CreateStorageEngine
+
+### Required Keys
+- **storage**
+- **storageDetails**
+- **global**
+
+### Usage
+```javascript
+CreateStorageEngine(storage=[<storage>], storageDetails=[<storageDetails>], global=[<global>])
+```
+
+
+---
+
+## GetFunctionEngineDefintion
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetFunctionEngineDefintion(engine=[<engine>])
+```
+
+
+---
+
+## CreateVectorDatabaseEngine
+
+### Required Keys
+- **database**
+- **conDetails**
+
+### Optional Keys
+- **global**
+
+### Usage
+```javascript
+CreateVectorDatabaseEngine(database=[<database>], conDetails=[<conDetails>], global=[<global>])
+```
+
+
+---
+
+## RequestEngine
+
+### Required Keys
+- **engine**
+- **permission**
+- **comment**
+
+### Usage
+```javascript
+RequestEngine(engine=[<engine>], permission=[<permission>], comment=[<comment>])
+```
+
+
+---
+
+## GetEngineUsage
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetEngineUsage(engine=[<engine>])
+```
+
+
+---
+
+## EngineActivity
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+EngineActivity(engine=[<engine>])
+```
+
+
+---
+
+## GetEngineFiles
+
+### Required Keys
+- **engine**
+- **filePath**
+
+### Usage
+```javascript
+GetEngineFiles(engine=[<engine>], filePath=[<filePath>])
+```
+
+
+---
+
+## GetEngineUsagePerProject
+
+### Required Keys
+- **engine**
+- **limit**
+- **offset**
+- **startDate**
+- **endDate**
+
+### Usage
+```javascript
+GetEngineUsagePerProject(engine=[<engine>], limit=[<limit>], offset=[<offset>], startDate=[<startDate>], endDate=[<endDate>])
+```
+
+
+---
+
+## MyEngines
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **onlyFavorites**
+- **engineTypes**
+- **engine**
+- **permissionFilters**
+- **metaKeys**
+- **metaFilters**
+- **noMeta**
+- **userT**
+- **sort**
+
+### Usage
+```javascript
+MyEngines(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], onlyFavorites=[<onlyFavorites>], engineTypes=[<engineTypes>], engine=[<engine>], permissionFilters=[<permissionFilters>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], noMeta=[<noMeta>], userT=[<userT>], sort=[<sort>])
+```
+
+
+---
+
+## MyEngineProject
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **onlyFavorites**
+- **type**
+- **subType**
+- **engine**
+- **metaKeys**
+- **metaFilters**
+- **permissionFilters**
+- **noMeta**
+- **onlyPortals**
+
+### Usage
+```javascript
+MyEngineProject(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], onlyFavorites=[<onlyFavorites>], type=[<type>], subType=[<subType>], engine=[<engine>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], permissionFilters=[<permissionFilters>], noMeta=[<noMeta>], onlyPortals=[<onlyPortals>])
+```
+
+
+---
+
+## DeleteEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+DeleteEngine(engine=[<engine>])
+```
+
+
+---
+
+## GetEngineMetaValues
+
+### Required Keys
+- **engineTypes**
+- **metaKeys**
+
+### Usage
+```javascript
+GetEngineMetaValues(engineTypes=[<engineTypes>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## GetEngineAssets
+
+**Description:** 
+
+        Retrieve the contents of a file in the engine
+
+### Required Keys
+- **engine**
+- **filePath**
+
+### Usage
+```javascript
+GetEngineAssets(engine=[<engine>], filePath=[<filePath>])
+```
+
+
+---
+
+## UploadEngine
+
+**Description:** 
+
+        Import a new engine. The user who uploads will by default be the owner of the engine
+
+### Required Keys
+- **filePath**
+- **space**
+- **global**
+
+### Usage
+```javascript
+UploadEngine(filePath=[<filePath>], space=[<space>], global=[<global>])
+```
+
+
+---
+
+## GetEngineMarkdown
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetEngineMarkdown(engine=[<engine>])
+```
+
+
+---
+
+## CreateRestFunctionEngine
+
+**Description:** 
+
+        This reactor is deprecated and users should use the generic CreateFunctionEngine reactor.
+
+
+### Required Keys
+- **function**
+- **functionDetails**
+
+### Optional Keys
+- **filePath**
+
+### Usage
+```javascript
+CreateRestFunctionEngine(function=[<function>], functionDetails=[<functionDetails>], filePath=[<filePath>])
+```
+
+
+---
+
+## GetEngineUsagePerUser
+
+### Required Keys
+- **engine**
+- **limit**
+- **offset**
+- **startDate**
+- **endDate**
+
+### Usage
+```javascript
+GetEngineUsagePerUser(engine=[<engine>], limit=[<limit>], offset=[<offset>], startDate=[<startDate>], endDate=[<endDate>])
+```
+
+
+---
+
+## CreateModelEngine
+
+### Required Keys
+- **model**
+- **modelDetails**
+- **global**
+
+### Usage
+```javascript
+CreateModelEngine(model=[<model>], modelDetails=[<modelDetails>], global=[<global>])
+```
+
+
+---
+
+## CloseEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+CloseEngine(engine=[<engine>])
+```
+
+
+---
+
+## ExportEngine
+
+### Required Keys
+- **engine**
+- **keepGit**
+
+### Usage
+```javascript
+ExportEngine(engine=[<engine>], keepGit=[<keepGit>])
+```
+
+
+---
+
+## CheckEngineName
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+CheckEngineName(engine=[<engine>])
+```
+
+
+---
+
+## RemoteEngineRun
+
+### Required Keys
+- **payload**
+
+### Usage
+```javascript
+RemoteEngineRun(payload=[<payload>])
+```
+
+
+---
+
+## LoadEngineMetadata
+
+**Description:** 
+
+        Define metadata on an engine through a JSON file
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+LoadEngineMetadata(filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## GetEngineUserAccessRequest
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetEngineUserAccessRequest(engine=[<engine>])
+```
+
+
+---
+
+## EnginePy
+
+### Required Keys
+- **code**
+- **engine**
+
+### Usage
+```javascript
+EnginePy(code=[<code>], engine=[<engine>])
+```
+
+
+---
+
+## MyDiscoverableEngines
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **engineTypes**
+- **engine**
+- **metaKeys**
+- **metaFilters**
+- **noMeta**
+
+### Usage
+```javascript
+MyDiscoverableEngines(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], engineTypes=[<engineTypes>], engine=[<engine>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], noMeta=[<noMeta>])
+```
+
+
+---
+
+## RemoteModelShutdown
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+RemoteModelShutdown(engine=[<engine>])
+```
+
+
+---
+
+## CreatePythonFunctionEngine
+
+### Required Keys
+- **function**
+- **functionDetails**
+- **content**
+
+### Usage
+```javascript
+CreatePythonFunctionEngine(function=[<function>], functionDetails=[<functionDetails>], content=[<content>])
+```
+
+
+---
+
+## RemoteModelStart
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+RemoteModelStart(engine=[<engine>])
+```
+
+
+---
+
+## CreateVenvEngine
+
+### Required Keys
+- **venv**
+- **venvDetails**
+
+### Optional Keys
+- **global**
+
+### Usage
+```javascript
+CreateVenvEngine(venv=[<venv>], venvDetails=[<venvDetails>], global=[<global>])
+```
+
+
+---
+
+## VoteEngine
+
+### Required Keys
+- **engine**
+- **vote**
+
+### Usage
+```javascript
+VoteEngine(engine=[<engine>], vote=[<vote>])
+```
+
+
+---
+
+## ExecuteStreamingFunctionEngine
+
+### Required Keys
+- **engine**
+- **map**
+
+### Usage
+```javascript
+ExecuteStreamingFunctionEngine(engine=[<engine>], map=[<map>])
+```
+
+
+---
+
+## GetEngineMetadata
+
+### Required Keys
+- **engine**
+- **metaKeys**
+
+### Usage
+```javascript
+GetEngineMetadata(engine=[<engine>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## GetEngineSMSS
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetEngineSMSS(engine=[<engine>])
+```
+
+
+---
+
+## ReplaceInaccessibleEngines
+
+**Description:** 
+
+        Replaces UUID engine ids with new UUID values
+
+### Required Keys
+- **project**
+- **map**
+
+### Optional Keys
+- **filePath**
+
+### Usage
+```javascript
+ReplaceInaccessibleEngines(project=[<project>], map=[<map>], filePath=[<filePath>])
+```
+
+
+---
+
+## UnvoteEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+UnvoteEngine(engine=[<engine>])
+```
+
+
+---
+
+## UpdateEngineAppLink
+
+### Required Keys
+- **engine**
+- **project**
+
+### Usage
+```javascript
+UpdateEngineAppLink(engine=[<engine>], project=[<project>])
+```
+
+
+---
+
+## PullEngineFromCloud
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+PullEngineFromCloud(engine=[<engine>])
+```
+
+
+---
+
+## UnlockEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+UnlockEngine(engine=[<engine>])
+```
+
+
+---
+
+## PushEngineToCloud
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+PushEngineToCloud(engine=[<engine>])
+```
+
+
+---
+
+## UpdateEngineFiles
+
+### Required Keys
+- **engine**
+- **payload**
+
+### Usage
+```javascript
+UpdateEngineFiles(engine=[<engine>], payload=[<payload>])
+```
+

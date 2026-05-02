@@ -1,0 +1,71 @@
+---
+id: get-jdbc-output
+title: "Execute SQL or pixel via JDBC bridge (binary)"
+description: "Opens (optionally) an insight and executes a SQL/pixel expression returning a binary payload."
+sidebar_label: "Execute SQL or pixel via JDBC bridge (binary)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Project"],"description":"Opens (optionally) an insight and executes a SQL/pixel expression returning a binary payload.","operationId":"getJDBCOutput","parameters":[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"sql","in":"query","schema":{"type":"string"}},{"name":"open","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Execution output returned"},"400":{"description":"Execution error","content":{"application/octet-stream":{}}},"401":{"description":"Unauthorized","content":{"application/octet-stream":{}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/project-{projectId}/jdbc","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute SQL or pixel via JDBC bridge (binary)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/project-{projectId}/jdbc"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Opens (optionally) an insight and executes a SQL/pixel expression returning a binary payload.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"sql","in":"query","schema":{"type":"string"}},{"name":"open","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Execution output returned"},"400":{"description":"Execution error","content":{"application/octet-stream":{}}},"401":{"description":"Unauthorized","content":{"application/octet-stream":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

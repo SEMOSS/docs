@@ -1,0 +1,71 @@
+---
+id: comms
+title: "Open an SSE channel for MCP tool communications"
+description: "Establishes a Server-Sent Events (SSE) stream used for real-time interaction with a toolbox. The stream emits event data as processing progresses."
+sidebar_label: "Open an SSE channel for MCP tool communications"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["MCP"],"description":"Establishes a Server-Sent Events (SSE) stream used for real-time interaction with a toolbox. The stream emits event data as processing progresses.","operationId":"comms","parameters":[{"name":"toolbox_id","in":"path","description":"Identifier of the MCP toolbox","required":true,"schema":{"type":"string"}},{"name":"access_key","in":"query","description":"Optional access key for additional authorization","schema":{"type":"string"}},{"name":"Authorization","in":"header","description":"Authorization header (e.g., Basic or Bearer token)","schema":{"type":"string"}},{"name":"toolbox_id","in":"path","description":"Toolbox identifier","required":true,"schema":{"type":"string"}},{"name":"access_key","in":"query","description":"Optional access key","schema":{"type":"string"}}],"requestBody":{"description":"Optional JSON command payload at stream initiation","content":{"application/json":{"schema":{"type":"object"}}}},"responses":{"200":{"description":"SSE stream established; events will be pushed until completion or disconnect","content":{"text/event-stream":{"schema":{"type":"string","description":"Server-Sent Events stream (event: <type>\\n data: <payload>)"}}}},"400":{"description":"Bad request","content":{"text/event-stream":{}}},"401":{"description":"Unauthorized","content":{"text/event-stream":{}}},"410":{"description":"Connection closed","content":{"text/event-stream":{}}},"500":{"description":"Internal server error","content":{"text/event-stream":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/ext/mcp/{toolbox_id}/comms","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"jsonRequestBodyExample":{},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Open an SSE channel for MCP tool communications","description":{"content":"Establishes a Server-Sent Events (SSE) stream used for real-time interaction with a toolbox. The stream emits event data as processing progresses.","type":"text/plain"},"url":{"path":["ext","mcp",":toolbox_id","comms"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"Optional access key for additional authorization","type":"text/plain"},"key":"access_key","value":""},{"disabled":false,"description":{"content":"Optional access key","type":"text/plain"},"key":"access_key","value":""}],"variable":[{"disabled":false,"description":{"content":"(Required) Toolbox identifier","type":"text/plain"},"type":"any","value":"","key":"toolbox_id"}]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"text/event-stream"}],"method":"POST","body":{"mode":"raw","raw":"","options":{"raw":{"language":"json"}}},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Open an SSE channel for MCP tool communications"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ext/mcp/{toolbox_id}/comms"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Establishes a Server-Sent Events (SSE) stream used for real-time interaction with a toolbox. The stream emits event data as processing progresses.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"toolbox_id","in":"path","description":"Identifier of the MCP toolbox","required":true,"schema":{"type":"string"}},{"name":"access_key","in":"query","description":"Optional access key for additional authorization","schema":{"type":"string"}},{"name":"Authorization","in":"header","description":"Authorization header (e.g., Basic or Bearer token)","schema":{"type":"string"}},{"name":"toolbox_id","in":"path","description":"Toolbox identifier","required":true,"schema":{"type":"string"}},{"name":"access_key","in":"query","description":"Optional access key","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Optional JSON command payload at stream initiation","content":{"application/json":{"schema":{"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"SSE stream established; events will be pushed until completion or disconnect","content":{"text/event-stream":{"schema":{"type":"string","description":"Server-Sent Events stream (event: <type>\\n data: <payload>)"}}}},"400":{"description":"Bad request","content":{"text/event-stream":{}}},"401":{"description":"Unauthorized","content":{"text/event-stream":{}}},"410":{"description":"Connection closed","content":{"text/event-stream":{}}},"500":{"description":"Internal server error","content":{"text/event-stream":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

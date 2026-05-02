@@ -1,0 +1,28 @@
+.git
+.github
+.vscode
+
+# Never bake env files into Docker images; pass via `docker run --env-file` / compose.
+.env
+.env.*
+**/.env
+**/.env.*
+
+**/node_modules
+
+# Local build outputs
+build
+build/**
+docusaurus/build
+docusaurus/build/**
+docusaurus/.docusaurus
+docusaurus/.docusaurus/**
+
+# Logs / caches
+**/*.log
+.pnpm-store
+.pnpm-store/**
+
+# OS / editor
+.DS_Store
+Thumbs.db

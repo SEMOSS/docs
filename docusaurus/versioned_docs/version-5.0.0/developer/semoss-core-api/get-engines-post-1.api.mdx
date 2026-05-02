@@ -1,0 +1,63 @@
+---
+id: get-engines-post-1
+title: "List engines (POST)"
+description: "Same as GET /getEngines but accepts parameters as form/URL-encoded body."
+sidebar_label: "List engines (POST)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Same as GET /getEngines but accepts parameters as form/URL-encoded body.","operationId":"getEnginesPOST_1","responses":{"200":{"description":"Engines fetched","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/engine/getEngines","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List engines (POST)","description":{"content":"Same as GET /getEngines but accepts parameters as form/URL-encoded body.","type":"text/plain"},"url":{"path":["auth","engine","getEngines"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-5.0.0/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List engines (POST)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/engine/getEngines"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Same as GET /getEngines but accepts parameters as form/URL-encoded body.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Engines fetched","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

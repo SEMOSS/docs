@@ -1,0 +1,150 @@
+# Code Modifier App
+## Overview
+This recipe demonstrates how to set up a Code Modifier app using the SEMOSSName platform, guiding users through building an application that streamlines code transformation tasks. The Code Modifier app allows users to:
+
+- Paste in a piece of code
+- Select the programming language of the input code
+- Describe the desired modifications
+- Automatically apply these changes using AI-powered logic, providing an updated version of the submitted code
+
+This is a no-code/low-code solution powered by LLMs.
+
+## Setup
+
+To follow the tutorial, you will need:
+
+- Access to create a Drag and Drop App within the [SEMOSSName Platform](https://MonoLithURL/SemossWeb/packages/client/dist/#/app/new)
+
+![Drag and Drop](/versioned/4.3.2/img/CodeModifier/Drag%20and%20Drop.png)
+
+- A GPT-4o model engine ID (or a supported model of your choosing). This can be found in the model catalog.
+
+![ModelID](/versioned/4.3.2/img/CodeModifier/ModelID.png)
+
+## Steps
+### Setup the Application
+Follow these steps to create the bulk of your app's interface.
+- Create a Drag and Drop App
+- From the blocks tab, you will need the following blocks
+	- **Input** for the code to modify
+	- **Select** for the programming language
+	- **Input** for the instructions to add
+	- **Button** to submit and call the LLM
+	- **Markdown** to render the output of the LLM
+
+Keep the existing text block that is provided.
+
+Your setup should look like this.
+![AppSetup](/versioned/4.3.2/img/CodeModifier/AppSetup.png)
+Notice how my first input block is wider. If you edit the block settings for input, you can go edit the number of rows in the appearance tab in order.
+
+### Touch up the UI
+If you try to edit the text block directly thorugh the editor UI, it will not work, and this is intentional. Instead, if you would like to edit the UI, click on your text block, and edit the Text through the settings tab in block settings. Feel free to add a description within the text block similar to 
+
+> Welcome to the Code Modification App! Follow these steps to modify your code:
+> 1. Paste your code
+> 2. Select the coding language from the dropdown menu
+> 3. Describe the modifications you want.
+> 4. Click execute to see the modified code below.
+
+![BlockTextEdit](/versioned/4.3.2/img/CodeModifier/BlockTextEdit.png)
+
+For each of the input boxes, you can also edit the labels as well to be more descriptive. Feel free to add labels for the input blocks similar to 
+> Paste your code here
+
+> Select coding language
+ 
+> Describe the code modifications
+
+![InputLabels](/versioned/4.3.2/img/CodeModifier/InputLabels.png)
+
+### Change Variable Names
+For easier tracking and future updates, rename each block’s variable (in block settings) to something descriptive and unique, such as “CodeInput,” “Language,” or “Modifications.”
+
+*Remember: these names must match what you reference in your notebook code below.*
+
+
+![VariableNames](/versioned/4.3.2/img/CodeModifier/VariableNames.png)
+
+### Notebook Setup
+Create a new notebook within the notebooks tab and name the id something like `data-run`. 
+
+In the first cell, you will want the list of all the languages you can choose for the Language Input by running this query for example: `['Python', 'R', 'SQL']`. 
+
+*Note, R and Pixel is supported also but this tutorial is using Python.* 
+
+Once you run the query, you can capture the output as a variable, with `data-run--1` being the Cell that contains the information. I will be changing the name to "All Languages" for simplicity. 
+
+![CellOutput](/versioned/4.3.2/img/CodeModifier/CellOutput.png)
+
+For the next cell, you can insert the following code block:
+
+```
+from ai_server import ModelEngine
+model = ModelEngine(engine_id = ENGINE_ID, insight_id = '${i}')
+
+# Generation
+question = 'You are an expert software engineer. Modify the following code: ' + f'''{{CodeInput}}''' + 'with these instructions: {{Modifications}}} in language: {{Language}}}. Please print only the code with no additional information.' 
+output = model.ask(question = question, param_dict={'max_completion_tokens':2000,'temperature':0.3})
+output[0]['response']
+```
+
+ENGINE_ID refers to your model ID that you grabbed earlier. Note, the variable names of CodeInput, Modifications, and Language depend on what you named your variables earlier. You can run the cell after to verify the output and then change up the name to something like "CodeOutput".
+
+![CodeOutput](/versioned/4.3.2/img/CodeModifier/CodeOutput.png)
+
+### Tying Everything Together
+First, back on the UI, notice how when you click on the Language drop down there are no values. You will want to edit that block in Block Settings, and under "Options", select "All Languages", or what you have named the cell output for the languages. 
+
+![LanguageOptions](/versioned/4.3.2/img/CodeModifier/LanguageOptions.png)
+
+Then, you will have the Submit button run the cell. This will be from editing the Button's settings, and creating a new action on click to run the CodeOutput cell. 
+
+![SubmitAction](/versioned/4.3.2/img/CodeModifier/SubmitAction.png)
+
+The play button next to "Run Cell" can also run the cell if you would like to verify the output.
+
+Next, you will edit the markdown at the bottom, clear the text in the markdown section, and choose Cell > CodeOutput, which will display the result of the cell. 
+
+![MarkdownSelect](/versioned/4.3.2/img/CodeModifier/MarkdownSelect.png)
+
+Finally, as it stands now, your Language Dropdown will not show any options when you first start your page until you run the cell in the notebook. To populate before you have done anything within the app, you will need to enable On Page Load, and this is done by going into the Layers tab and selecting the page, adding new action for "on Page Load" to run the Cell (All Languages within data-run).
+
+![OnPageLoad](/versioned/4.3.2/img/CodeModifier/OnPageLoad.png)
+
+
+Once you're done, you can save it and click the show button, and your code modifier app is ready!
+## Deep Dive
+Here is a deeper dive into the code snippets which are used to power the code modifier app.
+### Cell 1: Languages
+`['Python', 'R', 'SQL']`
+
+This cell holds a Python list of all languages you want to make available as dropdown options. You can easily update this list as needed.
+
+By tying “On Page Load” actions to this cell, your app will always display the latest set of languages automatically.
+
+### Cell 2: Model and Prompt Code
+```
+from ai_server import ModelEngine
+model = ModelEngine(engine_id = ENGINE_ID, insight_id = '${i}')
+
+# Generation
+question = 'You are an expert software engineer. Modify the following code: ' + f'''{{CodeInput}}''' + 'with these instructions: {{Modifications}}} in language: {{Language}}}. Please print only the code with no additional information.' 
+output = model.ask(question = question, param_dict={'max_completion_tokens':2000,'temperature':0.3})
+output[0]['response']
+```
+
+The model initialization block sets up the connection to your selected LLM (using the engine ID of GPT-4o or another approved model).
+
+The `question` variable performs “prompt engineering” by assembling the user’s code, language, and requested modification into a natural-language instruction for the LLM—telling it to output only the rewritten code, with no extra explanation.
+
+The model call itself uses parameters: `max_completion_tokens` (controls response length) and `temperature` (controls creativity/randomness of output).
+
+The last line extracts the updated code from the model’s response so it can be displayed in the app.
+
+## Resources
+After following this tutorial, you’ll have a fully functional LLM-powered Code Modifier App. Users will be able to submit code, describe a change, and instantly receive the modified code as output.
+
+Below is a sample of what a user sees in the finished app:
+
+![Output](/versioned/4.3.2/img/CodeModifier/Output.png)

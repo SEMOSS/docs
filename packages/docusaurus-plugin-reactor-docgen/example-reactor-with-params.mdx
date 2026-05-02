@@ -1,0 +1,260 @@
+---
+id: example-reactor-with-params
+title: "ExampleReactor"
+sidebar_label: "ExampleReactor"
+description: "This is an example reactor with required and optional parameters"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# ExampleReactor
+
+**Description:** 
+``` markdown
+This is an example reactor with required and optional parameters
+```
+
+## Required Keys
+- **query**
+- **database**
+
+## Optional Keys
+- **limit**
+- **format**
+
+## Usage
+```javascript
+ExampleReactor(query=[<query>], database=[<database>], limit=[<limit>], format=[<format>])
+```
+
+## Try It Out
+
+<div className="try-it-out-section">
+
+You can test this reactor directly using the `runPixelSync` API endpoint. Here are examples in different formats:
+
+### cURL
+```bash
+curl -X POST "https://workshop.semoss.com/semoss-ai-dev/Monolith/api/engine/runPixel" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Accept: application/json" \
+  -H "Authorization: Basic ****" \
+  -d "expression=ExampleReactor(query%3D%5B%3Cquery%3E%5D%2C%20database%3D%5B%3Cdatabase%3E%5D%2C%20limit%3D%5B%3Climit%3E%5D%2C%20format%3D%5B%3Cformat%3E%5D)"
+```
+
+### JavaScript (Fetch API)
+```javascript
+const response = await fetch('https://workshop.semoss.com/ semoss-ai-dev/Monolith/api/engine/runPixel', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'application/json',
+    'Authorization': 'Basic ****'
+  },
+  body: new URLSearchParams({
+    expression: 'ExampleReactor(query=[<query>], database=[<database>], limit=[<limit>], format=[<format>])'
+  })
+});
+
+const result = await response.json();
+console.log(result.pixelReturn[0].output);
+```
+
+### Python (requests)
+```python
+import requests
+
+url = "https://workshop.semoss.com/semoss-ai-dev/Monolith/api/engine/runPixel"
+headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "application/json",
+    "Authorization": "Basic ****"
+}
+data = {
+    "expression": "ExampleReactor(query=[<query>], database=[<database>], limit=[<limit>], format=[<format>])"
+}
+
+response = requests.post(url, headers=headers, data=data)
+result = response.json()
+print(result["pixelReturn"][0]["output"])
+```
+
+### Request Details
+
+<div className="api-endpoint-info">
+
+- **Endpoint**: `POST https://workshop.semoss.com/ semoss-ai-dev/Monolith/api/engine/runPixel`
+- **Content-Type**: `application/x-www-form-urlencoded`
+- **Body**: `expression=ExampleReactor(query=[&lt;query&gt;], database=[&lt;database&gt;], limit=[&lt;limit&gt;], format=[&lt;format&gt;])`
+
+</div>
+
+### Interactive API Explorer
+
+<div className="api-explorer">
+  <div className="margin-bottom--lg">
+    <h4>Test ExampleReactor Reactor</h4>
+    <p>Fill in the parameters below to generate the API request.</p>
+  </div>
+  
+  <div className="margin-bottom--md">
+    <label htmlFor="query" className="margin-bottom--sm">
+      <strong>query</strong> <span style={{color: "red"}}>(Required)</span>
+    </label>
+    <input
+      type="text"
+      id="query"
+      name="query"
+      placeholder="Enter query value"
+      className="form-input"
+      required
+    />
+  </div>
+  
+  <div className="margin-bottom--md">
+    <label htmlFor="database" className="margin-bottom--sm">
+      <strong>database</strong> <span style={{color: "red"}}>(Required)</span>
+    </label>
+    <input
+      type="text"
+      id="database"
+      name="database"
+      placeholder="Enter database value"
+      className="form-input"
+      required
+    />
+  </div>
+  
+  <div className="margin-bottom--md">
+    <label htmlFor="limit" className="margin-bottom--sm">
+      <strong>limit</strong> (Optional)
+    </label>
+    <input
+      type="text"
+      id="limit"
+      name="limit"
+      placeholder="Enter limit value"
+      className="form-input"
+    />
+  </div>
+  
+  <div className="margin-bottom--md">
+    <label htmlFor="format" className="margin-bottom--sm">
+      <strong>format</strong> (Optional)
+    </label>
+    <input
+      type="text"
+      id="format"
+      name="format"
+      placeholder="Enter format value"
+      className="form-input"
+    />
+  </div>
+  
+  <div className="margin-top--lg">
+    <button type="button" className="button button--primary" onClick={() => testReactorExampleReactor()}>
+      Generate Request
+    </button>
+  </div>
+  
+  <div className="margin-top--lg">
+    <h5>Generated Request:</h5>
+    <pre id="response-output-examplereactor" className="prism-code">
+      Click "Generate Request" to see the API request details here.
+    </pre>
+  </div>
+</div>
+
+<script>
+{
+  function testReactorExampleReactor() {
+    const params = [];
+    
+    const queryValue = document.getElementById('query').value;
+    if (queryValue && queryValue.trim()) {
+      params.push('query=[' + queryValue.trim() + ']');
+    }
+    
+    const databaseValue = document.getElementById('database').value;
+    if (databaseValue && databaseValue.trim()) {
+      params.push('database=[' + databaseValue.trim() + ']');
+    }
+    
+    const limitValue = document.getElementById('limit').value;
+    if (limitValue && limitValue.trim()) {
+      params.push('limit=[' + limitValue.trim() + ']');
+    }
+    
+    const formatValue = document.getElementById('format').value;
+    if (formatValue && formatValue.trim()) {
+      params.push('format=[' + formatValue.trim() + ']');
+    }
+    
+    const expression = params.length > 0 
+      ? 'ExampleReactor(' + params.join(', ') + ')'
+      : 'ExampleReactor()';
+    
+    const outputElement = document.getElementById('response-output-examplereactor');
+    
+    const requestBody = 'expression=' + encodeURIComponent(expression);
+    
+    const requestDetails = `Endpoint: POST https://workshop.semoss.com/semoss-ai-dev/Monolith/api/engine/runPixel
+
+Headers:
+- Content-Type: application/x-www-form-urlencoded
+- Accept: application/json  
+- Authorization: Basic **** (You need to provide authentication)
+
+Body:
+${requestBody}
+
+Generated Pixel Expression:
+${expression}
+
+cURL Command:
+curl -X POST "https://workshop.semoss.com/semoss-ai-dev/Monolith/api/engine/runPixel" \\
+  -H "Content-Type: application/x-www-form-urlencoded" \\
+  -H "Accept: application/json" \\
+  -H "Authorization: Basic ****" \\
+  -d "${requestBody}"
+
+Note: This is a demo interface showing the generated request. 
+To actually execute this, use one of the code examples above with proper authentication.`;
+    
+    outputElement.textContent = requestDetails;
+  }
+}
+</script>
+
+> **Note**: Replace the placeholder values (`[&lt;key&gt;]`) with actual values for your use case. You'll also need to provide proper authentication credentials.
+
+</div>
+
+<Tabs>
+  <TabItem value="javascript" label="javascript" default>
+```javascript
+
+const { actions } = useInsight();
+
+const executeExampleReactor = async () => {
+    const { pixelReturn } = await actions.run(
+        `ExampleReactor(query=[<query>], database=[<database>], limit=[<limit>], format=[<format>]);`,
+    );
+
+    // get the result
+    const result = pixelReturn[0].output;
+    console.log(result);
+};
+```  
+</TabItem>
+  <TabItem value="python" label="python">
+```python
+from semoss import Insight
+insight = Insight(insight_id = '${i}')
+insight.run_pixel("ExampleReactor(query=[<query>], database=[<database>], limit=[<limit>], format=[<format>])")
+```
+
+  </TabItem>
+
+</Tabs>

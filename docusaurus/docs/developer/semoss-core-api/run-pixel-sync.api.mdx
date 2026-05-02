@@ -1,0 +1,71 @@
+---
+id: run-pixel-sync
+title: "Execute Pixel synchronously"
+description: "Executes a Pixel expression and returns the full result in the response."
+sidebar_label: "Execute Pixel synchronously"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","requestBody":{"content":{"application/json":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"Pixel expression to execute","example":"Connect(engine:'mydb');"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}},"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"Pixel expression to execute","example":"Connect(engine:'mydb');"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"jsonRequestBodyExample":{"dropLogging":true,"expression":"Connect(engine:'mydb');","insightId":"bf235853-86b7-483f-a0a5-ae489bfed97b","tz":"America/New_York"},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "post api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute Pixel synchronously"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/engine/runPixel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Executes a Pixel expression and returns the full result in the response.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"Pixel expression to execute","example":"Connect(engine:'mydb');"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}},"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"Pixel expression to execute","example":"Connect(engine:'mydb');"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

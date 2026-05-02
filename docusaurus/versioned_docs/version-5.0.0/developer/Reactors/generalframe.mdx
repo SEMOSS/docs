@@ -1,0 +1,499 @@
+---
+id: generalFrame
+title: "generalFrame"
+sidebar_label: "generalFrame"
+description: "Documentation for generalFrame reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# generalFrame
+
+This document contains multiple reactors in the generalFrame category.
+
+---
+
+## ResetAllFilters
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+ResetAllFilters()
+```
+
+
+---
+
+## HasDuplicates
+
+### Required Keys
+- **frame**
+- **columns**
+
+### Usage
+```javascript
+HasDuplicates(frame=[<frame>], columns=[<columns>])
+```
+
+
+---
+
+## ResetFrameToOriginalName
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+ResetFrameToOriginalName(frame=[<frame>])
+```
+
+
+---
+
+## SetFrameFilter
+
+### Required Keys
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+SetFrameFilter(filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## FrameFilterModelNumericRange
+
+### Required Keys
+- **column**
+- **panel**
+
+### Usage
+```javascript
+FrameFilterModelNumericRange(column=[<column>], panel=[<panel>])
+```
+
+
+---
+
+## FrameFilterModelFilteredValues
+
+### Required Keys
+- **column**
+- **filterWord**
+- **limit**
+- **offset**
+- **panel**
+
+### Usage
+```javascript
+FrameFilterModelFilteredValues(column=[<column>], filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], panel=[<panel>])
+```
+
+
+---
+
+## MergeFrames
+
+### Required Keys
+- **source**
+- **target**
+- **sourceCols**
+- **targetCols**
+- **jType**
+
+### Usage
+```javascript
+MergeFrames(source=[<source>], target=[<target>], sourceCols=[<sourceCols>], targetCols=[<targetCols>], jType=[<jType>])
+```
+
+
+---
+
+## UnfilterFrame
+
+### Required Keys
+- **columns**
+- **taskRefresh**
+
+### Usage
+```javascript
+UnfilterFrame(columns=[<columns>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## RemoveFrameFilter
+
+### Required Keys
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+RemoveFrameFilter(filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## FrameFilterEmptyValues
+
+### Required Keys
+- **columns**
+
+### Usage
+```javascript
+FrameFilterEmptyValues(columns=[<columns>])
+```
+
+
+---
+
+## GetFrameMetamodel
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+GetFrameMetamodel(frame=[<frame>])
+```
+
+
+---
+
+## CacheNativeFrame
+
+### Required Keys
+- **frame**
+- **frameType**
+- **inThread**
+
+### Usage
+```javascript
+CacheNativeFrame(frame=[<frame>], frameType=[<frameType>], inThread=[<inThread>])
+```
+
+
+---
+
+## FrameFilterModel
+
+### Required Keys
+- **column**
+- **filterWord**
+- **limit**
+- **offset**
+- **panel**
+
+### Usage
+```javascript
+FrameFilterModel(column=[<column>], filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], panel=[<panel>])
+```
+
+
+---
+
+## GetFrameFilterState
+
+### Required Keys
+- **column**
+- **filterWord**
+- **limit**
+- **offset**
+- **panel**
+- **dynamic**
+- **optionsCache**
+
+### Usage
+```javascript
+GetFrameFilterState(column=[<column>], filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], panel=[<panel>], dynamic=[<dynamic>], optionsCache=[<optionsCache>])
+```
+
+
+---
+
+## GetFrameFilters
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetFrameFilters()
+```
+
+
+---
+
+## GetFrameFiltersQS
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetFrameFiltersQS()
+```
+
+
+---
+
+## RemoveFrame
+
+### Required Keys
+- **variable**
+- **dropNow**
+
+### Usage
+```javascript
+RemoveFrame(variable=[<variable>], dropNow=[<dropNow>])
+```
+
+
+---
+
+## FrameHeaders
+
+### Required Keys
+- **frame**
+- **headerTypes**
+- **reset**
+
+### Usage
+```javascript
+FrameHeaders(frame=[<frame>], headerTypes=[<headerTypes>], reset=[<reset>])
+```
+
+
+---
+
+## CurrentFrame
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+CurrentFrame()
+```
+
+
+---
+
+## FrameProfile
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+FrameProfile(frame=[<frame>])
+```
+
+
+---
+
+## FrameHeaderExists
+
+### Required Keys
+- **frame**
+- **column**
+
+### Usage
+```javascript
+FrameHeaderExists(frame=[<frame>], column=[<column>])
+```
+
+
+---
+
+## GetFrameFilterRange
+
+### Required Keys
+- **column**
+- **panel**
+- **dynamic**
+- **optionsCache**
+
+### Usage
+```javascript
+GetFrameFilterRange(column=[<column>], panel=[<panel>], dynamic=[<dynamic>], optionsCache=[<optionsCache>])
+```
+
+
+---
+
+## ReplaceFrameFilter
+
+### Required Keys
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+ReplaceFrameFilter(filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## FrameCache
+
+### Required Keys
+- **frameCache**
+
+### Usage
+```javascript
+FrameCache(frameCache=[<frameCache>])
+```
+
+
+---
+
+## SetCurrentFrame
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+SetCurrentFrame(frame=[<frame>])
+```
+
+
+---
+
+## GetFrameDatabaseJoins
+
+### Required Keys
+- **frame**
+- **database**
+
+### Usage
+```javascript
+GetFrameDatabaseJoins(frame=[<frame>], database=[<database>])
+```
+
+
+---
+
+## GetFrameTableStructure
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+GetFrameTableStructure(frame=[<frame>])
+```
+
+
+---
+
+## FrameFilterWithSQL
+
+### Required Keys
+- **frame**
+- **query**
+
+### Usage
+```javascript
+FrameFilterWithSQL(frame=[<frame>], query=[<query>])
+```
+
+
+---
+
+## AddFrameFilter
+
+### Required Keys
+- **frame**
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+AddFrameFilter(frame=[<frame>], filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## FrameFilterModelVisibleValues
+
+### Required Keys
+- **column**
+- **filterWord**
+- **limit**
+- **offset**
+- **panel**
+
+### Usage
+```javascript
+FrameFilterModelVisibleValues(column=[<column>], filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], panel=[<panel>])
+```
+
+
+---
+
+## GetFrames
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetFrames()
+```
+
+
+---
+
+## LastUsedFrame
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+LastUsedFrame()
+```
+
+
+---
+
+## DeleteFrameFilter
+
+### Required Keys
+- **index**
+- **taskRefresh**
+
+### Usage
+```javascript
+DeleteFrameFilter(index=[<index>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## SwapFrame
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+SwapFrame(frame=[<frame>])
+```
+

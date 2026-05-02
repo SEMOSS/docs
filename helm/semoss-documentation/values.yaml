@@ -1,0 +1,25 @@
+replicaCount: 1
+
+image:
+  repository: quay.io/semoss/documentation
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources: {}
+
+env:
+  APP_NAME: "AI EU"
+  MONOLITH_API_URL: "http://localhost:8080/ai.eui"
+  SUPPORT_EMAIL: "testsupport@deloitte.com"
+
+probes:
+  readiness:
+    initialDelaySeconds: 10
+    periodSeconds: 10
+  liveness:
+    initialDelaySeconds: 30
+    periodSeconds: 20

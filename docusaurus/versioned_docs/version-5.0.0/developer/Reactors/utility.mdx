@@ -1,0 +1,335 @@
+---
+id: utility
+title: "utility"
+sidebar_label: "utility"
+description: "Documentation for utility reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# utility
+
+This document contains multiple reactors in the utility category.
+
+---
+
+## ExportDatabase
+
+### Required Keys
+- **database**
+- **keepGit**
+
+### Usage
+```javascript
+ExportDatabase(database=[<database>], keepGit=[<keepGit>])
+```
+
+
+---
+
+## RemoveVariable
+
+### Required Keys
+- **variable**
+- **dropNow**
+
+### Usage
+```javascript
+RemoveVariable(variable=[<variable>], dropNow=[<dropNow>])
+```
+
+
+---
+
+## Help
+
+### Required Keys
+- **reset**
+
+### Usage
+```javascript
+Help(reset=[<reset>])
+```
+
+
+---
+
+## ImageCapture
+
+### Required Keys
+- **project**
+- **url**
+- **params**
+- **imageWaitTime**
+
+### Usage
+```javascript
+ImageCapture(project=[<project>], url=[<url>], params=[<params>], imageWaitTime=[<imageWaitTime>])
+```
+
+
+---
+
+## DeleteInsightCache
+
+### Required Keys
+- **project**
+- **id**
+- **paramValues**
+
+### Usage
+```javascript
+DeleteInsightCache(project=[<project>], id=[<id>], paramValues=[<paramValues>])
+```
+
+
+---
+
+## ExternalDatabaseProfile
+
+### Required Keys
+- **dbDriver**
+- **host**
+- **port**
+- **username**
+- **password**
+- **schema**
+
+### Usage
+```javascript
+ExternalDatabaseProfile(dbDriver=[<dbDriver>], host=[<host>], port=[<port>], username=[<username>], password=[<password>], schema=[<schema>])
+```
+
+
+---
+
+## SendEmail
+
+### Required Keys
+- **smtpHost**
+- **smtpPort**
+- **subject**
+- **from**
+- **message**
+- **messageEncoded**
+- **filePath**
+- **space**
+- **emailSession**
+- **html**
+- **mustache**
+- **mustacheVars**
+- **username**
+- **password**
+- **to**
+- **cc**
+- **bcc**
+- **attachments**
+
+### Usage
+```javascript
+SendEmail(smtpHost=[<smtpHost>], smtpPort=[<smtpPort>], subject=[<subject>], from=[<from>], message=[<message>], messageEncoded=[<messageEncoded>], filePath=[<filePath>], space=[<space>], emailSession=[<emailSession>], html=[<html>], mustache=[<mustache>], mustacheVars=[<mustacheVars>], username=[<username>], password=[<password>], to=[<to>], cc=[<cc>], bcc=[<bcc>], attachments=[<attachments>])
+```
+
+
+---
+
+## WidgetT
+
+### Required Keys
+- **array**
+
+### Usage
+```javascript
+WidgetT(array=[<array>])
+```
+
+
+---
+
+## VariableExists
+
+### Required Keys
+- **variable**
+
+### Usage
+```javascript
+VariableExists(variable=[<variable>])
+```
+
+
+---
+
+## CheckRecommendOptimization
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+CheckRecommendOptimization(database=[<database>])
+```
+
+
+---
+
+## AddOperationAlias
+
+### Required Keys
+- **reactor**
+- **alias**
+
+### Usage
+```javascript
+AddOperationAlias(reactor=[<reactor>], alias=[<alias>])
+```
+
+
+---
+
+## CheckRPackages
+
+### Required Keys
+- **reload**
+
+### Usage
+```javascript
+CheckRPackages(reload=[<reload>])
+```
+
+
+---
+
+## DatabaseProfile
+
+### Required Keys
+- **frame**
+- **database**
+- **concepts**
+
+### Usage
+```javascript
+DatabaseProfile(frame=[<frame>], database=[<database>], concepts=[<concepts>])
+```
+
+
+---
+
+## PostRequest
+
+### Required Keys
+- **url**
+- **headersMap**
+- **bodyMap**
+- **useApplicationCert**
+
+### Usage
+```javascript
+PostRequest(url=[<url>], headersMap=[<headersMap>], bodyMap=[<bodyMap>], useApplicationCert=[<useApplicationCert>])
+```
+
+
+---
+
+## PredictExcelRangeMetadata
+
+### Required Keys
+- **filePath**
+- **space**
+- **sheetName**
+- **sheetRange**
+- **password**
+
+### Usage
+```javascript
+PredictExcelRangeMetadata(filePath=[<filePath>], space=[<space>], sheetName=[<sheetName>], sheetRange=[<sheetRange>], password=[<password>])
+```
+
+
+---
+
+## GetUserInfo
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetUserInfo()
+```
+
+
+---
+
+## ValidateUserProjectDependencies
+
+**Description:** 
+
+        Return a map `{'engineid':true/false}` for the users access to each engine dependency listed in this project
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ValidateUserProjectDependencies(project=[<project>])
+```
+
+
+---
+
+## DatabaseColumnUnique
+
+### Required Keys
+- **database**
+- **columns**
+
+### Usage
+```javascript
+DatabaseColumnUnique(database=[<database>], columns=[<columns>])
+```
+
+
+---
+
+## DeleteDatabase
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+DeleteDatabase(database=[<database>])
+```
+
+
+---
+
+## GetRequest
+
+### Required Keys
+- **url**
+- **headersMap**
+- **useApplicationCert**
+- **saveFile**
+
+### Usage
+```javascript
+GetRequest(url=[<url>], headersMap=[<headersMap>], useApplicationCert=[<useApplicationCert>], saveFile=[<saveFile>])
+```
+
+
+---
+
+## BackupDatabase
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+BackupDatabase(database=[<database>])
+```
+

@@ -1,0 +1,608 @@
+---
+id: project
+title: "project"
+sidebar_label: "project"
+description: "Documentation for project reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# project
+
+This document contains multiple reactors in the project category.
+
+---
+
+## UploadProject
+
+### Required Keys
+- **filePath**
+- **space**
+- **global**
+
+### Usage
+```javascript
+UploadProject(filePath=[<filePath>], space=[<space>], global=[<global>])
+```
+
+
+---
+
+## GetProjectDependencies
+
+**Description:** 
+
+        Set the engine dependencies for a project
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectDependencies(project=[<project>])
+```
+
+
+---
+
+## SetProjectMetakeyOptions
+
+### Required Keys
+- **metaoptions**
+
+### Usage
+```javascript
+SetProjectMetakeyOptions(metaoptions=[<metaoptions>])
+```
+
+
+---
+
+## GetProjectMetaValues
+
+### Required Keys
+- **metaKeys**
+
+### Usage
+```javascript
+GetProjectMetaValues(metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## PullProjectFolderFromCloud
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+PullProjectFolderFromCloud(project=[<project>])
+```
+
+
+---
+
+## CreateProject
+
+### Required Keys
+- **project**
+- **projectType**
+- **global**
+- **portal**
+- **portalName**
+- **provider**
+- **url**
+
+### Usage
+```javascript
+CreateProject(project=[<project>], projectType=[<projectType>], global=[<global>], portal=[<portal>], portalName=[<portalName>], provider=[<provider>], url=[<url>])
+```
+
+
+---
+
+## GetProjectStatus
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectStatus(project=[<project>])
+```
+
+
+---
+
+## SetProjectMetadata
+
+**Description:** 
+
+        Define metadata on a project
+
+### Required Keys
+- **project**
+- **meta**
+- **encoded**
+- **jsonCleanup**
+
+### Usage
+```javascript
+SetProjectMetadata(project=[<project>], meta=[<meta>], encoded=[<encoded>], jsonCleanup=[<jsonCleanup>])
+```
+
+
+---
+
+## UploadProjectApp
+
+**Description:** 
+
+        Import an app from an exported zip smss-app file
+
+### Required Keys
+- **filePath**
+- **space**
+- **global**
+
+### Usage
+```javascript
+UploadProjectApp(filePath=[<filePath>], space=[<space>], global=[<global>])
+```
+
+
+---
+
+## ProjectReconnectServer
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ProjectReconnectServer(project=[<project>])
+```
+
+
+---
+
+## SetProjectDependencies
+
+**Description:** 
+
+        Set the engine dependencies for a project
+
+### Required Keys
+- **project**
+- **dependencies**
+
+### Usage
+```javascript
+SetProjectDependencies(project=[<project>], dependencies=[<dependencies>])
+```
+
+
+---
+
+## ValidateUserProjectDependencies
+
+**Description:** 
+
+        Return a map `{'engineid':true/false}` for the users access to each engine dependency listed in this project
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ValidateUserProjectDependencies(project=[<project>])
+```
+
+
+---
+
+## GetProjectUserAccessRequest
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectUserAccessRequest(project=[<project>])
+```
+
+
+---
+
+## GetProjectList
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectList(project=[<project>])
+```
+
+
+---
+
+## GetProjectEmailSession
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectEmailSession(project=[<project>])
+```
+
+
+---
+
+## ProjectInfo
+
+### Required Keys
+- **project**
+- **metaKeys**
+
+### Usage
+```javascript
+ProjectInfo(project=[<project>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## ExportProjectApp
+
+**Description:** 
+
+        Export an app as a single zip file
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ExportProjectApp(project=[<project>])
+```
+
+
+---
+
+## ValidateProjectDependencies
+
+**Description:** 
+
+        Return true if the user has access to all engine dependencies listed in this project
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ValidateProjectDependencies(project=[<project>])
+```
+
+
+---
+
+## PushProjectFolderToCloud
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+PushProjectFolderToCloud(project=[<project>])
+```
+
+
+---
+
+## RequestProject
+
+### Required Keys
+- **project**
+- **permission**
+- **comment**
+
+### Usage
+```javascript
+RequestProject(project=[<project>], permission=[<permission>], comment=[<comment>])
+```
+
+
+---
+
+## UnlockProjects
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+UnlockProjects(project=[<project>])
+```
+
+
+---
+
+## GetProjectIMAPEmailSession
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectIMAPEmailSession(project=[<project>])
+```
+
+
+---
+
+## ExportProject
+
+### Required Keys
+- **project**
+- **keepGit**
+
+### Usage
+```javascript
+ExportProject(project=[<project>], keepGit=[<keepGit>])
+```
+
+
+---
+
+## GetProjectMetakeyOptions
+
+### Required Keys
+- **metaKeys**
+
+### Usage
+```javascript
+GetProjectMetakeyOptions(metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## GetProjectMetadata
+
+### Required Keys
+- **project**
+- **metaKeys**
+
+### Usage
+```javascript
+GetProjectMetadata(project=[<project>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## GetProjectAvailables
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectAvailables(project=[<project>])
+```
+
+
+---
+
+## MyProjects
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **onlyFavorites**
+- **metaKeys**
+- **metaFilters**
+- **permissionFilters**
+- **noMeta**
+- **onlyPortals**
+- **userT**
+
+### Usage
+```javascript
+MyProjects(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], onlyFavorites=[<onlyFavorites>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], permissionFilters=[<permissionFilters>], noMeta=[<noMeta>], onlyPortals=[<onlyPortals>], userT=[<userT>])
+```
+
+
+---
+
+## PublishProject
+
+### Required Keys
+- **project**
+- **release**
+
+### Usage
+```javascript
+PublishProject(project=[<project>], release=[<release>])
+```
+
+
+---
+
+## GetProjectSMSS
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectSMSS(project=[<project>])
+```
+
+
+---
+
+## ProjectR
+
+### Required Keys
+- **code**
+- **project**
+
+### Usage
+```javascript
+ProjectR(code=[<code>], project=[<project>])
+```
+
+
+---
+
+## GetProjectPortalDetails
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectPortalDetails(project=[<project>])
+```
+
+
+---
+
+## GetProjectMarkdown
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectMarkdown(project=[<project>])
+```
+
+
+---
+
+## SetProjectPropertiesContent
+
+### Required Keys
+- **project**
+- **propMap**
+
+### Usage
+```javascript
+SetProjectPropertiesContent(project=[<project>], propMap=[<propMap>])
+```
+
+
+---
+
+## OpenProject
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+OpenProject(project=[<project>])
+```
+
+
+---
+
+## GetProjectPropertiesContent
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectPropertiesContent(project=[<project>])
+```
+
+
+---
+
+## DeleteProject
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+DeleteProject(project=[<project>])
+```
+
+
+---
+
+## GetProjectPOP3EmailSession
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectPOP3EmailSession(project=[<project>])
+```
+
+
+---
+
+## ProjectGitDetails
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ProjectGitDetails(project=[<project>])
+```
+
+
+---
+
+## GetProjectAuthorizationHeader
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetProjectAuthorizationHeader(project=[<project>])
+```
+
+
+---
+
+## ProjectPy
+
+### Required Keys
+- **code**
+- **project**
+
+### Usage
+```javascript
+ProjectPy(code=[<code>], project=[<project>])
+```
+
+
+---
+
+## ReloadProjectProperties
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+ReloadProjectProperties(project=[<project>])
+```
+

@@ -1,0 +1,71 @@
+---
+id: get-jdbc-json-output
+title: "Execute SQL or pixel via JDBC bridge (JSON)"
+description: "Executes a query against the project / insight and returns JSON formatted results."
+sidebar_label: "Execute SQL or pixel via JDBC bridge (JSON)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Project"],"description":"Executes a query against the project / insight and returns JSON formatted results.","operationId":"getJDBCJsonOutput","parameters":[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"sql","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Execution JSON returned","content":{"application/json":{}}},"400":{"description":"Execution error","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/project-{projectId}/jdbc_json","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute SQL or pixel via JDBC bridge (JSON)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/project-{projectId}/jdbc_json"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Executes a query against the project / insight and returns JSON formatted results.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"sql","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Execution JSON returned","content":{"application/json":{}}},"400":{"description":"Execution error","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

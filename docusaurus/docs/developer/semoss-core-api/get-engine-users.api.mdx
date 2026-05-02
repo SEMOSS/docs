@@ -1,0 +1,71 @@
+---
+id: get-engine-users
+title: "Get engine users"
+description: "Gets users and permissions for an engine."
+sidebar_label: "Get engine users"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Gets users and permissions for an engine.","operationId":"getEngineUsers","parameters":[{"name":"engineId","in":"query","description":"Engine identifier","schema":{"type":"string"}},{"name":"userId","in":"query","description":"User identifier to filter","schema":{"type":"string"}},{"name":"searchTerm","in":"query","description":"Search term","schema":{"type":"string"}},{"name":"permission","in":"query","description":"Permission filter","schema":{"type":"string"}},{"name":"limit","in":"query","description":"Limit","schema":{"type":"string"}},{"name":"offset","in":"query","description":"Offset","schema":{"type":"string"}},{"name":"engineId","in":"query","schema":{"type":"string"}},{"name":"userId","in":"query","schema":{"type":"string"}},{"name":"searchTerm","in":"query","schema":{"type":"string"}},{"name":"permission","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int64"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int64"}}],"responses":{"200":{"description":"Users retrieved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"method":"get","path":"/auth/admin/engine/getEngineUsers","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get engine users","description":{"content":"Gets users and permissions for an engine.","type":"text/plain"},"url":{"path":["auth","admin","engine","getEngineUsers"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"Engine identifier","type":"text/plain"},"key":"engineId","value":""},{"disabled":false,"description":{"content":"User identifier to filter","type":"text/plain"},"key":"userId","value":""},{"disabled":false,"description":{"content":"Search term","type":"text/plain"},"key":"searchTerm","value":""},{"disabled":false,"description":{"content":"Permission filter","type":"text/plain"},"key":"permission","value":""},{"disabled":false,"description":{"content":"Limit","type":"text/plain"},"key":"limit","value":""},{"disabled":false,"description":{"content":"Offset","type":"text/plain"},"key":"offset","value":""},{"disabled":false,"key":"engineId","value":""},{"disabled":false,"key":"userId","value":""},{"disabled":false,"key":"searchTerm","value":""},{"disabled":false,"key":"permission","value":""},{"disabled":false,"key":"limit","value":""},{"disabled":false,"key":"offset","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get engine users"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/admin/engine/getEngineUsers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Gets users and permissions for an engine.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"engineId","in":"query","description":"Engine identifier","schema":{"type":"string"}},{"name":"userId","in":"query","description":"User identifier to filter","schema":{"type":"string"}},{"name":"searchTerm","in":"query","description":"Search term","schema":{"type":"string"}},{"name":"permission","in":"query","description":"Permission filter","schema":{"type":"string"}},{"name":"limit","in":"query","description":"Limit","schema":{"type":"string"}},{"name":"offset","in":"query","description":"Offset","schema":{"type":"string"}},{"name":"engineId","in":"query","schema":{"type":"string"}},{"name":"userId","in":"query","schema":{"type":"string"}},{"name":"searchTerm","in":"query","schema":{"type":"string"}},{"name":"permission","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int64"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Users retrieved","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

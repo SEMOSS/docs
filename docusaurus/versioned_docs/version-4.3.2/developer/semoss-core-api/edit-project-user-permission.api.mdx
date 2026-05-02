@@ -1,0 +1,63 @@
+---
+id: edit-project-user-permission
+title: "Edit project user permission"
+description: "Edits a user's permission for a project."
+sidebar_label: "Edit project user permission"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Edits a user's permission for a project.","operationId":"editProjectUserPermission","responses":{"200":{"description":"Permission updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/project/editProjectUserPermission","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Edit project user permission","description":{"content":"Edits a user's permission for a project.","type":"text/plain"},"url":{"path":["auth","admin","project","editProjectUserPermission"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Edit project user permission"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/project/editProjectUserPermission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Edits a user's permission for a project.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permission updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

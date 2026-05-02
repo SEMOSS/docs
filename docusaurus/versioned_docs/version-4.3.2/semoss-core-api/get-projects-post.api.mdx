@@ -1,0 +1,63 @@
+---
+id: get-projects-post
+title: "List projects (POST)"
+description: "Returns projects using form parameters for filtering and pagination."
+sidebar_label: "List projects (POST)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns projects using form parameters for filtering and pagination.","operationId":"getProjectsPOST","responses":{"200":{"description":"Projects retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/project/getProjects","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List projects (POST)","description":{"content":"Returns projects using form parameters for filtering and pagination.","type":"text/plain"},"url":{"path":["auth","admin","project","getProjects"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List projects (POST)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/project/getProjects"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns projects using form parameters for filtering and pagination.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Projects retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

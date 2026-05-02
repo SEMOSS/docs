@@ -1,0 +1,63 @@
+---
+id: print-engines
+title: "List engines"
+description: "Returns basic information for all engines the user can access."
+sidebar_label: "List engines"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Returns basic information for all engines the user can access.","operationId":"printEngines","responses":{"200":{"description":"Engines returned","content":{"application/json":{"example":[{"id":"engine1","name":"SalesDB"},{"id":"engine2","name":"HRDB"}]}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/engine/all","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List engines","description":{"content":"Returns basic information for all engines the user can access.","type":"text/plain"},"url":{"path":["engine","all"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List engines"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/engine/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns basic information for all engines the user can access.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Engines returned","content":{"application/json":{"example":[{"id":"engine1","name":"SalesDB"},{"id":"engine2","name":"HRDB"}]}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

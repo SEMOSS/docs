@@ -1,0 +1,182 @@
+---
+id: mcp
+title: "mcp"
+sidebar_label: "mcp"
+description: "Documentation for mcp reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# mcp
+
+This document contains multiple reactors in the mcp category.
+
+---
+
+## InitMCP
+
+### Required Keys
+- **project**
+- **protocolVersion**
+
+### Usage
+```javascript
+InitMCP(project=[<project>], protocolVersion=[<protocolVersion>])
+```
+
+
+---
+
+## MakePythonMCP
+
+**Description:** 
+
+        Generates a mcp/py_mcp.json file from the py/mcp_driver.py file function.
+If the project is a no-code app, the mcp_driver notebook sheet will be transformed
+into a py/mcp_driver.py file to then generate the mcp/py_mcp.json.
+
+
+### Required Keys
+- **project**
+
+### Optional Keys
+- **model**
+- **comment**
+
+### Usage
+```javascript
+MakePythonMCP(project=[<project>], model=[<model>], comment=[<comment>])
+```
+
+
+---
+
+## GetMCPResources
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetMCPResources(project=[<project>])
+```
+
+
+---
+
+## MakeNotebookCellMCP
+
+**Description:** 
+
+        Generates a function from a specific cell in the mcp_driver that is written to py/mcp_driver.py.
+The function is then added to the mcp/py_mcp.json.
+
+
+### Required Keys
+- **project**
+- **cellId**
+
+### Optional Keys
+- **model**
+- **comment**
+
+### Usage
+```javascript
+MakeNotebookCellMCP(project=[<project>], cellId=[<cellId>], model=[<model>], comment=[<comment>])
+```
+
+
+---
+
+## RunMCPTool
+
+**Description:** 
+
+        Execute a tool defined in the app
+
+### Required Keys
+- **project**
+- **function**
+- **paramValues**
+
+### Usage
+```javascript
+RunMCPTool(project=[<project>], function=[<function>], paramValues=[<paramValues>])
+```
+
+
+---
+
+## GetMCPResourcesTemplates
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetMCPResourcesTemplates(project=[<project>])
+```
+
+
+---
+
+## MakePixelMCP
+
+**Description:** 
+
+        Generates a mcp/pixel_mcp.json file from a set of reactors
+
+### Required Keys
+- **project**
+
+### Optional Keys
+- **reactor**
+- **comment**
+
+### Usage
+```javascript
+MakePixelMCP(project=[<project>], reactor=[<reactor>], comment=[<comment>])
+```
+
+
+---
+
+## GetMCPTools
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetMCPTools(project=[<project>])
+```
+
+
+---
+
+## GetMCPInternalTools
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetMCPInternalTools(project=[<project>])
+```
+
+
+---
+
+## GetMCPPrompts
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+GetMCPPrompts(project=[<project>])
+```
+

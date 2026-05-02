@@ -1,0 +1,153 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SEMOSS",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9999/Monolith_War"
+    }
+  ],
+  "paths": {
+    "/engine/runPixel": {
+      "post": {
+        "tags": ["engine"],
+        "summary": "Execute Pixel synchronously",
+        "description": "Executes a Pixel expression and returns the full result in the response.",
+        "operationId": "runPixelSync",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "title": "RunPixelRequest",
+                "required": ["expression"],
+                "type": "object",
+                "properties": {
+                  "expression": {
+                    "type": "object",
+                    "description": "LLM function call parameters",
+                    "properties": {
+                      "engine": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "LLM engine identifier",
+                        "example": ["MyLLMEngine"]
+                      },
+                      "command": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Command to execute",
+                        "example": ["Generate a summary of machine learning"]
+                      },
+                      "useHistory": {
+                        "type": "array",
+                        "items": {
+                          "type": "boolean"
+                        },
+                        "description": "Whether to use conversation history",
+                        "example": [true]
+                      },
+                      "paramValues": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        },
+                        "description": "Parameter values for the command",
+                        "example": [{}]
+                      },
+                      "context": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Context information for the LLM",
+                        "example": ["This is about ML models"]
+                      }
+                    },
+                    "required": ["engine", "command"]
+                  },
+                  "insightId": {
+                    "type": "string",
+                    "description": "Insight identifier. Use 'new' to create a new insight or omit for temporary.",
+                    "example": "bf235853-86b7-483f-a0a5-ae489bfed97b"
+                  },
+                  "tz": {
+                    "type": "string",
+                    "description": "Client timezone ID",
+                    "example": "America/New_York"
+                  },
+                  "dropLogging": {
+                    "type": "boolean",
+                    "description": "If true, drop console logging after run",
+                    "example": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Pixel executed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pixelReturn": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "output": {
+                            "type": "string",
+                            "description": "LLM generated response"
+                          },
+                          "operationType": {
+                            "type": "string",
+                            "example": "LLM"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "LLM Response": {
+                    "description": "Sample LLM response",
+                    "value": {
+                      "pixelReturn": [
+                        {
+                          "output": "Machine learning is a subset of artificial intelligence that enables computers to learn and make decisions from data without being explicitly programmed.",
+                          "operationType": "LLM"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

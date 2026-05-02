@@ -1,0 +1,782 @@
+---
+id: panel
+title: "panel"
+sidebar_label: "panel"
+description: "Documentation for panel reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# panel
+
+This document contains multiple reactors in the panel category.
+
+---
+
+## RetrievePanelComment
+
+### Required Keys
+- **panel**
+- **comment**
+
+### Usage
+```javascript
+RetrievePanelComment(panel=[<panel>], comment=[<comment>])
+```
+
+
+---
+
+## UnsortPanel
+
+### Required Keys
+- **panel**
+- **columns**
+
+### Usage
+```javascript
+UnsortPanel(panel=[<panel>], columns=[<columns>])
+```
+
+
+---
+
+## RetrievePanelOrnaments
+
+### Required Keys
+- **panel**
+- **traversal**
+
+### Usage
+```javascript
+RetrievePanelOrnaments(panel=[<panel>], traversal=[<traversal>])
+```
+
+
+---
+
+## ClosePanelIfExists
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+ClosePanelIfExists(panel=[<panel>])
+```
+
+
+---
+
+## AddPanelEvents
+
+### Required Keys
+- **panel**
+- **events**
+
+### Usage
+```javascript
+AddPanelEvents(panel=[<panel>], events=[<events>])
+```
+
+
+---
+
+## SetPanelPosition
+
+### Required Keys
+- **panel**
+- **position**
+
+### Usage
+```javascript
+SetPanelPosition(panel=[<panel>], position=[<position>])
+```
+
+
+---
+
+## GetPanelFilterState
+
+### Required Keys
+- **column**
+- **filterWord**
+- **limit**
+- **offset**
+- **panel**
+
+### Usage
+```javascript
+GetPanelFilterState(column=[<column>], filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], panel=[<panel>])
+```
+
+
+---
+
+## SetPanelSort
+
+### Required Keys
+- **panel**
+- **columns**
+- **sort**
+
+### Usage
+```javascript
+SetPanelSort(panel=[<panel>], columns=[<columns>], sort=[<sort>])
+```
+
+
+---
+
+## RemovePanelColorByValue
+
+### Required Keys
+- **panel**
+- **name**
+
+### Usage
+```javascript
+RemovePanelColorByValue(panel=[<panel>], name=[<name>])
+```
+
+
+---
+
+## RefreshPanelTask
+
+### Required Keys
+- **panel**
+- **limit**
+
+### Usage
+```javascript
+RefreshPanelTask(panel=[<panel>], limit=[<limit>])
+```
+
+
+---
+
+## GetPanelFilters
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelFilters(panel=[<panel>])
+```
+
+
+---
+
+## SetPanelView
+
+### Required Keys
+- **panel**
+- **panelView**
+- **panelViewOptions**
+
+### Usage
+```javascript
+SetPanelView(panel=[<panel>], panelView=[<panelView>], panelViewOptions=[<panelViewOptions>])
+```
+
+
+---
+
+## AddPanelConfig
+
+### Required Keys
+- **panel**
+- **config**
+
+### Usage
+```javascript
+AddPanelConfig(panel=[<panel>], config=[<config>])
+```
+
+
+---
+
+## RetrievePanelColorByValue
+
+### Required Keys
+- **panel**
+- **name**
+
+### Usage
+```javascript
+RetrievePanelColorByValue(panel=[<panel>], name=[<name>])
+```
+
+
+---
+
+## ClosePanel
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+ClosePanel(panel=[<panel>])
+```
+
+
+---
+
+## GetPanelCollect
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelCollect(panel=[<panel>])
+```
+
+
+---
+
+## SetPanelSortBy
+
+### Required Keys
+- **panel**
+- **columns**
+- **sort**
+
+### Usage
+```javascript
+SetPanelSortBy(panel=[<panel>], columns=[<columns>], sort=[<sort>])
+```
+
+
+---
+
+## AddPanelOrnaments
+
+### Required Keys
+- **panel**
+- **ornaments**
+
+### Usage
+```javascript
+AddPanelOrnaments(panel=[<panel>], ornaments=[<ornaments>])
+```
+
+
+---
+
+## SetPanelSheet
+
+### Required Keys
+- **panel**
+- **sheet**
+
+### Usage
+```javascript
+SetPanelSheet(panel=[<panel>], sheet=[<sheet>])
+```
+
+
+---
+
+## OpenTab
+
+### Required Keys
+- **webURL**
+
+### Usage
+```javascript
+OpenTab(webURL=[<webURL>])
+```
+
+
+---
+
+## AddPanelFilter
+
+### Required Keys
+- **panel**
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+AddPanelFilter(panel=[<panel>], filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## InsightPanelIds
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+InsightPanelIds()
+```
+
+
+---
+
+## GetPanelId
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelId(panel=[<panel>])
+```
+
+
+---
+
+## ResetPanelEvents
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+ResetPanelEvents(panel=[<panel>])
+```
+
+
+---
+
+## RefreshAllPanelTasks
+
+### Required Keys
+- **limit**
+
+### Usage
+```javascript
+RefreshAllPanelTasks(limit=[<limit>])
+```
+
+
+---
+
+## AddPanelComment
+
+### Required Keys
+- **panel**
+- **comment**
+
+### Usage
+```javascript
+AddPanelComment(panel=[<panel>], comment=[<comment>])
+```
+
+
+---
+
+## SetPanelFilter
+
+### Required Keys
+- **panel**
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+SetPanelFilter(panel=[<panel>], filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## CachedPanel
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+CachedPanel(panel=[<panel>])
+```
+
+
+---
+
+## PanelExists
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+PanelExists(panel=[<panel>])
+```
+
+
+---
+
+## AddPanel
+
+### Required Keys
+- **panel**
+- **sheet**
+
+### Usage
+```javascript
+AddPanel(panel=[<panel>], sheet=[<sheet>])
+```
+
+
+---
+
+## MovePanel
+
+### Required Keys
+- **panel**
+- **sheet**
+
+### Usage
+```javascript
+MovePanel(panel=[<panel>], sheet=[<sheet>])
+```
+
+
+---
+
+## ResetPanelOrnaments
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+ResetPanelOrnaments(panel=[<panel>])
+```
+
+
+---
+
+## GetPanelState
+
+### Required Keys
+- **panel**
+- **output**
+
+### Usage
+```javascript
+GetPanelState(panel=[<panel>], output=[<output>])
+```
+
+
+---
+
+## Clone
+
+### Required Keys
+- **panel**
+- **cloneId**
+- **sheet**
+
+### Usage
+```javascript
+Clone(panel=[<panel>], cloneId=[<cloneId>], sheet=[<sheet>])
+```
+
+
+---
+
+## SetPanelLabel
+
+### Required Keys
+- **panel**
+- **panelLabel**
+
+### Usage
+```javascript
+SetPanelLabel(panel=[<panel>], panelLabel=[<panelLabel>])
+```
+
+
+---
+
+## RetrievePanelEvents
+
+### Required Keys
+- **panel**
+- **traversal**
+
+### Usage
+```javascript
+RetrievePanelEvents(panel=[<panel>], traversal=[<traversal>])
+```
+
+
+---
+
+## UpdatePanelComment
+
+### Required Keys
+- **panel**
+- **comment**
+
+### Usage
+```javascript
+UpdatePanelComment(panel=[<panel>], comment=[<comment>])
+```
+
+
+---
+
+## SetPanelCollect
+
+### Required Keys
+- **panel**
+- **limit**
+
+### Usage
+```javascript
+SetPanelCollect(panel=[<panel>], limit=[<limit>])
+```
+
+
+---
+
+## RemovePanelEvents
+
+### Required Keys
+- **panel**
+- **traversal**
+
+### Usage
+```javascript
+RemovePanelEvents(panel=[<panel>], traversal=[<traversal>])
+```
+
+
+---
+
+## ReplacePanelFilter
+
+### Required Keys
+- **panel**
+- **filters**
+- **taskRefresh**
+
+### Usage
+```javascript
+ReplacePanelFilter(panel=[<panel>], filters=[<filters>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## AddPanelIfAbsent
+
+### Required Keys
+- **panel**
+- **sheet**
+
+### Usage
+```javascript
+AddPanelIfAbsent(panel=[<panel>], sheet=[<sheet>])
+```
+
+
+---
+
+## Panel
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+Panel(panel=[<panel>])
+```
+
+
+---
+
+## GetPanelFiltersQS
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelFiltersQS(panel=[<panel>])
+```
+
+
+---
+
+## RefreshPanelView
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+RefreshPanelView(panel=[<panel>])
+```
+
+
+---
+
+## SetPanelState
+
+### Required Keys
+- **state**
+
+### Usage
+```javascript
+SetPanelState(state=[<state>])
+```
+
+
+---
+
+## AddPanelSort
+
+### Required Keys
+- **panel**
+- **columns**
+- **sort**
+
+### Usage
+```javascript
+AddPanelSort(panel=[<panel>], columns=[<columns>], sort=[<sort>])
+```
+
+
+---
+
+## GetPanelColorByValue
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelColorByValue(panel=[<panel>])
+```
+
+
+---
+
+## RemovePanelOrnaments
+
+### Required Keys
+- **panel**
+- **traversal**
+
+### Usage
+```javascript
+RemovePanelOrnaments(panel=[<panel>], traversal=[<traversal>])
+```
+
+
+---
+
+## GetPanelSort
+
+### Required Keys
+- **panel**
+
+### Usage
+```javascript
+GetPanelSort(panel=[<panel>])
+```
+
+
+---
+
+## CachedPanelClone
+
+### Required Keys
+- **panel**
+- **cloneId**
+
+### Usage
+```javascript
+CachedPanelClone(panel=[<panel>], cloneId=[<cloneId>])
+```
+
+
+---
+
+## SetMultiTypePanelSort
+
+### Required Keys
+- **panel**
+- **sortConfig**
+
+### Usage
+```javascript
+SetMultiTypePanelSort(panel=[<panel>], sortConfig=[<sortConfig>])
+```
+
+
+---
+
+## AddPanelColorByValue
+
+### Required Keys
+- **panel**
+- **name**
+- **qs**
+- **options**
+
+### Usage
+```javascript
+AddPanelColorByValue(panel=[<panel>], name=[<name>], qs=[<qs>], options=[<options>])
+```
+
+
+---
+
+## AddPanelSortBy
+
+### Required Keys
+- **panel**
+- **column**
+- **values**
+
+### Usage
+```javascript
+AddPanelSortBy(panel=[<panel>], column=[<column>], values=[<values>])
+```
+
+
+---
+
+## UnfilterPanel
+
+### Required Keys
+- **panel**
+- **columns**
+- **taskRefresh**
+
+### Usage
+```javascript
+UnfilterPanel(panel=[<panel>], columns=[<columns>], taskRefresh=[<taskRefresh>])
+```
+
+
+---
+
+## RemovePanelComment
+
+### Required Keys
+- **panel**
+- **comment**
+
+### Usage
+```javascript
+RemovePanelComment(panel=[<panel>], comment=[<comment>])
+```
+

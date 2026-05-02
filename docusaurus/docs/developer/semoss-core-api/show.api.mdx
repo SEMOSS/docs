@@ -1,0 +1,63 @@
+---
+id: show
+title: "Get current user information"
+description: "Returns information about the currently authenticated user"
+sidebar_label: "Get current user information"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Authentication"],"description":"Returns information about the currently authenticated user","operationId":"show","responses":{"200":{"description":"User information retrieved successfully","content":{"application/json":{"schema":{"type":"object","properties":{"email":{"type":"string","description":"Email address"},"id":{"type":"string","description":"User identifier"},"name":{"type":"string","description":"Display name"},"permissions":{"type":"array","description":"List of permissions","items":{"type":"string","description":"List of permissions"}},"type":{"type":"string","description":"User type","enum":["admin","user","api"]}},"title":"UserInfoDTO"}}}},"401":{"description":"Unauthorized"},"500":{"description":"Internal server error"}},"security":[{"basicAuth":[]},{"trustedToken":[]}],"method":"get","path":"/auth/whoami","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get current user information","description":{"content":"Returns information about the currently authenticated user","type":"text/plain"},"url":{"path":["auth","whoami"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get current user information"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/whoami"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns information about the currently authenticated user
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"User information retrieved successfully","content":{"application/json":{"schema":{"type":"object","properties":{"email":{"type":"string","description":"Email address"},"id":{"type":"string","description":"User identifier"},"name":{"type":"string","description":"Display name"},"permissions":{"type":"array","description":"List of permissions","items":{"type":"string","description":"List of permissions"}},"type":{"type":"string","description":"User type","enum":["admin","user","api"]}},"title":"UserInfoDTO"}}}},"401":{"description":"Unauthorized"},"500":{"description":"Internal server error"}}}
+>
+  
+</StatusCodes>
+
+
+      

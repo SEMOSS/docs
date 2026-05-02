@@ -1,0 +1,106 @@
+{
+   "llmAi": [
+      {
+         "name": "prerna.reactor.model.LLM",
+         "description": "This method is used to run an LLM text-generation call",
+         "requiredKeys": [
+            "engine",
+            "command"
+         ],
+         "optionalKeys": [
+            "useHistory",
+            "paramValues",
+            "context"
+         ]
+      }
+   ],
+   "Miscellaneous": [
+      {
+         "name": "prerna.reactor.project.NewAppAssetsDirectory",
+         "description": "Create a new empty directory in the projects assets folder",
+         "requiredKeys":          [
+            "project",
+            "filePath"
+         ],
+         "optionalKeys": ["comment"]
+      },
+      {
+         "name": "prerna.reactor.images.MigrateImagesToCouch",
+         "description": "Reactor to migrate images from remote image folders to CouchDB",
+         "requiredKeys": [],
+         "optionalKeys":          [
+            "repull",
+            "filterInvalidIds",
+            "verifyMissing"
+         ]
+      },
+      {
+         "name": "prerna.reactor.project.LoadApp",
+         "description": "Set the context for the insight in order to have access to app assets including custom reactors and python scripts",
+         "requiredKeys": ["project"],
+         "optionalKeys": ["loadPath"]
+      },
+      {
+         "name": "prerna.reactor.project.DeleteAppAssets",
+         "description": "Delete a single or multiple files in the projects assets folder",
+         "requiredKeys": [
+            "project",
+            "filePath"
+         ],
+         "optionalKeys": [
+            "comment"
+         ]
+      },
+      {
+         "name": "prerna.reactor.project.DownloadAppAsset",
+         "description": "Download a file or directory from within the projects assets folder",
+         "requiredKeys": [
+            "project",
+            "filePath"
+         ],
+         "optionalKeys": []
+      },
+      {
+         "name": "prerna.reactor.EchoE",
+         "description": "This reactor returns back the encoded input the user enters",
+         "requiredKeys": [
+            "value"
+         ],
+         "optionalKeys": []
+      },
+      {
+         "name": "prerna.reactor.EchoR",
+         "description": "This reactor returns back the encoded input the user enters",
+         "requiredKeys": [
+            "value"
+         ],
+         "optionalKeys": []
+      },
+      {
+         "name": "prerna.reactor.app.ExportApp",
+         "description": "Export an app as a single .smss-app file",
+         "requiredKeys": [
+            "project"
+         ],
+         "optionalKeys": []
+      },
+      {
+         "name": "prerna.reactor.project.GetAppAssets",
+         "description": "Retrieve the contents of a file in the projects assets folder",
+         "requiredKeys": [
+            "project",
+            "filePath"
+         ],
+         "optionalKeys": []
+      },
+      {
+         "name": "prerna.reactor.engine.DeleteEngineAssets",
+         "description": "Delete a single or multiple files in the engine folder",
+         "requiredKeys": [
+            "engine",
+            "filePath"
+         ],
+         "optionalKeys": []
+      }
+   ]
+}

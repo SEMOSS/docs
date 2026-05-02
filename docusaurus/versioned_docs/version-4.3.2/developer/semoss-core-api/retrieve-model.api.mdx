@@ -1,0 +1,71 @@
+---
+id: retrieve-model
+title: "retrieveModel"
+description: "retrieveModel"
+sidebar_label: "retrieveModel"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["AI Models"],"operationId":"retrieveModel","parameters":[{"name":"modelId","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"default":{"description":"default response","content":{"application/json;charset=utf-8":{}}}},"security":[{"basicAuth":[]}],"description":"retrieveModel","method":"get","path":"/model/openai/models/{modelId}","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"retrieve Model","description":{"type":"text/plain"},"url":{"path":["model","openai","models",":modelId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"modelId"}]},"header":[{"key":"Accept","value":"application/json;charset=utf-8"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"retrieveModel"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/model/openai/models/{modelId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+retrieveModel
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"modelId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"default":{"description":"default response","content":{"application/json;charset=utf-8":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

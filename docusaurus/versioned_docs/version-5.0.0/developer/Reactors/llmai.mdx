@@ -1,0 +1,471 @@
+---
+id: llmAi
+title: "llmAi"
+sidebar_label: "llmAi"
+description: "Documentation for llmAi reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# llmAi
+
+This document contains multiple reactors in the llmAi category.
+
+---
+
+## EmbedderKeywordExtraction
+
+**Description:** 
+
+        Utilizes a keyBERT model to extract the keywords from the text input
+
+### Required Keys
+- **model**
+- **input**
+
+### Optional Keys
+- **percentile**
+- **limit**
+
+### Usage
+```javascript
+EmbedderKeywordExtraction(model=[<model>], input=[<input>], percentile=[<percentile>], limit=[<limit>])
+```
+
+
+---
+
+## LLM
+
+**Description:** 
+
+        This method is used to run an LLM text-generation call
+
+### Required Keys
+- **engine**
+- **command**
+
+### Optional Keys
+- **useHistory**
+- **paramValues**
+- **context**
+
+### Usage
+```javascript
+LLM(engine=[<engine>], command=[<command>], useHistory=[<useHistory>], paramValues=[<paramValues>], context=[<context>])
+```
+
+
+---
+
+## Rerank
+
+### Required Keys
+- **function**
+
+### Optional Keys
+- **limit**
+
+### Usage
+```javascript
+Rerank(function=[<function>], limit=[<limit>])
+```
+
+
+---
+
+## AddOpenAIKey
+
+### Optional Keys
+- **apikey**
+
+### Usage
+```javascript
+AddOpenAIKey(apikey=[<apikey>])
+```
+
+
+---
+
+## GetMyOpenAiKeyModelsList
+
+### Required Keys
+- **openaiKey**
+
+### Optional Keys
+- **organizationId**
+
+### Usage
+```javascript
+GetMyOpenAiKeyModelsList(openaiKey=[<openaiKey>], organizationId=[<organizationId>])
+```
+
+
+---
+
+## Embeddings
+
+**Description:** 
+
+        This reactor is used to interact with Embedding Model Engines. If the model does not support embeddings it will return "This model does not support embeddings."
+
+### Required Keys
+- **engine**
+- **values**
+
+### Optional Keys
+- **paramValues**
+- **encoded**
+
+### Usage
+```javascript
+Embeddings(engine=[<engine>], values=[<values>], paramValues=[<paramValues>], encoded=[<encoded>])
+```
+
+
+---
+
+## BuildModelToolsArray
+
+**Description:** 
+
+        Return an array with the tools maps for each engine id being requested
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+BuildModelToolsArray(engine=[<engine>])
+```
+
+
+---
+
+## ExecuteGuardrailEngine
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+ExecuteGuardrailEngine(engine=[<engine>])
+```
+
+
+---
+
+## Ask
+
+### Optional Keys
+- **fullPrompt**
+- **command**
+
+### Usage
+```javascript
+Ask(fullPrompt=[<fullPrompt>], command=[<command>])
+```
+
+
+---
+
+## GetModelAPI
+
+### Required Keys
+- **model**
+
+### Usage
+```javascript
+GetModelAPI(model=[<model>])
+```
+
+
+---
+
+## LLM2
+
+**Description:** 
+
+        This method is used to run an LLM text-generation call
+
+### Required Keys
+- **engine**
+- **command**
+
+### Optional Keys
+- **useHistory**
+- **paramValues**
+- **image**
+- **context**
+- **roomId**
+- **url**
+
+### Usage
+```javascript
+LLM2(engine=[<engine>], command=[<command>], useHistory=[<useHistory>], paramValues=[<paramValues>], image=[<image>], context=[<context>], roomId=[<roomId>], url=[<url>])
+```
+
+
+---
+
+## LLMInstruct
+
+### Required Keys
+- **engine**
+- **command**
+
+### Optional Keys
+- **paramValues**
+- **context**
+
+### Usage
+```javascript
+LLMInstruct(engine=[<engine>], command=[<command>], paramValues=[<paramValues>], context=[<context>])
+```
+
+
+---
+
+## AskPlayground
+
+**Description:** 
+
+        This method is used to run an LLM text-generation call (Playground)â€”returns both input and response message objects.
+
+### Required Keys
+- **engine**
+- **command**
+
+### Optional Keys
+- **paramValues**
+- **image**
+- **mcpToolID**
+- **parentMessageId**
+- **context**
+- **roomId**
+- **url**
+
+### Usage
+```javascript
+AskPlayground(engine=[<engine>], command=[<command>], paramValues=[<paramValues>], image=[<image>], mcpToolID=[<mcpToolID>], parentMessageId=[<parentMessageId>], context=[<context>], roomId=[<roomId>], url=[<url>])
+```
+
+
+---
+
+## CreateEmbeddingsFromVectorCSVFile
+
+### Required Keys
+- **engine**
+- **filePaths**
+
+### Optional Keys
+- **paramValues**
+- **space**
+
+### Usage
+```javascript
+CreateEmbeddingsFromVectorCSVFile(engine=[<engine>], filePaths=[<filePaths>], paramValues=[<paramValues>], space=[<space>])
+```
+
+
+---
+
+## AskTool
+
+### Required Keys
+- **engine**
+- **command**
+
+### Optional Keys
+- **paramValues**
+- **context**
+- **engine_tools**
+- **project_tools**
+
+### Usage
+```javascript
+AskTool(engine=[<engine>], command=[<command>], paramValues=[<paramValues>], context=[<context>], engine_tools=[<engine_tools>], project_tools=[<project_tools>])
+```
+
+
+---
+
+## DetoxifyGuardrailEngine
+
+### Required Keys
+- **prompt**
+- **threshold**
+
+### Usage
+```javascript
+DetoxifyGuardrailEngine(prompt=[<prompt>], threshold=[<threshold>])
+```
+
+
+---
+
+## CreateEmbeddingsFromDocuments
+
+### Required Keys
+- **engine**
+- **filePaths**
+
+### Optional Keys
+- **paramValues**
+- **space**
+
+### Usage
+```javascript
+CreateEmbeddingsFromDocuments(engine=[<engine>], filePaths=[<filePaths>], paramValues=[<paramValues>], space=[<space>])
+```
+
+
+---
+
+## Vision
+
+**Description:** 
+
+        This method is used to run a vision task with an Image-Text-to-Text model
+
+### Required Keys
+- **engine**
+- **command**
+- **image**
+
+### Optional Keys
+- **paramValues**
+
+### Usage
+```javascript
+Vision(engine=[<engine>], command=[<command>], image=[<image>], paramValues=[<paramValues>])
+```
+
+
+---
+
+## Model
+
+### Required Keys
+- **model**
+
+### Usage
+```javascript
+Model(model=[<model>])
+```
+
+
+---
+
+## NER
+
+### Required Keys
+- **engine**
+- **prompt**
+- **entities**
+
+### Optional Keys
+- **paramValues**
+- **maskEntities**
+
+### Usage
+```javascript
+NER(engine=[<engine>], prompt=[<prompt>], entities=[<entities>], paramValues=[<paramValues>], maskEntities=[<maskEntities>])
+```
+
+
+---
+
+## TextToSQL
+
+**Description:** 
+
+        Convert natural language to SQL. Also allows users to pass in old SQL and SQL errors to generate new SQL
+
+### Required Keys
+- **database**
+- **model**
+- **command**
+
+### Optional Keys
+- **paramValues**
+- **error**
+- **sql**
+
+### Usage
+```javascript
+TextToSQL(database=[<database>], model=[<model>], command=[<command>], paramValues=[<paramValues>], error=[<error>], sql=[<sql>])
+```
+
+
+---
+
+## GLiNERGuardrailEngine
+
+### Required Keys
+- **prompt**
+- **labels**
+- **threshold**
+
+### Usage
+```javascript
+GLiNERGuardrailEngine(prompt=[<prompt>], labels=[<labels>], threshold=[<threshold>])
+```
+
+
+---
+
+## GetModelMaxTokenLength
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetModelMaxTokenLength(engine=[<engine>])
+```
+
+
+---
+
+## GenericGuardrailInput
+
+### Usage
+```javascript
+GenericGuardrailInput()
+```
+
+
+---
+
+## GetGuardrailEngineDefintion
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+GetGuardrailEngineDefintion(engine=[<engine>])
+```
+
+
+---
+
+## ImageEmbeddings
+
+### Required Keys
+- **engine**
+- **values**
+
+### Optional Keys
+- **paramValues**
+
+### Usage
+```javascript
+ImageEmbeddings(engine=[<engine>], values=[<values>], paramValues=[<paramValues>])
+```
+

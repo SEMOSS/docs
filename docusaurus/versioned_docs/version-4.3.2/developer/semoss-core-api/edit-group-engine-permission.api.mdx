@@ -1,0 +1,63 @@
+---
+id: edit-group-engine-permission
+title: "Edit engine permission for group"
+description: "Edits a group's engine permission."
+sidebar_label: "Edit engine permission for group"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Edits a group's engine permission.","operationId":"editGroupEnginePermission","responses":{"200":{"description":"Permission updated","content":{"application/json":{"schema":{"type":"boolean"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/group/editGroupEnginePermission","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Edit engine permission for group","description":{"content":"Edits a group's engine permission.","type":"text/plain"},"url":{"path":["auth","admin","group","editGroupEnginePermission"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Edit engine permission for group"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/group/editGroupEnginePermission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Edits a group's engine permission.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permission updated","content":{"application/json":{"schema":{"type":"boolean"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

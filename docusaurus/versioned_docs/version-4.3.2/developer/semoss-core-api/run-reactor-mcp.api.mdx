@@ -1,0 +1,71 @@
+---
+id: run-reactor-mcp
+title: "Execute Reactor via MCP"
+description: "Executes a specified reactor with given parameters using the MCP protocol."
+sidebar_label: "Execute Reactor via MCP"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Executes a specified reactor with given parameters using the MCP protocol.","operationId":"runReactorMCP","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"_meta":{"type":"object","properties":{"contextProjectId":{"type":"string","description":"Context project ID","example":"projectId"},"dropLogging":{"type":"string","description":"Drop logging","example":"true"},"insightId":{"type":"string","description":"Insight ID","example":"insightId"},"tz":{"type":"string","description":"Timezone","example":"America/New_York"}},"description":"Meta information","title":"Meta"},"id":{"type":"string","description":"Request ID","example":"unique-request-id"},"jsonrpc":{"type":"string","description":"JSON-RPC version","example":"2.0"},"method":{"type":"string","description":"Method name","example":"tools/call"},"params":{"type":"object","properties":{"arguments":{"type":"object","additionalProperties":{"type":"object","description":"Arguments for the reactor"},"description":"Arguments for the reactor"},"name":{"type":"string","description":"Reactor name","example":"reactorName"}},"description":"Parameters for the reactor call","title":"Params"}},"title":"ReactorMCPRequest"}}},"required":true},"responses":{"200":{"description":"Reactor executed","content":{"application/json":{"schema":{"type":"object","example":{"jsonrpc":"2.0","result":{"content":[{"type":"text","text":"Reactor execution output"}],"isError":false}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"jsonrpc":"2.0","result":{"content":[{"type":"text","text":"Reactor execution output"}],"isError":false}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runReactorMCP","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"jsonRequestBodyExample":{"_meta":{"contextProjectId":"projectId","dropLogging":"true","insightId":"insightId","tz":"America/New_York"},"id":"unique-request-id","jsonrpc":"2.0","method":"tools/call","params":{"arguments":{},"name":"reactorName"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Reactor via MCP","description":{"content":"Executes a specified reactor with given parameters using the MCP protocol.","type":"text/plain"},"url":{"path":["engine","runReactorMCP"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"","options":{"raw":{"language":"json"}}},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute Reactor via MCP"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/engine/runReactorMCP"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Executes a specified reactor with given parameters using the MCP protocol.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"_meta":{"type":"object","properties":{"contextProjectId":{"type":"string","description":"Context project ID","example":"projectId"},"dropLogging":{"type":"string","description":"Drop logging","example":"true"},"insightId":{"type":"string","description":"Insight ID","example":"insightId"},"tz":{"type":"string","description":"Timezone","example":"America/New_York"}},"description":"Meta information","title":"Meta"},"id":{"type":"string","description":"Request ID","example":"unique-request-id"},"jsonrpc":{"type":"string","description":"JSON-RPC version","example":"2.0"},"method":{"type":"string","description":"Method name","example":"tools/call"},"params":{"type":"object","properties":{"arguments":{"type":"object","additionalProperties":{"type":"object","description":"Arguments for the reactor"},"description":"Arguments for the reactor"},"name":{"type":"string","description":"Reactor name","example":"reactorName"}},"description":"Parameters for the reactor call","title":"Params"}},"title":"ReactorMCPRequest"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Reactor executed","content":{"application/json":{"schema":{"type":"object","example":{"jsonrpc":"2.0","result":{"content":[{"type":"text","text":"Reactor execution output"}],"isError":false}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"jsonrpc":"2.0","result":{"content":[{"type":"text","text":"Reactor execution output"}],"isError":false}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

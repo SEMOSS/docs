@@ -1,0 +1,63 @@
+---
+id: get-play-sheets
+title: "List available PlaySheets"
+description: "Returns a map of PlaySheet names to their implementation classes."
+sidebar_label: "List available PlaySheets"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Returns a map of PlaySheet names to their implementation classes.","operationId":"getPlaySheets","responses":{"200":{"description":"Successful operation","content":{"application/json":{"example":{"PlaySheetA":"com.semoss.PlaySheetA","PlaySheetB":"com.semoss.PlaySheetB"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/engine/playsheets","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List available PlaySheets","description":{"content":"Returns a map of PlaySheet names to their implementation classes.","type":"text/plain"},"url":{"path":["engine","playsheets"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List available PlaySheets"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/engine/playsheets"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns a map of PlaySheet names to their implementation classes.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful operation","content":{"application/json":{"example":{"PlaySheetA":"com.semoss.PlaySheetA","PlaySheetB":"com.semoss.PlaySheetB"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

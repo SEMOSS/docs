@@ -1,0 +1,442 @@
+---
+id: admin
+title: "admin"
+sidebar_label: "admin"
+description: "Documentation for admin reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# admin
+
+This document contains multiple reactors in the admin category.
+
+---
+
+## AdminReloadSocialProperties
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+AdminReloadSocialProperties()
+```
+
+
+---
+
+## AdminGetProjectMarkdown
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+AdminGetProjectMarkdown(project=[<project>])
+```
+
+
+---
+
+## AdminGetEngineUsagePerProject
+
+### Required Keys
+- **engine**
+- **limit**
+- **offset**
+- **startDate**
+- **endDate**
+
+### Usage
+```javascript
+AdminGetEngineUsagePerProject(engine=[<engine>], limit=[<limit>], offset=[<offset>], startDate=[<startDate>], endDate=[<endDate>])
+```
+
+
+---
+
+## AdminUploadUsers
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+AdminUploadUsers(filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## AdminMyProjects
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **project**
+- **metaKeys**
+- **metaFilters**
+- **noMeta**
+- **userT**
+
+### Usage
+```javascript
+AdminMyProjects(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], project=[<project>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], noMeta=[<noMeta>], userT=[<userT>])
+```
+
+
+---
+
+## AdminExportUserDatabasePermissions
+
+### Required Keys
+- **fileName**
+- **filePath**
+- **password**
+- **database**
+
+### Usage
+```javascript
+AdminExportUserDatabasePermissions(fileName=[<fileName>], filePath=[<filePath>], password=[<password>], database=[<database>])
+```
+
+
+---
+
+## AdminMyEngines
+
+### Required Keys
+- **filterWord**
+- **limit**
+- **offset**
+- **engineTypes**
+- **engine**
+- **metaKeys**
+- **metaFilters**
+- **noMeta**
+- **userT**
+
+### Usage
+```javascript
+AdminMyEngines(filterWord=[<filterWord>], limit=[<limit>], offset=[<offset>], engineTypes=[<engineTypes>], engine=[<engine>], metaKeys=[<metaKeys>], metaFilters=[<metaFilters>], noMeta=[<noMeta>], userT=[<userT>])
+```
+
+
+---
+
+## AdminProjectInfo
+
+### Required Keys
+- **project**
+- **metaKeys**
+
+### Usage
+```javascript
+AdminProjectInfo(project=[<project>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## AdminDatabase
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+AdminDatabase(database=[<database>])
+```
+
+
+---
+
+## AdminGetProjectUsage
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+AdminGetProjectUsage(project=[<project>])
+```
+
+
+---
+
+## AdminGetRDFMap
+
+**Description:** 
+
+        Admin reactor to get the contents of the RDF_Map.prop file with secrets concealed
+
+### Usage
+```javascript
+AdminGetRDFMap()
+```
+
+
+---
+
+## AdminPushLocalToCloud
+
+### Required Keys
+- **dryRun**
+
+### Usage
+```javascript
+AdminPushLocalToCloud(dryRun=[<dryRun>])
+```
+
+
+---
+
+## AdminUploadDatabasePermissions
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+AdminUploadDatabasePermissions(filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## AdminExecQuery
+
+### Required Keys
+- **qs**
+
+### Usage
+```javascript
+AdminExecQuery(qs=[<qs>])
+```
+
+
+---
+
+## AdminGetEngineMarkdown
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+AdminGetEngineMarkdown(engine=[<engine>])
+```
+
+
+---
+
+## AdminGetAllEngineUsage
+
+### Required Keys
+- **engine**
+- **limit**
+- **offset**
+- **startDate**
+- **endDate**
+
+### Usage
+```javascript
+AdminGetAllEngineUsage(engine=[<engine>], limit=[<limit>], offset=[<offset>], startDate=[<startDate>], endDate=[<endDate>])
+```
+
+
+---
+
+## AdminResetPasswordRules
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+AdminResetPasswordRules()
+```
+
+
+---
+
+## AdminLockAccounts
+
+### Required Keys
+- **days**
+
+### Usage
+```javascript
+AdminLockAccounts(days=[<days>])
+```
+
+
+---
+
+## AdminGetEngineUsagePerUser
+
+### Required Keys
+- **engine**
+- **limit**
+- **offset**
+- **startDate**
+- **endDate**
+
+### Usage
+```javascript
+AdminGetEngineUsagePerUser(engine=[<engine>], limit=[<limit>], offset=[<offset>], startDate=[<startDate>], endDate=[<endDate>])
+```
+
+
+---
+
+## AdminLockAccountWarning
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+AdminLockAccountWarning()
+```
+
+
+---
+
+## AdminRClearAllUserRserves
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+AdminRClearAllUserRserves()
+```
+
+
+---
+
+## AdminGetProjectAvailables
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+AdminGetProjectAvailables(project=[<project>])
+```
+
+
+---
+
+## AdminRemoveDuplicates
+
+### Required Keys
+- **database**
+- **table**
+- **drop**
+
+### Usage
+```javascript
+AdminRemoveDuplicates(database=[<database>], table=[<table>], drop=[<drop>])
+```
+
+
+---
+
+## AdminLoadLdapUsers
+
+### Required Keys
+- **searchContextName**
+- **searchFilter**
+- **searchContextScope**
+- **authProvider**
+- **updateAttributes**
+
+### Usage
+```javascript
+AdminLoadLdapUsers(searchContextName=[<searchContextName>], searchFilter=[<searchFilter>], searchContextScope=[<searchContextScope>], authProvider=[<authProvider>], updateAttributes=[<updateAttributes>])
+```
+
+
+---
+
+## AdminEngineInfo
+
+### Required Keys
+- **engine**
+- **metaKeys**
+
+### Usage
+```javascript
+AdminEngineInfo(engine=[<engine>], metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## AdminGetEngineSMSS
+
+### Required Keys
+- **engine**
+
+### Usage
+```javascript
+AdminGetEngineSMSS(engine=[<engine>])
+```
+
+
+---
+
+## AdminGetSystemInfo
+
+**Description:** 
+
+        	Admin only reactor returning a map with properties about the instance including:
+	hostname, ipaddress, isCluster, storageProvider, isClusterScheduler, isClusterZK
+
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+AdminGetSystemInfo()
+```
+
+
+---
+
+## AdminGetProjectPortalDetails
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+AdminGetProjectPortalDetails(project=[<project>])
+```
+
+
+---
+
+## AdminExportAllUsers
+
+### Required Keys
+- **task**
+- **fileName**
+- **filePath**
+- **password**
+
+### Usage
+```javascript
+AdminExportAllUsers(task=[<task>], fileName=[<fileName>], filePath=[<filePath>], password=[<password>])
+```
+

@@ -1,0 +1,71 @@
+---
+id: get-user-insight-permission
+title: "Get current user's permission for an insight"
+description: "Get current user's permission for an insight"
+sidebar_label: "Get current user's permission for an insight"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"operationId":"getUserInsightPermission","parameters":[{"name":"projectId","in":"query","schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Permission fetched","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or no access","content":{"application/json":{"schema":{"type":"object"}}}}},"description":"Get current user's permission for an insight","method":"get","path":"/auth/insight/getUserInsightPermission","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get current user's permission for an insight","description":{"type":"text/plain"},"url":{"path":["auth","insight","getUserInsightPermission"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"projectId","value":""},{"disabled":false,"key":"insightId","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get current user's permission for an insight"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/insight/getUserInsightPermission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get current user's permission for an insight
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"projectId","in":"query","schema":{"type":"string"}},{"name":"insightId","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permission fetched","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or no access","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

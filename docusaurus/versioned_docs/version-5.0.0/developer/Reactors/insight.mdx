@@ -1,0 +1,740 @@
+---
+id: insight
+title: "insight"
+sidebar_label: "insight"
+description: "Documentation for insight reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# insight
+
+This document contains multiple reactors in the insight category.
+
+---
+
+## MakeInsightMosfet
+
+### Required Keys
+- **project**
+- **id**
+- **override**
+
+### Usage
+```javascript
+MakeInsightMosfet(project=[<project>], id=[<id>], override=[<override>])
+```
+
+
+---
+
+## GetInsightParameters
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetInsightParameters()
+```
+
+
+---
+
+## ReadInsightTheme
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+ReadInsightTheme()
+```
+
+
+---
+
+## GetInsightFrames
+
+### Required Keys
+- **project**
+- **id**
+- **frame**
+
+### Usage
+```javascript
+GetInsightFrames(project=[<project>], id=[<id>], frame=[<frame>])
+```
+
+
+---
+
+## DeleteInsightParameter
+
+### Required Keys
+- **paramName**
+
+### Usage
+```javascript
+DeleteInsightParameter(paramName=[<paramName>])
+```
+
+
+---
+
+## InsightHandle
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+InsightHandle()
+```
+
+
+---
+
+## DropInsight
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+DropInsight()
+```
+
+
+---
+
+## MyOpenInsights
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+MyOpenInsights()
+```
+
+
+---
+
+## ModifyInsightDatasource
+
+### Required Keys
+- **options**
+
+### Usage
+```javascript
+ModifyInsightDatasource(options=[<options>])
+```
+
+
+---
+
+## SetInsightTheme
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+SetInsightTheme()
+```
+
+
+---
+
+## OpenEmptyInsight
+
+### Required Keys
+- **recipe**
+- **params**
+
+### Usage
+```javascript
+OpenEmptyInsight(recipe=[<recipe>], params=[<params>])
+```
+
+
+---
+
+## OpenInsight
+
+### Required Keys
+- **project**
+- **id**
+- **params**
+- **additionalPixels**
+- **paramValues**
+- **cache**
+- **useExistingIfOpen**
+- **origin**
+
+### Usage
+```javascript
+OpenInsight(project=[<project>], id=[<id>], params=[<params>], additionalPixels=[<additionalPixels>], paramValues=[<paramValues>], cache=[<cache>], useExistingIfOpen=[<useExistingIfOpen>], origin=[<origin>])
+```
+
+
+---
+
+## GetCurrentRecipe
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetCurrentRecipe()
+```
+
+
+---
+
+## GetInsightDatasources
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetInsightDatasources()
+```
+
+
+---
+
+## GetInsightCachedDateTime
+
+### Usage
+```javascript
+GetInsightCachedDateTime()
+```
+
+
+---
+
+## SetInsightMetadata
+
+**Description:** 
+
+        Define metadata for an insight
+
+### Required Keys
+- **project**
+- **id**
+- **meta**
+- **encoded**
+- **jsonCleanup**
+
+### Usage
+```javascript
+SetInsightMetadata(project=[<project>], id=[<id>], meta=[<meta>], encoded=[<encoded>], jsonCleanup=[<jsonCleanup>])
+```
+
+
+---
+
+## ClearInsight
+
+### Required Keys
+- **suppress**
+- **output**
+
+### Usage
+```javascript
+ClearInsight(suppress=[<suppress>], output=[<output>])
+```
+
+
+---
+
+## CurrentVariables
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+CurrentVariables()
+```
+
+
+---
+
+## InsightRecipe
+
+### Required Keys
+- **project**
+- **id**
+- **vec**
+
+### Usage
+```javascript
+InsightRecipe(project=[<project>], id=[<id>], vec=[<vec>])
+```
+
+
+---
+
+## PushInsightFolderToCloud
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+PushInsightFolderToCloud(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## GetInsightMetaValues
+
+### Required Keys
+- **metaKeys**
+
+### Usage
+```javascript
+GetInsightMetaValues(metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## IsInsightParameterized
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+IsInsightParameterized(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## PullInsightFolderFromCloud
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+PullInsightFolderFromCloud(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## InsightPixelList
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+InsightPixelList()
+```
+
+
+---
+
+## LoadInsight
+
+### Required Keys
+- **project**
+- **id**
+- **params**
+- **additionalPixels**
+- **cache**
+
+### Usage
+```javascript
+LoadInsight(project=[<project>], id=[<id>], params=[<params>], additionalPixels=[<additionalPixels>], cache=[<cache>])
+```
+
+
+---
+
+## CopyInsight
+
+### Required Keys
+- **recipe**
+- **limit**
+- **drop**
+
+### Usage
+```javascript
+CopyInsight(recipe=[<recipe>], limit=[<limit>], drop=[<drop>])
+```
+
+
+---
+
+## RetrieveInsightPipeline
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+RetrieveInsightPipeline(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## GetInsightMetakeyOptions
+
+### Required Keys
+- **metaKeys**
+
+### Usage
+```javascript
+GetInsightMetakeyOptions(metaKeys=[<metaKeys>])
+```
+
+
+---
+
+## GetInsightUserAccessRequest
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+GetInsightUserAccessRequest(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## ReloadInsight
+
+### Required Keys
+- **project**
+- **id**
+- **params**
+- **additionalPixels**
+- **paramValues**
+- **cache**
+- **useExistingIfOpen**
+- **origin**
+
+### Usage
+```javascript
+ReloadInsight(project=[<project>], id=[<id>], params=[<params>], additionalPixels=[<additionalPixels>], paramValues=[<paramValues>], cache=[<cache>], useExistingIfOpen=[<useExistingIfOpen>], origin=[<origin>])
+```
+
+
+---
+
+## SetInsightParamValue
+
+### Required Keys
+- **paramName**
+- **paramValue**
+
+### Usage
+```javascript
+SetInsightParamValue(paramName=[<paramName>], paramValue=[<paramValue>])
+```
+
+
+---
+
+## SetInsightConfig
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+SetInsightConfig()
+```
+
+
+---
+
+## SetInsightMetakeyOptions
+
+### Required Keys
+- **metaoptions**
+
+### Usage
+```javascript
+SetInsightMetakeyOptions(metaoptions=[<metaoptions>])
+```
+
+
+---
+
+## DisableInsightAPI
+
+### Required Keys
+- **apikey**
+
+### Usage
+```javascript
+DisableInsightAPI(apikey=[<apikey>])
+```
+
+
+---
+
+## SetInsightGraphOptions
+
+### Required Keys
+- **options**
+
+### Usage
+```javascript
+SetInsightGraphOptions(options=[<options>])
+```
+
+
+---
+
+## GetInsightMetamodel
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+GetInsightMetamodel(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## InsightUsageStatistics
+
+### Required Keys
+- **project**
+- **filterWord**
+- **tags**
+- **panel**
+
+### Usage
+```javascript
+InsightUsageStatistics(project=[<project>], filterWord=[<filterWord>], tags=[<tags>], panel=[<panel>])
+```
+
+
+---
+
+## SetInsightOrnament
+
+### Required Keys
+- **insightOrnament**
+
+### Usage
+```javascript
+SetInsightOrnament(insightOrnament=[<insightOrnament>])
+```
+
+
+---
+
+## SetOpenInsightParamValue
+
+### Required Keys
+- **paramMap**
+
+### Usage
+```javascript
+SetOpenInsightParamValue(paramMap=[<paramMap>])
+```
+
+
+---
+
+## AddInsightAPI
+
+### Required Keys
+- **project**
+- **id**
+- **password**
+- **consumer**
+
+### Optional Keys
+- **expires**
+- **limit**
+
+### Usage
+```javascript
+AddInsightAPI(project=[<project>], id=[<id>], password=[<password>], consumer=[<consumer>], expires=[<expires>], limit=[<limit>])
+```
+
+
+---
+
+## AddInsightParameter
+
+### Required Keys
+- **paramStruct**
+
+### Usage
+```javascript
+AddInsightParameter(paramStruct=[<paramStruct>])
+```
+
+
+---
+
+## CheckInsightNameExists
+
+### Required Keys
+- **project**
+- **insightName**
+
+### Usage
+```javascript
+CheckInsightNameExists(project=[<project>], insightName=[<insightName>])
+```
+
+
+---
+
+## RequestInsight
+
+### Required Keys
+- **project**
+- **id**
+- **permission**
+- **comment**
+
+### Usage
+```javascript
+RequestInsight(project=[<project>], id=[<id>], permission=[<permission>], comment=[<comment>])
+```
+
+
+---
+
+## ListInsightAPI
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+ListInsightAPI(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## GetInsightConfig
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetInsightConfig()
+```
+
+
+---
+
+## UpdateInsightParameter
+
+### Required Keys
+- **paramStruct**
+
+### Usage
+```javascript
+UpdateInsightParameter(paramStruct=[<paramStruct>])
+```
+
+
+---
+
+## SetInsightGoldenLayout
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+SetInsightGoldenLayout()
+```
+
+
+---
+
+## RetrieveInsightOrnament
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+RetrieveInsightOrnament()
+```
+
+
+---
+
+## GetInsightFrameStructure
+
+### Required Keys
+- **project**
+- **id**
+
+### Usage
+```javascript
+GetInsightFrameStructure(project=[<project>], id=[<id>])
+```
+
+
+---
+
+## CopyInsightPermissions
+
+### Required Keys
+- **sourceProject**
+- **sourceInsight**
+- **targetProject**
+- **targetInsight**
+
+### Usage
+```javascript
+CopyInsightPermissions(sourceProject=[<sourceProject>], sourceInsight=[<sourceInsight>], targetProject=[<targetProject>], targetInsight=[<targetInsight>])
+```
+
+
+---
+
+## UpdateInsightImage
+
+### Required Keys
+- **project**
+- **id**
+- **url**
+- **imageWaitTime**
+
+### Usage
+```javascript
+UpdateInsightImage(project=[<project>], id=[<id>], url=[<url>], imageWaitTime=[<imageWaitTime>])
+```
+

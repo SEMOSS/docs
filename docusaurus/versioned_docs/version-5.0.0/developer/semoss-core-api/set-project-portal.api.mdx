@@ -1,0 +1,63 @@
+---
+id: set-project-portal
+title: "Set project portal"
+description: "Enables or disables the public portal for a project and updates configuration."
+sidebar_label: "Set project portal"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Enables or disables the public portal for a project and updates configuration.","operationId":"setProjectPortal","responses":{"200":{"description":"Portal updated","content":{"application/json":{"schema":{"type":"boolean"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/project/setProjectPortal","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Set project portal","description":{"content":"Enables or disables the public portal for a project and updates configuration.","type":"text/plain"},"url":{"path":["auth","admin","project","setProjectPortal"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-5.0.0/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Set project portal"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/project/setProjectPortal"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Enables or disables the public portal for a project and updates configuration.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Portal updated","content":{"application/json":{"schema":{"type":"boolean"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

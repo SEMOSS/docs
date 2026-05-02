@@ -1,0 +1,71 @@
+---
+id: get-group-app-permission
+title: "Get group permission for an app/engine"
+description: "Returns the permission string for the specified group, type, and app/engine id."
+sidebar_label: "Get group permission for an app/engine"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns the permission string for the specified group, type, and app/engine id.","operationId":"getGroupAppPermission","parameters":[{"name":"groupId","in":"query","schema":{"type":"string"}},{"name":"type","in":"query","schema":{"type":"string"}},{"name":"appId","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Permission fetched","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Invalid input","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"get","path":"/auth/group/engine/getGroupAppPermission","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get group permission for an app/engine","description":{"content":"Returns the permission string for the specified group, type, and app/engine id.","type":"text/plain"},"url":{"path":["auth","group","engine","getGroupAppPermission"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"groupId","value":""},{"disabled":false,"key":"type","value":""},{"disabled":false,"key":"appId","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get group permission for an app/engine"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/group/engine/getGroupAppPermission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the permission string for the specified group, type, and app/engine id.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"groupId","in":"query","schema":{"type":"string"}},{"name":"type","in":"query","schema":{"type":"string"}},{"name":"appId","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permission fetched","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Invalid input","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

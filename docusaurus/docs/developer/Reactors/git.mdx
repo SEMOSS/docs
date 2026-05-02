@@ -1,0 +1,339 @@
+---
+id: git
+title: "git"
+sidebar_label: "git"
+description: "Documentation for git reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# git
+
+This document contains multiple reactors in the git category.
+
+---
+
+## AddAppCollaborator
+
+### Required Keys
+- **repository**
+- **collaborator**
+- **username**
+- **password**
+
+### Usage
+```javascript
+AddAppCollaborator(repository=[<repository>], collaborator=[<collaborator>], username=[<username>], password=[<password>])
+```
+
+
+---
+
+## ListAppRemotes
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+ListAppRemotes(database=[<database>])
+```
+
+
+---
+
+## ListUserApps
+
+### Required Keys
+- **username**
+- **password**
+
+### Usage
+```javascript
+ListUserApps(username=[<username>], password=[<password>])
+```
+
+
+---
+
+## DeleteAsset
+
+**Description:** 
+
+        Delete a single or multiple files in the space's file repository
+
+### Required Keys
+- **filePath**
+- **space**
+- **comment**
+
+### Usage
+```javascript
+DeleteAsset(filePath=[<filePath>], space=[<space>], comment=[<comment>])
+```
+
+
+---
+
+## GitVersion
+
+### Required Keys
+- **app**
+
+### Usage
+```javascript
+GitVersion(app=[<app>])
+```
+
+
+---
+
+## CreateAsset
+
+### Required Keys
+- **repository**
+- **fileName**
+- **content**
+
+### Usage
+```javascript
+CreateAsset(repository=[<repository>], fileName=[<fileName>], content=[<content>])
+```
+
+
+---
+
+## InitAppRepo
+
+### Required Keys
+- **database**
+- **repository**
+- **username**
+- **password**
+- **syncDatabase**
+
+### Usage
+```javascript
+InitAppRepo(database=[<database>], repository=[<repository>], username=[<username>], password=[<password>], syncDatabase=[<syncDatabase>])
+```
+
+
+---
+
+## RemoveAppCollaborator
+
+### Required Keys
+- **repository**
+- **collaborator**
+- **username**
+- **password**
+
+### Usage
+```javascript
+RemoveAppCollaborator(repository=[<repository>], collaborator=[<collaborator>], username=[<username>], password=[<password>])
+```
+
+
+---
+
+## CopyAppRepo
+
+### Required Keys
+- **database**
+- **repository**
+
+### Usage
+```javascript
+CopyAppRepo(database=[<database>], repository=[<repository>])
+```
+
+
+---
+
+## Login
+
+### Required Keys
+- **username**
+- **password**
+
+### Usage
+```javascript
+Login(username=[<username>], password=[<password>])
+```
+
+
+---
+
+## DropAppRepo
+
+### Required Keys
+- **database**
+- **repository**
+
+### Usage
+```javascript
+DropAppRepo(database=[<database>], repository=[<repository>])
+```
+
+
+---
+
+## SearchAppCollaborator
+
+### Required Keys
+- **collaborator**
+- **username**
+- **password**
+
+### Usage
+```javascript
+SearchAppCollaborator(collaborator=[<collaborator>], username=[<username>], password=[<password>])
+```
+
+
+---
+
+## IsGit
+
+### Required Keys
+- **project**
+
+### Usage
+```javascript
+IsGit(project=[<project>])
+```
+
+
+---
+
+## UpdateAsset
+
+### Required Keys
+- **repository**
+- **fileName**
+- **content**
+
+### Usage
+```javascript
+UpdateAsset(repository=[<repository>], fileName=[<fileName>], content=[<content>])
+```
+
+
+---
+
+## SyncAppO
+
+### Required Keys
+- **database**
+- **repository**
+- **username**
+- **password**
+- **dual**
+- **syncDatabase**
+
+### Usage
+```javascript
+SyncAppO(database=[<database>], repository=[<repository>], username=[<username>], password=[<password>], dual=[<dual>], syncDatabase=[<syncDatabase>])
+```
+
+
+---
+
+## SyncAppFiles
+
+### Required Keys
+- **database**
+- **repository**
+- **username**
+- **password**
+- **dual**
+- **syncDatabase**
+- **files**
+
+### Usage
+```javascript
+SyncAppFiles(database=[<database>], repository=[<repository>], username=[<username>], password=[<password>], dual=[<dual>], syncDatabase=[<syncDatabase>], files=[<files>])
+```
+
+
+---
+
+## SyncAppFilesO
+
+### Required Keys
+- **database**
+- **repository**
+- **dual**
+- **syncDatabase**
+- **files**
+
+### Usage
+```javascript
+SyncAppFilesO(database=[<database>], repository=[<repository>], dual=[<dual>], syncDatabase=[<syncDatabase>], files=[<files>])
+```
+
+
+---
+
+## ListAppCollaborators
+
+### Required Keys
+- **repository**
+- **username**
+- **password**
+
+### Usage
+```javascript
+ListAppCollaborators(repository=[<repository>], username=[<username>], password=[<password>])
+```
+
+
+---
+
+## SyncApp
+
+### Required Keys
+- **database**
+- **repository**
+- **username**
+- **password**
+- **dual**
+- **syncDatabase**
+
+### Usage
+```javascript
+SyncApp(database=[<database>], repository=[<repository>], username=[<username>], password=[<password>], dual=[<dual>], syncDatabase=[<syncDatabase>])
+```
+
+
+---
+
+## DeleteAppRepo
+
+### Required Keys
+- **database**
+- **repository**
+- **username**
+- **password**
+
+### Usage
+```javascript
+DeleteAppRepo(database=[<database>], repository=[<repository>], username=[<username>], password=[<password>])
+```
+
+
+---
+
+## GitStatus
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+GitStatus(database=[<database>])
+```
+

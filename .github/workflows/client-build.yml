@@ -1,0 +1,39 @@
+name: Client Documentation Build
+on:
+  push:
+    branches:
+      - client
+      - docker-refactor
+jobs:
+  build:
+    runs-on: codebuild-semoss-github-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    container:
+      image: quay.io/semoss/test-quay:ubuntu-dind
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to Quay
+        uses: docker/login-action@v2
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_REGISTRY_USER }}
+          password: ${{ secrets.QUAY_REGISTRY_PASSWORD }}
+
+      - name: Determine Image Tag and Repository
+        id: vars
+        run: |
+          echo "IMAGE_REPO=semoss/documentation" >> $GITHUB_ENV
+          echo "IMAGE_TAG=latest" >> $GITHUB_ENV
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          pull: true
+          tags: quay.io/${{ env.IMAGE_REPO }}:${{ env.IMAGE_TAG }}
+          no-cache: true
+          build-args: |
+            SEMOSS_DOC_VERSION=latest

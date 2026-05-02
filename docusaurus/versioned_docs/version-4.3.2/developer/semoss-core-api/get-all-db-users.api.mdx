@@ -1,0 +1,67 @@
+---
+id: get-all-db-users
+title: "List users (deprecated)"
+description: "Deprecated: use /getAllUsers instead."
+sidebar_label: "List users (deprecated)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Deprecated: use /getAllUsers instead.","operationId":"getAllDbUsers","responses":{"200":{"description":"Users retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}},"deprecated":true,"method":"get","path":"/auth/admin/user/getAllDbUsers","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List users (deprecated)","description":{"content":"Deprecated: use /getAllUsers instead.","type":"text/plain"},"url":{"path":["auth","admin","user","getAllDbUsers"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List users (deprecated)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/admin/user/getAllDbUsers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Deprecated: use /getAllUsers instead.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Users retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

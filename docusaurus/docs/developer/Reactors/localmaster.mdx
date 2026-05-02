@@ -1,0 +1,199 @@
+---
+id: localMaster
+title: "localMaster"
+sidebar_label: "localMaster"
+description: "Documentation for localMaster reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# localMaster
+
+This document contains multiple reactors in the localMaster category.
+
+---
+
+## FuzzyMatches
+
+### Required Keys
+- **task**
+- **frame**
+- **frameCol**
+- **outputFrame**
+
+### Usage
+```javascript
+FuzzyMatches(task=[<task>], frame=[<frame>], frameCol=[<frameCol>], outputFrame=[<outputFrame>])
+```
+
+
+---
+
+## GetDatabaseConcepts
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+GetDatabaseConcepts(database=[<database>])
+```
+
+
+---
+
+## FuzzyMerge
+
+### Required Keys
+- **qs**
+- **joins**
+- **frame**
+- **fedFrame**
+- **matches**
+- **nonMatches**
+- **propagation**
+
+### Usage
+```javascript
+FuzzyMerge(qs=[<qs>], joins=[<joins>], frame=[<frame>], fedFrame=[<fedFrame>], matches=[<matches>], nonMatches=[<nonMatches>], propagation=[<propagation>])
+```
+
+
+---
+
+## FederationBestMatches
+
+### Required Keys
+- **database**
+- **concept**
+- **column**
+- **frameCol**
+- **outputFrame**
+
+### Usage
+```javascript
+FederationBestMatches(database=[<database>], concept=[<concept>], column=[<column>], frameCol=[<frameCol>], outputFrame=[<outputFrame>])
+```
+
+
+---
+
+## GetDatabaseMetamodel
+
+### Required Keys
+- **database**
+- **options**
+
+### Usage
+```javascript
+GetDatabaseMetamodel(database=[<database>], options=[<options>])
+```
+
+
+---
+
+## GetConceptProperties
+
+### Required Keys
+- **concepts**
+- **database**
+
+### Usage
+```javascript
+GetConceptProperties(concepts=[<concepts>], database=[<database>])
+```
+
+
+---
+
+## FederationBlend
+
+### Required Keys
+- **joinType**
+- **frameCol**
+- **database**
+- **concept**
+- **column**
+- **additionalCols**
+- **matches**
+- **nonMatches**
+- **fedFrame**
+- **propagation**
+
+### Usage
+```javascript
+FederationBlend(joinType=[<joinType>], frameCol=[<frameCol>], database=[<database>], concept=[<concept>], column=[<column>], additionalCols=[<additionalCols>], matches=[<matches>], nonMatches=[<nonMatches>], fedFrame=[<fedFrame>], propagation=[<propagation>])
+```
+
+
+---
+
+## GetTraversalOptions
+
+### Required Keys
+- **logical**
+- **values**
+
+### Usage
+```javascript
+GetTraversalOptions(logical=[<logical>], values=[<values>])
+```
+
+
+---
+
+## GetDatabaseList
+
+### Required Keys
+- **limit**
+- **offset**
+
+### Usage
+```javascript
+GetDatabaseList(limit=[<limit>], offset=[<offset>])
+```
+
+
+---
+
+## GetSpecificConceptProperties
+
+### Required Keys
+- **concept**
+- **database**
+
+### Usage
+```javascript
+GetSpecificConceptProperties(concept=[<concept>], database=[<database>])
+```
+
+
+---
+
+## GetDatabaseConnections
+
+### Required Keys
+- **columns**
+- **database**
+
+### Usage
+```javascript
+GetDatabaseConnections(columns=[<columns>], database=[<database>])
+```
+
+
+---
+
+## GetDatabaseTableStructure
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+GetDatabaseTableStructure(database=[<database>])
+```
+

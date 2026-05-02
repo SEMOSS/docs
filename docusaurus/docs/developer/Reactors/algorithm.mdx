@@ -1,0 +1,469 @@
+---
+id: algorithm
+title: "algorithm"
+sidebar_label: "algorithm"
+description: "Documentation for algorithm reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# algorithm
+
+This document contains multiple reactors in the algorithm category.
+
+---
+
+## RunSentimentAnalysis
+
+### Required Keys
+- **sentimentCol**
+- **groupCol**
+- **addEmotionCols**
+- **panel**
+
+### Usage
+```javascript
+RunSentimentAnalysis(sentimentCol=[<sentimentCol>], groupCol=[<groupCol>], addEmotionCols=[<addEmotionCols>], panel=[<panel>])
+```
+
+
+---
+
+## UsabilityScore
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+UsabilityScore(database=[<database>])
+```
+
+
+---
+
+## RunLOF
+
+### Required Keys
+- **instance**
+- **kNeighbors**
+- **attributes**
+
+### Usage
+```javascript
+RunLOF(instance=[<instance>], kNeighbors=[<kNeighbors>], attributes=[<attributes>])
+```
+
+
+---
+
+## RunAssociatedLearning
+
+### Required Keys
+- **ruleSide**
+- **column**
+- **values**
+- **attributes**
+- **conf**
+- **support**
+- **lift**
+- **panel**
+
+### Usage
+```javascript
+RunAssociatedLearning(ruleSide=[<ruleSide>], column=[<column>], values=[<values>], attributes=[<attributes>], conf=[<conf>], support=[<support>], lift=[<lift>], panel=[<panel>])
+```
+
+
+---
+
+## RunMultiClustering
+
+### Required Keys
+- **instance**
+- **minNumClusters**
+- **maxNumClusters**
+- **attributes**
+
+### Usage
+```javascript
+RunMultiClustering(instance=[<instance>], minNumClusters=[<minNumClusters>], maxNumClusters=[<maxNumClusters>], attributes=[<attributes>])
+```
+
+
+---
+
+## RAlg
+
+### Required Keys
+- **filename**
+- **function**
+
+### Usage
+```javascript
+RAlg(filename=[<filename>], function=[<function>])
+```
+
+
+---
+
+## SemanticDescription
+
+### Required Keys
+- **input**
+
+### Usage
+```javascript
+SemanticDescription(input=[<input>])
+```
+
+
+---
+
+## GetPhysicalToPhysicalMapping
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetPhysicalToPhysicalMapping()
+```
+
+
+---
+
+## RunNumericalCorrelation
+
+### Required Keys
+- **attributes**
+- **defaultValue**
+- **panel**
+
+### Usage
+```javascript
+RunNumericalCorrelation(attributes=[<attributes>], defaultValue=[<defaultValue>], panel=[<panel>])
+```
+
+
+---
+
+## RunDatabaseDescriptionGenerator
+
+### Required Keys
+- **database**
+- **size**
+- **words**
+
+### Usage
+```javascript
+RunDatabaseDescriptionGenerator(database=[<database>], size=[<size>], words=[<words>])
+```
+
+
+---
+
+## RunImpliedInsights
+
+### Usage
+```javascript
+RunImpliedInsights()
+```
+
+
+---
+
+## RunAliasMatch
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+RunAliasMatch()
+```
+
+
+---
+
+## GetXrayConfigList
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetXrayConfigList()
+```
+
+
+---
+
+## RunSimilarity
+
+### Required Keys
+- **instance**
+- **attributes**
+
+### Usage
+```javascript
+RunSimilarity(instance=[<instance>], attributes=[<attributes>])
+```
+
+
+---
+
+## Ratio
+
+### Required Keys
+- **instance**
+- **attributes**
+
+### Usage
+```javascript
+Ratio(instance=[<instance>], attributes=[<attributes>])
+```
+
+
+---
+
+## RunOutlier
+
+### Required Keys
+- **instance**
+- **subsetSize**
+- **numRuns**
+- **attributes**
+
+### Usage
+```javascript
+RunOutlier(instance=[<instance>], subsetSize=[<subsetSize>], numRuns=[<numRuns>], attributes=[<attributes>])
+```
+
+
+---
+
+## GetXLSchema
+
+### Required Keys
+- **filePath**
+- **sheetName**
+
+### Usage
+```javascript
+GetXLSchema(filePath=[<filePath>], sheetName=[<sheetName>])
+```
+
+
+---
+
+## RunClassification
+
+### Required Keys
+- **classify**
+- **attributes**
+- **panel**
+
+### Usage
+```javascript
+RunClassification(classify=[<classify>], attributes=[<attributes>], panel=[<panel>])
+```
+
+
+---
+
+## RunDocumentSummarization
+
+### Required Keys
+- **fileOrigin**
+- **userInput**
+- **numSentences**
+- **numTopics**
+- **numTopicTerms**
+
+### Usage
+```javascript
+RunDocumentSummarization(fileOrigin=[<fileOrigin>], userInput=[<userInput>], numSentences=[<numSentences>], numTopics=[<numTopics>], numTopicTerms=[<numTopicTerms>])
+```
+
+
+---
+
+## RunAnomaly
+
+### Required Keys
+- **timeColumn**
+- **seriesColumn**
+- **aggregateFunction**
+- **maxAnoms**
+- **direction**
+- **alpha**
+- **period**
+
+### Usage
+```javascript
+RunAnomaly(timeColumn=[<timeColumn>], seriesColumn=[<seriesColumn>], aggregateFunction=[<aggregateFunction>], maxAnoms=[<maxAnoms>], direction=[<direction>], alpha=[<alpha>], period=[<period>])
+```
+
+
+---
+
+## RunMatrixRegression
+
+### Required Keys
+- **yColumn**
+- **xColumns**
+- **defaultValue**
+- **panel**
+
+### Usage
+```javascript
+RunMatrixRegression(yColumn=[<yColumn>], xColumns=[<xColumns>], defaultValue=[<defaultValue>], panel=[<panel>])
+```
+
+
+---
+
+## RunClustering
+
+### Required Keys
+- **instance**
+- **numClusters**
+- **attributes**
+
+### Usage
+```javascript
+RunClustering(instance=[<instance>], numClusters=[<numClusters>], attributes=[<attributes>])
+```
+
+
+---
+
+## HyperParameters
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+HyperParameters()
+```
+
+
+---
+
+## GetXrayConfigFile
+
+### Required Keys
+- **fileName**
+
+### Usage
+```javascript
+GetXrayConfigFile(fileName=[<fileName>])
+```
+
+
+---
+
+## RunGPT2Description
+
+### Required Keys
+- **descriptionType**
+- **database**
+- **table**
+- **numDescriptions**
+
+### Usage
+```javascript
+RunGPT2Description(descriptionType=[<descriptionType>], database=[<database>], table=[<table>], numDescriptions=[<numDescriptions>])
+```
+
+
+---
+
+## GetPhysicalToLogicalMapping
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+GetPhysicalToLogicalMapping()
+```
+
+
+---
+
+## RunKeyAttributes
+
+### Required Keys
+- **column**
+
+### Usage
+```javascript
+RunKeyAttributes(column=[<column>])
+```
+
+
+---
+
+## GetLocalSchema
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+GetLocalSchema(database=[<database>])
+```
+
+
+---
+
+## SemanticBlending
+
+### Required Keys
+- **columns**
+- **display**
+- **randomVals**
+- **genFrame**
+- **frameName**
+
+### Usage
+```javascript
+SemanticBlending(columns=[<columns>], display=[<display>], randomVals=[<randomVals>], genFrame=[<genFrame>], frameName=[<frameName>])
+```
+
+
+---
+
+## RunDataQuality
+
+### Required Keys
+- **rule**
+- **column**
+- **options**
+- **inputTable**
+
+### Usage
+```javascript
+RunDataQuality(rule=[<rule>], column=[<column>], options=[<options>], inputTable=[<inputTable>])
+```
+
+
+---
+
+## GetCSVSchema
+
+### Required Keys
+- **filePath**
+- **delimiter**
+
+### Usage
+```javascript
+GetCSVSchema(filePath=[<filePath>], delimiter=[<delimiter>])
+```
+

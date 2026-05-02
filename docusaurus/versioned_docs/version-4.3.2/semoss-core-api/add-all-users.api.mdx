@@ -1,0 +1,67 @@
+---
+id: add-all-users
+title: "Add all users (legacy)"
+description: "Adds all users to a database. Deprecated: use /auth/admin/engine/addAllUsers."
+sidebar_label: "Add all users (legacy)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Adds all users to a database. Deprecated: use /auth/admin/engine/addAllUsers.","operationId":"addAllUsers","responses":{"200":{"description":"Operation successful","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean","description":"Indicates if the operation succeeded"}},"title":"LegacyAdminSuccessResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"deprecated":true,"method":"post","path":"/auth/admin/app/addAllUsers","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Add all users (legacy)","description":{"content":"Adds all users to a database. Deprecated: use /auth/admin/engine/addAllUsers.","type":"text/plain"},"url":{"path":["auth","admin","app","addAllUsers"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add all users (legacy)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/app/addAllUsers"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Adds all users to a database. Deprecated: use /auth/admin/engine/addAllUsers.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Operation successful","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean","description":"Indicates if the operation succeeded"}},"title":"LegacyAdminSuccessResponse"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

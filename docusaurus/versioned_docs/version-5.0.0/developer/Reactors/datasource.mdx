@@ -1,0 +1,363 @@
+---
+id: dataSource
+title: "dataSource"
+sidebar_label: "dataSource"
+description: "Documentation for dataSource reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# dataSource
+
+This document contains multiple reactors in the dataSource category.
+
+---
+
+## DropBoxUploader
+
+### Required Keys
+- **filename**
+
+### Usage
+```javascript
+DropBoxUploader(filename=[<filename>])
+```
+
+
+---
+
+## SharePointDriveSelector
+
+### Required Keys
+- **siteId**
+
+### Usage
+```javascript
+SharePointDriveSelector(siteId=[<siteId>])
+```
+
+
+---
+
+## SurveyMonkeyListSurveys
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+SurveyMonkeyListSurveys()
+```
+
+
+---
+
+## RDFFileSource
+
+### Required Keys
+- **filePath**
+- **rdfType**
+- **baseUri**
+- **query**
+
+### Usage
+```javascript
+RDFFileSource(filePath=[<filePath>], rdfType=[<rdfType>], baseUri=[<baseUri>], query=[<query>])
+```
+
+
+---
+
+## GoogleUploader
+
+### Required Keys
+- **filename**
+
+### Usage
+```javascript
+GoogleUploader(filename=[<filename>])
+```
+
+
+---
+
+## FileRead
+
+### Required Keys
+- **filePath**
+- **space**
+- **sheetName**
+- **sheetRange**
+- **dataTypeMap**
+- **delimiter**
+- **newHeaders**
+- **additionalDataTypes**
+
+### Usage
+```javascript
+FileRead(filePath=[<filePath>], space=[<space>], sheetName=[<sheetName>], sheetRange=[<sheetRange>], dataTypeMap=[<dataTypeMap>], delimiter=[<delimiter>], newHeaders=[<newHeaders>], additionalDataTypes=[<additionalDataTypes>])
+```
+
+
+---
+
+## DirectJdbcConnection
+
+### Required Keys
+- **query**
+- **conDetails**
+
+### Usage
+```javascript
+DirectJdbcConnection(query=[<query>], conDetails=[<conDetails>])
+```
+
+
+---
+
+## Database
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+Database(database=[<database>])
+```
+
+
+---
+
+## Asset
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+Asset()
+```
+
+
+---
+
+## OneDriveFileRetriever
+
+### Required Keys
+- **id**
+
+### Usage
+```javascript
+OneDriveFileRetriever(id=[<id>])
+```
+
+
+---
+
+## OneDriveUploader
+
+### Required Keys
+- **filename**
+
+### Usage
+```javascript
+OneDriveUploader(filename=[<filename>])
+```
+
+
+---
+
+## URLSource
+
+### Required Keys
+- **url**
+- **delimiter**
+
+### Usage
+```javascript
+URLSource(url=[<url>], delimiter=[<delimiter>])
+```
+
+
+---
+
+## NaturalLanguageSearch
+
+### Required Keys
+- **query**
+- **database**
+- **global**
+- **panel**
+
+### Usage
+```javascript
+NaturalLanguageSearch(query=[<query>], database=[<database>], global=[<global>], panel=[<panel>])
+```
+
+
+---
+
+## DropBoxFileRetriever
+
+### Required Keys
+- **path**
+
+### Usage
+```javascript
+DropBoxFileRetriever(path=[<path>])
+```
+
+
+---
+
+## GoogleFileRetriever
+
+### Required Keys
+- **id**
+- **type**
+
+### Usage
+```javascript
+GoogleFileRetriever(id=[<id>], type=[<type>])
+```
+
+
+---
+
+## AuditDatabase
+
+### Required Keys
+- **database**
+- **tables**
+- **columns**
+- **dateTimeField**
+- **value**
+
+### Usage
+```javascript
+AuditDatabase(database=[<database>], tables=[<tables>], columns=[<columns>], dateTimeField=[<dateTimeField>], value=[<value>])
+```
+
+
+---
+
+## SharePointWebDavPull
+
+### Required Keys
+- **path**
+
+### Usage
+```javascript
+SharePointWebDavPull(path=[<path>])
+```
+
+
+---
+
+## SharePointListFiles
+
+### Required Keys
+- **driveId**
+
+### Usage
+```javascript
+SharePointListFiles(driveId=[<driveId>])
+```
+
+
+---
+
+## JdbcSource
+
+### Required Keys
+- **conDetails**
+
+### Usage
+```javascript
+JdbcSource(conDetails=[<conDetails>])
+```
+
+
+---
+
+## SharePointFileRetriever
+
+### Required Keys
+- **driveId**
+- **fileId**
+
+### Usage
+```javascript
+SharePointFileRetriever(driveId=[<driveId>], fileId=[<fileId>])
+```
+
+
+---
+
+## DropBoxListFiles
+
+### Usage
+```javascript
+DropBoxListFiles()
+```
+
+
+---
+
+## OneDriveListFiles
+
+### Usage
+```javascript
+OneDriveListFiles()
+```
+
+
+---
+
+## API
+
+### Usage
+```javascript
+API()
+```
+
+
+---
+
+## GoogleListFiles
+
+### Usage
+```javascript
+GoogleListFiles()
+```
+
+
+---
+
+## SharePointSiteSelector
+
+### Required Keys
+- **serverUrl**
+
+### Usage
+```javascript
+SharePointSiteSelector(serverUrl=[<serverUrl>])
+```
+
+
+---
+
+## FileReference
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+FileReference(filePath=[<filePath>], space=[<space>])
+```
+

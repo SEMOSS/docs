@@ -1,0 +1,71 @@
+---
+id: execute-pixel
+title: "Execute Pixel (scheduler)"
+description: "Executes a Pixel expression in the scheduler context and returns the result."
+sidebar_label: "Execute Pixel (scheduler)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Scheduler"],"description":"Executes a Pixel expression in the scheduler context and returns the result.","operationId":"executePixel","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["pixel"],"type":"object","properties":{"pixel":{"type":"string","description":"Pixel expression to execute"}},"title":"ExecutePixelForm"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{}}}},"method":"post","path":"/schedule/executePixel","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel (scheduler)","description":{"content":"Executes a Pixel expression in the scheduler context and returns the result.","type":"text/plain"},"url":{"path":["schedule","executePixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]}}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Execute Pixel (scheduler)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/schedule/executePixel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Executes a Pixel expression in the scheduler context and returns the result.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["pixel"],"type":"object","properties":{"pixel":{"type":"string","description":"Pixel expression to execute"}},"title":"ExecutePixelForm"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Pixel executed","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

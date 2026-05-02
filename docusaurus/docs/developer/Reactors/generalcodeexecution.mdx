@@ -1,0 +1,194 @@
+---
+id: generalCodeExecution
+title: "generalCodeExecution"
+sidebar_label: "generalCodeExecution"
+description: "Documentation for generalCodeExecution reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# generalCodeExecution
+
+This document contains multiple reactors in the generalCodeExecution category.
+
+---
+
+## Java
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+Java()
+```
+
+
+---
+
+## PySource
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+PySource(filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## ParallelRun
+
+### Required Keys
+- **parallel_worker**
+
+### Usage
+```javascript
+ParallelRun(parallel_worker=[<parallel_worker>])
+```
+
+
+---
+
+## LoadPyFromFileProjectPy
+
+### Required Keys
+- **filePath**
+- **alias**
+- **space**
+
+### Usage
+```javascript
+LoadPyFromFileProjectPy(filePath=[<filePath>], alias=[<alias>], space=[<space>])
+```
+
+
+---
+
+## StopPixelExecution
+
+**Description:** 
+
+        Stop the current execution of a pixel job
+
+### Required Keys
+- **id**
+
+### Usage
+```javascript
+StopPixelExecution(id=[<id>])
+```
+
+
+---
+
+## Py
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+Py()
+```
+
+
+---
+
+## LoadPyFromFile
+
+### Required Keys
+- **filePath**
+- **alias**
+- **space**
+
+### Usage
+```javascript
+LoadPyFromFile(filePath=[<filePath>], alias=[<alias>], space=[<space>])
+```
+
+
+---
+
+## R
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+R()
+```
+
+
+---
+
+## GetConsolidatedCodeExecution
+
+### Required Keys
+- **write**
+
+### Usage
+```javascript
+GetConsolidatedCodeExecution(write=[<write>])
+```
+
+
+---
+
+## ParallelPixelRun
+
+### Required Keys
+- **pixel**
+
+### Usage
+```javascript
+ParallelPixelRun(pixel=[<pixel>])
+```
+
+
+---
+
+## REnableUserRecovery
+
+### Required Keys
+- **enable**
+
+### Usage
+```javascript
+REnableUserRecovery(enable=[<enable>])
+```
+
+
+---
+
+## RSource
+
+### Required Keys
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+RSource(filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## CancelR
+
+### Required Keys
+- **no keys defined**
+
+### Usage
+```javascript
+CancelR()
+```
+

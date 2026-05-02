@@ -1,0 +1,227 @@
+---
+sidebar_position: 1
+title: Client Documentation Overview
+description: Guide for adding and contributing to the Docusaurus documentation site
+---
+
+# Client Documentation Overview
+
+Welcome to the client documentation section. This guide explains how to add and manage documentation within this Docusaurus-powered documentation site.
+
+## About This Documentation
+
+This is a Docusaurus v3-based documentation site built with:
+- **Framework**: Docusaurus 3.10.0
+- **Content Format**: Markdown (.md) and MDX (.mdx)
+- **Styling**: Tailwind CSS / Infima
+- **Build Tool**: pnpm
+
+## How to Add Content
+
+### 1. **File Structure**
+
+Documentation is organized in the `docs/` folder with the following structure:
+
+```
+docs/
+├── client/                 # Client-specific documentation
+│   ├── Overview.mdx       # This file
+│   └── [other sections]
+├── guides/                # How-to guides
+├── tutorials/             # Step-by-step tutorials
+└── [other categories]
+```
+
+Each section can have its own folder with markdown files and subdirectories.
+
+### 2. **Creating a New Document**
+
+To add a new documentation page:
+
+#### Step 1: Create a Markdown File
+Create a `.md` or `.mdx` file in the appropriate folder:
+```
+docs/client/MyNewGuide.md
+```
+
+#### Step 2: Add Frontmatter
+Every document must start with YAML frontmatter:
+
+```markdown
+---
+sidebar_position: 2
+title: My Guide Title
+description: A brief description of this guide
+---
+
+# My Guide Title
+
+Content goes here...
+```
+
+**Frontmatter Fields:**
+- `sidebar_position`: Controls order in sidebar (lower numbers appear first)
+- `title`: The page title
+- `description`: Meta description for SEO
+- `hide_title`: (optional) Set to `true` to hide the page title
+
+#### Step 3: Write Your Content
+Use standard Markdown syntax:
+- Headings: `# H1`, `## H2`, `### H3`, etc.
+- Lists: `- item` or `1. numbered item`
+- Code blocks: ` ```language` ... ` ``` `
+- Links: `[text](path/to/page)`
+- Tables: Use standard Markdown tables
+
+### 3. **Using MDX Components**
+
+MDX files support React components for interactive content. Here's an example with a tab component:
+
+First, import the components at the top of your file:
+
+```jsx
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+Then use them in your content with code examples:
+
+```jsx
+<Tabs>
+  <TabItem value="js" label="JavaScript" default>
+    JavaScript code example goes here
+  </TabItem>
+  <TabItem value="py" label="Python">
+    Python code example goes here
+  </TabItem>
+</Tabs>
+```
+
+For code samples within tabs, write the code content directly without markdown fences.
+
+### 4. **Adding Images**
+
+Place images in the `static/img/` folder and reference them:
+
+```markdown
+![Alt text](/img/my-image.png)
+```
+
+Or in MDX:
+
+```mdx
+import myImage from '/img/my-image.png';
+
+<img src={myImage} alt="Description" />
+```
+
+## Development Workflow
+
+### Getting Started
+
+1. **Install Dependencies**
+   ```bash
+   pnpm install
+   ```
+
+2. **Start Development Server**
+   ```bash
+   pnpm run start
+   ```
+   The site will be available at `http://localhost:3000`
+
+3. **Build for Production**
+   ```bash
+   pnpm run build
+   ```
+
+4. **Deploy**
+   ```bash
+   pnpm run deploy
+   ```
+
+### Hot Reload
+
+Changes to `.md` and `.mdx` files are automatically detected and reflected in the development server.
+
+## Best Practices
+
+### Content Guidelines
+- **Keep it simple**: Use clear, concise language
+- **Use headings**: Structure content with proper heading hierarchy
+- **Add descriptions**: Include frontmatter descriptions for SEO
+- **Link related pages**: Cross-reference related documentation
+- **Use code examples**: Provide practical examples where applicable
+
+### File Naming
+- Use descriptive names: `GettingStarted.md` not `guide.md`
+- Use PascalCase for multi-word files: `UserAuthentication.md`
+- Avoid special characters except hyphens
+
+### Organization
+- Group related topics in folders
+- Use `sidebar_position` to order pages logically
+- Create index files for folder overviews
+
+## Sidebar Configuration
+
+The sidebar structure is defined in `sidebars.js`. To customize how your documentation appears:
+
+```javascript
+module.exports = {
+  docs: [
+    {
+      type: 'category',
+      label: 'Client Guide',
+      items: [
+        'client/Overview',
+        'client/MyNewGuide',
+      ],
+    },
+  ],
+};
+```
+
+## Editing an Existing Page
+
+1. Locate the `.md` or `.mdx` file in the `docs/` folder
+2. Edit the content directly
+3. Save the file
+4. Changes appear automatically in the dev server
+
+## Search Functionality
+
+The documentation includes local search powered by Algolia. Search indexes are built automatically during the build process.
+
+## Common Issues
+
+### Page Not Showing in Sidebar
+- Ensure the file is in the correct folder
+- Check that `sidebar_position` is set in frontmatter
+- Verify the file is referenced in `sidebars.js`
+
+### Images Not Loading
+- Check the image path (should start with `/img/`)
+- Ensure images are in `static/img/` folder
+- Use relative paths for images in the same folder
+
+### Build Errors
+- Run `pnpm run clear` to clear cache
+- Check for syntax errors in YAML frontmatter
+- Ensure all links point to valid documents
+
+## Resources
+
+- [Docusaurus Documentation](https://docusaurus.io/)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [MDX Documentation](https://mdxjs.com/)
+
+## Next Steps
+
+Ready to add content? Start by:
+1. Creating your first `.md` file in the `docs/` folder
+2. Adding the required frontmatter
+3. Writing your content
+4. Testing it locally with `pnpm run start`
+
+For questions or support, refer to the main documentation or contact the documentation team.

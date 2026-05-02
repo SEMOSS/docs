@@ -1,0 +1,71 @@
+---
+id: add-engine
+title: "Add engine (placeholder)"
+description: "Placeholder endpoint for adding an engine. Currently no-op."
+sidebar_label: "Add engine (placeholder)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Placeholder endpoint for adding an engine. Currently no-op.","operationId":"addEngine","parameters":[{"name":"api","in":"query","schema":{"type":"string"}},{"name":"database","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"No-op","content":{"application/json":{"example":{}}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/engine/add","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Add engine (placeholder)","description":{"content":"Placeholder endpoint for adding an engine. Currently no-op.","type":"text/plain"},"url":{"path":["engine","add"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"api","value":""},{"disabled":false,"key":"database","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add engine (placeholder)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/engine/add"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Placeholder endpoint for adding an engine. Currently no-op.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"api","in":"query","schema":{"type":"string"}},{"name":"database","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"No-op","content":{"application/json":{"example":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

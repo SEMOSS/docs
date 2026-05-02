@@ -1,0 +1,75 @@
+---
+id: image-download-1
+title: "Download database image (legacy)"
+description: "Downloads the database image for the specified database. Deprecated: use /e-{engineId}/image/download."
+sidebar_label: "Download database image (legacy)"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Database Engine"],"description":"Downloads the database image for the specified database. Deprecated: use /e-{engineId}/image/download.","operationId":"imageDownload_1","parameters":[{"name":"databaseId","in":"path","description":"Database identifier","required":true,"schema":{"type":"string"}},{"name":"databaseId","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"Image downloaded","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"}},"application/svg+xml":{"schema":{"type":"string","format":"binary"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"deprecated":true,"security":[{"basicAuth":[]}],"method":"get","path":"/app-{databaseId}/appImage/download","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download database image (legacy)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/app-{databaseId}/appImage/download"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Downloads the database image for the specified database. Deprecated: use /e-\{engineId\}/image/download.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"databaseId","in":"path","description":"Database identifier","required":true,"schema":{"type":"string"}},{"name":"databaseId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Image downloaded","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"}},"application/svg+xml":{"schema":{"type":"string","format":"binary"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

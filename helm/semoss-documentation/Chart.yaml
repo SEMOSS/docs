@@ -1,0 +1,6 @@
+apiVersion: v2
+name: semoss-documentation
+description: Helm chart for SEMOSS documentation site
+type: application
+version: 0.1.0
+appVersion: "latest"

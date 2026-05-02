@@ -1,0 +1,67 @@
+---
+id: set-app-global-1
+title: "[LEGACY] Set app global visibility"
+description: "Legacy endpoint. Use /auth/engine/setEngineGlobal instead."
+sidebar_label: "[LEGACY] Set app global visibility"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Legacy endpoint. Use /auth/engine/setEngineGlobal instead.","operationId":"setAppGlobal_1","responses":{"200":{"description":"Visibility updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or admin required","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"deprecated":true,"method":"post","path":"/auth/app/setAppGlobal","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"[LEGACY] Set app global visibility","description":{"content":"Legacy endpoint. Use /auth/engine/setEngineGlobal instead.","type":"text/plain"},"url":{"path":["auth","app","setAppGlobal"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"[LEGACY] Set app global visibility"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/app/setAppGlobal"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Legacy endpoint. Use /auth/engine/setEngineGlobal instead.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Visibility updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized or admin required","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

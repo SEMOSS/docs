@@ -1,0 +1,68 @@
+---
+sidebar_label: "Policy Bot"
+sidebar_position: 4
+---
+
+## Overview
+
+This recipe demonstrates how create a new code app using the React framework.
+
+## Setup
+- make sure you have node installed
+- make sure you have access to an instance of SEMOSS
+
+## Steps
+
+### Create new code app
+{/* We will reference Pro Code App Documentation steps for this */}
+ 
+### Code setup
+1. Create a folder for your workspace
+2. Clone the marketplace apps. We will focus on Policy Bot
+```
+git clone https://github.com/SEMOSS/marketplace.git
+```
+3. Open the Policy Bot folder in Visual Studio or your favorite code editor.
+![Visual Studio Editor](/versioned/4.3.2/img/Policy%20Bot/VSCode.png)
+
+{/* TODO add link to steps on getting app id */}
+### Configure Environment Variables
+1. Inside the policy bot repository, navigate to `/client/`. Open the `.env` file
+2. Get the App ID for your pro code app created in previous steps
+3. Update the following values in the `.env` file
+    - MODULE: the backend folder name for your SEMOSS instance
+    - ENDPOINT : The SEMOSS host URL for local setup it would be something like `http://localhost:9090`
+    - ACCESS_KEY: The access key for SEMOSS
+    - SECRET_KEY: The secret key for SEMOSS
+    - APP: The app ID for your pro code app
+
+### Run app locally
+1. Install Dependencies run the following command inside the client folder:
+     ```plaintext
+     pnpm install
+     ```
+2. Run app in dev mode
+     ```plaintext
+     pnpm run dev
+     ```
+3. In your web browser go to `http://localhost:3000/`
+
+### Build App
+1. Install Dependencies run the following command inside the client folder:
+     ```plaintext
+     pnpm install
+     ```
+2. Build the app
+    ```plaintext
+    pnpm run build
+    ```
+
+### Publish the app
+1. Zip the contents of your Policy Bot folder
+![Zip files](/versioned/4.3.2/img/Policy%20Bot/zip.png)
+2. Upload the zipped file for your app
+3. Publish app
+    - Click `Edit App` -> `Settings` -> `Data Apps` -> `Publish`.
+    - Click `Compile Changes on This Instance` while on the `Data Apps` screen to compile the reactors.
+4. Wait a few moments, and you should see the webpage inside your app.
+    ![Policy App](/versioned/4.3.2/img/Policy%20Bot/policyBot.png)

@@ -1,0 +1,42 @@
+name: Build Docusaurus documentation
+
+on:
+  push:
+    branches:
+      - main     # or your default branch
+  pull_request:  # also build on PRs to catch errors early
+  workflow_dispatch:  # allows manual triggering
+
+jobs:
+  build:
+    runs-on: codebuild-semoss-github-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    container:
+      image: public.ecr.aws/docker/library/node:24-bullseye
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - name: Install libatomic
+        run: apt-get update && apt-get install -y libatomic1
+
+      - name: Install plugin dependencies
+        run: |
+          cd packages/docusaurus-plugin-reactor-docgen
+          pnpm install --frozen-lockfile
+
+      - name: Install dependencies
+        run: |
+          cd docusaurus
+          pnpm install --frozen-lockfile
+      
+
+
+      - name: Build Docusaurus site
+        run: |
+          cd docusaurus
+          pnpm run build

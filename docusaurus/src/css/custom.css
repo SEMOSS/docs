@@ -1,0 +1,153 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+/* :root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+} */
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* [data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+} */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0471F0;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #0471F0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+div[class^="docRoot"]{
+  margin: 40px,
+}
+/* ul[class="theme-doc-sidebar-menu"] li[class="theme-doc-sidebar-item-category"] div[class="menu__list-item-collapsible"]{
+    height: 68px;
+}
+div[class="menu__list-item--collapsed"] > div[class="menu__list-item-collapsible"]{
+    height: 48px;
+} */
+
+[data-theme="dark"] ul.theme-doc-sidebar-menu li.menu__list-item div.menu__list-item-collapsible{
+  color:#212121;
+  .menu__link--active{
+      color: var(--ifm-menu-color);
+  }
+}
+[data-theme="light"] ul.theme-doc-sidebar-menu li.menu__list-item div.menu__list-item-collapsible{
+    .menu__link--active{
+      color:#212121;
+    }
+}
+[data-theme="dark"] ul.theme-doc-sidebar-menu li.menu__list-item--collapsed div.menu__list-item-collapsible{
+  height: 36px;
+  color:#212121;
+  .menu__link--active{
+      color:#0471F0;
+  }
+}
+[data-theme="light"] ul.theme-doc-sidebar-menu li.menu__list-item--collapsed div.menu__list-item-collapsible{
+    height: 36px;
+    .menu__link--active{
+      color:#212121;
+    }
+}
+li.table-of-contents__link--active{
+  color:#0471F0;
+}
+/*
+ul.theme-doc-sidebar-menu li.menu__list-item--collapsed div.menu__list-item-collapsible{
+    height: 48px;
+}
+ul.theme-doc-sidebar-menu li.theme-doc-sidebar-item-category ul.menu_list li.theme-doc-sidebar-item-link{
+    height: 68px;
+}
+ul.theme-doc-sidebar-menu li.menu__list-item--collapsed ul.menu_list li.theme-doc-sidebar-item-link{
+    height: 48px;
+}*/
+.theme-doc-sidebar-item-link{
+  display: flex;
+}
+.theme-doc-sidebar-item-link:has(.menu__link--active){
+  background: #EBF4FE;
+  .menu__link--active{
+    background: transparent;
+    color:#212121;
+  }
+}
+.theme-doc-sidebar-item-link:hover{
+  background: var(--ifm-menu-color-background-hover);
+}
+.theme-doc-sidebar-item-link .menu__link:hover{
+  background: transparent;
+
+/* Custom utility classes */
+.text-green {
+  color: #28a745;
+}
+
+[data-theme='dark'] .text-green {
+  color: #40c057;
+}
+
+.text-grey {
+  color: #6c757d;
+}
+
+[data-theme='dark'] .text-grey {
+  color: #adb5bd;
+}
+
+/* Custom utility classes */
+.text-green {
+  color: #28a745;
+}
+
+[data-theme='dark'] .text-green {
+  color: #40c057;
+}
+
+.text-grey {
+  color: #6c757d;
+}
+
+[data-theme='dark'] .text-grey {
+  color: #adb5bd;
+}
+}

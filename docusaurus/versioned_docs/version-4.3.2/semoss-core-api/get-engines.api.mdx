@@ -1,0 +1,71 @@
+---
+id: get-engines
+title: "List engines available to the user"
+description: "Returns engines the current user can access, with optional filters like types, favorites, search term, and metadata options."
+sidebar_label: "List engines available to the user"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Returns engines the current user can access, with optional filters like types, favorites, search term, and metadata options.","operationId":"getEngines","parameters":[{"name":"engineId","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"engineTypes","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"filterWord","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"onlyFavorites","in":"query","schema":{"type":"boolean"}},{"name":"metaKeys","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"noMeta","in":"query","schema":{"type":"boolean"}},{"name":"userT","in":"query","schema":{"type":"boolean"}}],"responses":{"200":{"description":"Engines fetched","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"get","path":"/auth/engine/getEngines","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"List engines available to the user","description":{"content":"Returns engines the current user can access, with optional filters like types, favorites, search term, and metadata options.","type":"text/plain"},"url":{"path":["auth","engine","getEngines"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"engineId","value":""},{"disabled":false,"key":"engineTypes","value":""},{"disabled":false,"key":"filterWord","value":""},{"disabled":false,"key":"limit","value":""},{"disabled":false,"key":"offset","value":""},{"disabled":false,"key":"onlyFavorites","value":""},{"disabled":false,"key":"metaKeys","value":""},{"disabled":false,"key":"noMeta","value":""},{"disabled":false,"key":"userT","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List engines available to the user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/auth/engine/getEngines"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns engines the current user can access, with optional filters like types, favorites, search term, and metadata options.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"engineId","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"engineTypes","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"filterWord","in":"query","schema":{"type":"string"}},{"name":"limit","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"offset","in":"query","schema":{"type":"integer","format":"int32"}},{"name":"onlyFavorites","in":"query","schema":{"type":"boolean"}},{"name":"metaKeys","in":"query","schema":{"type":"array","items":{"type":"string"}}},{"name":"noMeta","in":"query","schema":{"type":"boolean"}},{"name":"userT","in":"query","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Engines fetched","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized or invalid session","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

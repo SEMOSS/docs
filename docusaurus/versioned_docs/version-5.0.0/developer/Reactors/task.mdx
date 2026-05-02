@@ -1,0 +1,498 @@
+---
+id: task
+title: "task"
+sidebar_label: "task"
+description: "Documentation for task reactors"
+api: {"tags":["Engine Execution"],"description":"Executes a Pixel expression and returns the full result in the response.","operationId":"runPixelSync","x-codeSamples":[{"lang":"JavaScript","label":"SEMOSS SDK","source":"const { actions } = useInsight();\nconst ask = (question) => {\nconst { pixelReturn } = await actions.run(\n    ReactorName(key1=[<key1>], key2=[<key2>]);\n\n// get the message\nconst message = pixelReturn[0].output.response;\nconsole.log(message);\n};\n"},{"lang":"Python","label":"SEMOSS SDK","source":"from semoss import Insight\ninsight = Insight(insight_id = '${i}')\ninsight.run_pixel(\"ReactorName(key1=[<key1>], key2=[<key2>])\")\n"}],"requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["expression"],"type":"object","properties":{"dropLogging":{"type":"boolean","description":"If true, drop console logging after run","example":true},"expression":{"type":"string","description":"expression=ReactorName(key1=[<key1>], key2=[<key2>])","example":"expression=ReactorName(key1=[<key1>], key2=[<key2>])"},"insightId":{"type":"string","description":"Insight identifier. Use 'new' to create a new insight or omit for temporary.","example":"bf235853-86b7-483f-a0a5-ae489bfed97b"},"tz":{"type":"string","description":"Client timezone ID","example":"America/New_York"}},"title":"RunPixelRequest"}}},"required":true},"responses":{"200":{"description":"Pixel executed","content":{"application/json":{"schema":{"type":"object","example":{"status":"success","data":{"result":"Pixel execution output"}}},"examples":{"Sample Response":{"description":"Sample Response","value":{"status":"success","data":{"result":"Pixel execution output"}}}}}}},"400":{"description":"Invalid request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/runPixel","servers":[{"url":"http://localhost:8080/dev-monolith.com","description":"Versioned API Endpoint"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Execute Pixel synchronously","description":{"content":"Executes a Pixel expression and returns the full result in the response.","type":"text/plain"},"url":{"path":["engine","runPixel"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# task
+
+This document contains multiple reactors in the task category.
+
+---
+
+## TaskOptions
+
+### Required Keys
+- **options**
+- **ignoreFilters**
+
+### Usage
+```javascript
+TaskOptions(options=[<options>], ignoreFilters=[<ignoreFilters>])
+```
+
+
+---
+
+## Task
+
+### Required Keys
+- **taskId**
+
+### Usage
+```javascript
+Task(taskId=[<taskId>])
+```
+
+
+---
+
+## ToPdf
+
+### Required Keys
+- **html**
+- **filePath**
+- **space**
+- **outputFilePath**
+- **fileName**
+- **url**
+- **mustache**
+- **mustacheVars**
+- **pdfSignatureBlock**
+- **pdfSignatureLabel**
+- **pdfPageNumbers**
+- **pdfPageNumbersIgnoreFirst**
+- **pdfStartPageNumbers**
+- **imageWaitTime**
+
+### Usage
+```javascript
+ToPdf(html=[<html>], filePath=[<filePath>], space=[<space>], outputFilePath=[<outputFilePath>], fileName=[<fileName>], url=[<url>], mustache=[<mustache>], mustacheVars=[<mustacheVars>], pdfSignatureBlock=[<pdfSignatureBlock>], pdfSignatureLabel=[<pdfSignatureLabel>], pdfPageNumbers=[<pdfPageNumbers>], pdfPageNumbersIgnoreFirst=[<pdfPageNumbersIgnoreFirst>], pdfStartPageNumbers=[<pdfStartPageNumbers>], imageWaitTime=[<imageWaitTime>])
+```
+
+
+---
+
+## RemoveTask
+
+### Required Keys
+- **taskId**
+- **dropNow**
+
+### Usage
+```javascript
+RemoveTask(taskId=[<taskId>], dropNow=[<dropNow>])
+```
+
+
+---
+
+## Collect
+
+### Required Keys
+- **task**
+- **limit**
+- **meta**
+
+### Usage
+```javascript
+Collect(task=[<task>], limit=[<limit>], meta=[<meta>])
+```
+
+
+---
+
+## ResetTask
+
+### Required Keys
+- **taskId**
+
+### Usage
+```javascript
+ResetTask(taskId=[<taskId>])
+```
+
+
+---
+
+## ToTxt
+
+### Required Keys
+- **task**
+- **delimiter**
+- **fileName**
+- **filePath**
+- **appendTimestamp**
+
+### Usage
+```javascript
+ToTxt(task=[<task>], delimiter=[<delimiter>], fileName=[<fileName>], filePath=[<filePath>], appendTimestamp=[<appendTimestamp>])
+```
+
+
+---
+
+## Iterate
+
+### Required Keys
+- **qs**
+- **useFrameFilters**
+
+### Usage
+```javascript
+Iterate(qs=[<qs>], useFrameFilters=[<useFrameFilters>])
+```
+
+
+---
+
+## RefreshPanelTask
+
+### Required Keys
+- **panel**
+- **limit**
+
+### Usage
+```javascript
+RefreshPanelTask(panel=[<panel>], limit=[<limit>])
+```
+
+
+---
+
+## ToPPT
+
+### Required Keys
+- **baseUrl**
+- **url**
+- **fileName**
+- **filePath**
+- **imageWaitTime**
+
+### Usage
+```javascript
+ToPPT(baseUrl=[<baseUrl>], url=[<url>], fileName=[<fileName>], filePath=[<filePath>], imageWaitTime=[<imageWaitTime>])
+```
+
+
+---
+
+## CollectNewTemporalCol
+
+### Required Keys
+- **qs**
+
+### Usage
+```javascript
+CollectNewTemporalCol(qs=[<qs>])
+```
+
+
+---
+
+## CollectGGPlot
+
+### Required Keys
+- **ggplot**
+- **format**
+
+### Usage
+```javascript
+CollectGGPlot(ggplot=[<ggplot>], format=[<format>])
+```
+
+
+---
+
+## AsTask
+
+### Required Keys
+- **value**
+
+### Usage
+```javascript
+AsTask(value=[<value>])
+```
+
+
+---
+
+## Format
+
+### Required Keys
+- **type**
+- **options**
+
+### Usage
+```javascript
+Format(type=[<type>], options=[<options>])
+```
+
+
+---
+
+## CollectGraph
+
+### Required Keys
+- **frame**
+
+### Usage
+```javascript
+CollectGraph(frame=[<frame>])
+```
+
+
+---
+
+## GrabScalarElement
+
+### Required Keys
+- **task**
+- **cleanUp**
+
+### Usage
+```javascript
+GrabScalarElement(task=[<task>], cleanUp=[<cleanUp>])
+```
+
+
+---
+
+## NativeCollectNewCol
+
+### Required Keys
+- **qs**
+
+### Usage
+```javascript
+NativeCollectNewCol(qs=[<qs>])
+```
+
+
+---
+
+## ToExcel
+
+### Required Keys
+- **task**
+- **fileName**
+- **filePath**
+- **password**
+- **panel**
+
+### Usage
+```javascript
+ToExcel(task=[<task>], fileName=[<fileName>], filePath=[<filePath>], password=[<password>], panel=[<panel>])
+```
+
+
+---
+
+## CollectNewCol
+
+### Required Keys
+- **qs**
+
+### Usage
+```javascript
+CollectNewCol(qs=[<qs>])
+```
+
+
+---
+
+## CollectSeaborn
+
+### Required Keys
+- **splot**
+- **format**
+
+### Usage
+```javascript
+CollectSeaborn(splot=[<splot>], format=[<format>])
+```
+
+
+---
+
+## ToTsv
+
+### Required Keys
+- **task**
+- **fileName**
+- **filePath**
+- **appendTimestamp**
+
+### Usage
+```javascript
+ToTsv(task=[<task>], fileName=[<fileName>], filePath=[<filePath>], appendTimestamp=[<appendTimestamp>])
+```
+
+
+---
+
+## ToXml
+
+### Required Keys
+- **task**
+- **fileName**
+- **filePath**
+- **appendTimestamp**
+
+### Usage
+```javascript
+ToXml(task=[<task>], fileName=[<fileName>], filePath=[<filePath>], appendTimestamp=[<appendTimestamp>])
+```
+
+
+---
+
+## EmptyData
+
+### Required Keys
+- **value**
+
+### Usage
+```javascript
+EmptyData(value=[<value>])
+```
+
+
+---
+
+## CollectAll
+
+### Required Keys
+- **task**
+- **meta**
+
+### Usage
+```javascript
+CollectAll(task=[<task>], meta=[<meta>])
+```
+
+
+---
+
+## CollectMeta
+
+### Required Keys
+- **task**
+- **values**
+
+### Usage
+```javascript
+CollectMeta(task=[<task>], values=[<values>])
+```
+
+
+---
+
+## CollectVizNetwork
+
+### Required Keys
+- **vizNetwork**
+
+### Usage
+```javascript
+CollectVizNetwork(vizNetwork=[<vizNetwork>])
+```
+
+
+---
+
+## ToLoaderSheet
+
+### Required Keys
+- **database**
+
+### Usage
+```javascript
+ToLoaderSheet(database=[<database>])
+```
+
+
+---
+
+## CollectPivot
+
+### Required Keys
+- **rowGroups**
+- **columns**
+- **values**
+- **frameType**
+
+### Usage
+```javascript
+CollectPivot(rowGroups=[<rowGroups>], columns=[<columns>], values=[<values>], frameType=[<frameType>])
+```
+
+
+---
+
+## AutoTaskOptions
+
+### Required Keys
+- **panel**
+- **layout**
+- **ignoreFilters**
+
+### Usage
+```javascript
+AutoTaskOptions(panel=[<panel>], layout=[<layout>], ignoreFilters=[<ignoreFilters>])
+```
+
+
+---
+
+## ToCsv
+
+### Required Keys
+- **task**
+- **fileName**
+- **filePath**
+- **appendTimestamp**
+
+### Usage
+```javascript
+ToCsv(task=[<task>], fileName=[<fileName>], filePath=[<filePath>], appendTimestamp=[<appendTimestamp>])
+```
+
+
+---
+
+## ToPostgresCopy
+
+**Description:** 
+
+        This reactor is deprecated. Please use PostgresCopy() instead.
+
+### Required Keys
+- **database**
+- **table**
+- **format**
+- **nullValue**
+- **delimiter**
+- **filePath**
+- **space**
+
+### Usage
+```javascript
+ToPostgresCopy(database=[<database>], table=[<table>], format=[<format>], nullValue=[<nullValue>], delimiter=[<delimiter>], filePath=[<filePath>], space=[<space>])
+```
+
+
+---
+
+## ToDatabase
+
+### Required Keys
+- **task**
+- **targetDatabase**
+- **targetTable**
+- **override**
+- **insertId**
+- **ignoreOWL**
+- **batchSize**
+
+### Usage
+```javascript
+ToDatabase(task=[<task>], targetDatabase=[<targetDatabase>], targetTable=[<targetTable>], override=[<override>], insertId=[<insertId>], ignoreOWL=[<ignoreOWL>], batchSize=[<batchSize>])
+```
+

@@ -1,0 +1,71 @@
+---
+id: download-file
+title: "Download exported file"
+description: "Downloads an exported file for a given insight and file key."
+sidebar_label: "Download exported file"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Downloads an exported file for a given insight and file key.","operationId":"downloadFile","parameters":[{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"fileKey","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"File downloaded","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"},"examples":{"Binary":{"description":"Binary","value":"binary content (octet-stream)"}}}}},"400":{"description":"Invalid insight or file key","content":{"application/json":{"example":{"error":"Could not find the insight id"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/engine/downloadFile","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Download exported file","description":{"content":"Downloads an exported file for a given insight and file key.","type":"text/plain"},"url":{"path":["engine","downloadFile"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"insightId","value":""},{"disabled":false,"key":"fileKey","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/octet-stream"}],"method":"GET","auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download exported file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/engine/downloadFile"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Downloads an exported file for a given insight and file key.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"insightId","in":"query","schema":{"type":"string"}},{"name":"fileKey","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"File downloaded","content":{"application/octet-stream":{"schema":{"type":"string","format":"binary"},"examples":{"Binary":{"description":"Binary","value":"binary content (octet-stream)"}}}}},"400":{"description":"Invalid insight or file key","content":{"application/json":{"example":{"error":"Could not find the insight id"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"Unauthorized"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,63 @@
+---
+id: edit-insight-user-permissions
+title: "Edit multiple insight user permissions"
+description: "Edits multiple user permissions for an insight in bulk."
+sidebar_label: "Edit multiple insight user permissions"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Edits multiple user permissions for an insight in bulk.","operationId":"editInsightUserPermissions","responses":{"200":{"description":"Permissions updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}},"method":"post","path":"/auth/admin/insight/editInsightUserPermissions","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"AI Core","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Edit multiple insight user permissions","description":{"content":"Edits multiple user permissions for an insight in bulk.","type":"text/plain"},"url":{"path":["auth","admin","insight","editInsightUserPermissions"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Edit multiple insight user permissions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/insight/editInsightUserPermissions"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Edits multiple user permissions for an insight in bulk.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Permissions updated","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{"schema":{"type":"object"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"schema":{"type":"object"}}}},"500":{"description":"Server error","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

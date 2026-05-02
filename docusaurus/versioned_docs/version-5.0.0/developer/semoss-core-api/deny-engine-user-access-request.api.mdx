@@ -1,0 +1,63 @@
+---
+id: deny-engine-user-access-request
+title: "Deny engine user access request"
+description: "Denies user access requests."
+sidebar_label: "Deny engine user access request"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Denies user access requests.","operationId":"denyEngineUserAccessRequest","responses":{"200":{"description":"Operation successful","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"method":"post","path":"/auth/admin/engine/denyEngineUserAccessRequest","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSSName","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Deny engine user access request","description":{"content":"Denies user access requests.","type":"text/plain"},"url":{"path":["auth","admin","engine","denyEngineUserAccessRequest"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-5.0.0/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Deny engine user access request"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/engine/denyEngineUserAccessRequest"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Denies user access requests.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Operation successful","content":{"application/json":{"schema":{"type":"object"}}}},"400":{"description":"Bad request","content":{"application/json":{}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

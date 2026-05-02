@@ -1,0 +1,63 @@
+---
+id: get-all-user-engines
+title: "Get all user engines"
+description: "Lists engines a user has access to, optionally filtered by types."
+sidebar_label: "Get all user engines"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["auth"],"description":"Lists engines a user has access to, optionally filtered by types.","operationId":"getAllUserEngines","responses":{"200":{"description":"User engines retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}},"method":"post","path":"/auth/admin/engine/getAllUserEngines","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get all user engines","description":{"content":"Lists engines a user has access to, optionally filtered by types.","type":"text/plain"},"url":{"path":["auth","admin","engine","getAllUserEngines"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST"}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all user engines"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/auth/admin/engine/getAllUserEngines"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists engines a user has access to, optionally filtered by types.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"User engines retrieved","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}},"401":{"description":"Unauthorized","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

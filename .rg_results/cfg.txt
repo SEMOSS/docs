@@ -1,0 +1,1 @@
+﻿docusaurus/docs\Getting Started\How to Access SEMOSS.mdx:15:Access the [live web server](https://MonoLithURL/SemossWeb/packages/client/dist/) here and follow along with the **[Connecting to SEMOSSName](../How%20To/Establish%20Connection%20to%20CFG%20Portal/ConnectingToAI.md)** guide for detailed instructions on setting up your account and connections.

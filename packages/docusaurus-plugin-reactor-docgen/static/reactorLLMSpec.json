@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SEMOSS",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9999/Monolith_War"
+    }
+  ],
+  "paths": {
+    "/engine/runPixel": {
+      "post": {
+        "tags": ["engine"],
+        "summary": "Execute Pixel synchronously",
+        "description": "Executes a Pixel expression and returns the full result in the response.",
+        "operationId": "runPixelSync",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "title": "RunPixelRequest",
+                "required": ["expression"],
+                "type": "object",
+                "properties": {
+                  "expression": {
+                    "type": "string",
+                    "description": "expression=Connect(engine:'mydb');",
+                    "example": "Connect(engine:'mydb');"
+                  },
+                  "insightId": {
+                    "type": "string",
+                    "description": "Insight identifier. Use 'new' to create a new insight or omit for temporary.",
+                    "example": "bf235853-86b7-483f-a0a5-ae489bfed97b"
+                  },
+                  "tz": {
+                    "type": "string",
+                    "description": "Client timezone ID",
+                    "example": "America/New_York"
+                  },
+                  "dropLogging": {
+                    "type": "boolean",
+                    "description": "If true, drop console logging after run",
+                    "example": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Pixel executed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "status": "success",
+                    "data": {
+                      "result": "Pixel execution output"
+                    }
+                  }
+                },
+                "examples": {
+                  "Sample Response": {
+                    "description": "Sample Response",
+                    "value": {
+                      "status": "success",
+                      "data": {
+                        "result": "Pixel execution output"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

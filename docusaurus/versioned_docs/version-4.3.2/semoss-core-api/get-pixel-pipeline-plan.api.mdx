@@ -1,0 +1,71 @@
+---
+id: get-pixel-pipeline-plan
+title: "Get Pixel pipeline plan"
+description: "Returns the execution plan/pipeline for the current insight."
+sidebar_label: "Get Pixel pipeline plan"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Engine Execution"],"description":"Returns the execution plan/pipeline for the current insight.","operationId":"getPixelPipelinePlan","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["insightId"],"type":"object","properties":{"insightId":{"type":"string","description":"Insight identifier"}},"title":"InsightIdForm"}}},"required":true},"responses":{"200":{"description":"Pipeline returned","content":{"application/json":{"example":{"pipeline":[{"step":"Connect","details":{"engine":"mydb"}},{"step":"Select","details":{"table":"customers"}}]}}}},"400":{"description":"Invalid insight","content":{"application/json":{"example":{"error":"Could not find the insight id"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"User session is invalid"}}}}},"security":[{"basicAuth":[]}],"method":"post","path":"/engine/getPipeline","servers":[{"url":"http://localhost:8080/dev-monolith.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"},"postman":{"name":"Get Pixel pipeline plan","description":{"content":"Returns the execution plan/pipeline for the current insight.","type":"text/plain"},"url":{"path":["engine","getPipeline"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/x-www-form-urlencoded"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"urlencoded","urlencoded":[]},"auth":{"type":"basic","basic":[{"type":"any","value":"{{basicAuthUsername}}","key":"username"},{"type":"any","value":"{{basicAuthPassword}}","key":"password"}]}}}
+sidebar_class_name: "post api-method"
+info_path: version-4.3.2/ai-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Pixel pipeline plan"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/engine/getPipeline"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the execution plan/pipeline for the current insight.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/x-www-form-urlencoded":{"schema":{"required":["insightId"],"type":"object","properties":{"insightId":{"type":"string","description":"Insight identifier"}},"title":"InsightIdForm"}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Pipeline returned","content":{"application/json":{"example":{"pipeline":[{"step":"Connect","details":{"engine":"mydb"}},{"step":"Select","details":{"table":"customers"}}]}}}},"400":{"description":"Invalid insight","content":{"application/json":{"example":{"error":"Could not find the insight id"}}}},"401":{"description":"Unauthorized","content":{"application/json":{"example":{"error":"User session is invalid"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: download-project-asset
+title: "Download a project asset file"
+description: "Returns the content of an asset under app_root/version/assets by relative path."
+sidebar_label: "Download a project asset file"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Project"],"description":"Returns the content of an asset under app_root/version/assets by relative path.","operationId":"downloadProjectAsset","parameters":[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"relPath","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"Asset content returned"},"401":{"description":"Unauthorized","content":{"text/html":{},"application/octet-stream":{}}},"404":{"description":"File not found","content":{"application/json":{}}}},"security":[{"basicAuth":[]}],"method":"get","path":"/project-{projectId}/downloadProjectAsset/{relPath}","servers":[{"url":"http://localhost:8080/<YOUR_APP>.com/Monolith/api","description":"Demo Endpoint URL"},{"url":"http://localhost:8080/Monolith/api","description":"Local Development"}],"securitySchemes":{"basicAuth":{"type":"http","scheme":"basic"}},"info":{"title":"SEMOSS","version":"0.0.1-SNAPSHOT"}}
+sidebar_class_name: "get api-method"
+info_path: version-4.3.2/developer/semoss-core-api/ai-core
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download a project asset file"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/project-{projectId}/downloadProjectAsset/{relPath}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the content of an asset under app_root/version/assets by relative path.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"projectId","in":"path","required":true,"schema":{"type":"string"}},{"name":"relPath","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Asset content returned"},"401":{"description":"Unauthorized","content":{"text/html":{},"application/octet-stream":{}}},"404":{"description":"File not found","content":{"application/json":{}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1290 @@
+.
+./assets
+./assets/Backend Files
+./assets/Backend Files/CHANGELOG.md
+./assets/Backend Files/Database
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/app_root
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/app_root/version
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/app_root/version/image.png
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/database.mv.db
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/Movies_Movies_220714134932-0400_PROP.json
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/Movies_OWL.OWL
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564/positions.json
+./assets/Backend Files/Database/Movies__2555ec1b-e1a2-4905-91e0-022dc57fc564.smss
+./assets/Backend Files/Images
+./assets/Backend Files/Images/Enter pixel call.PNG
+./assets/Backend Files/Images/highLevelDevelopmentArchitecture.png
+./assets/Backend Files/Images/Inside Terminal.PNG
+./assets/Backend Files/Images/movie-metamodel.PNG
+./assets/Backend Files/Images/Terminal.PNG
+./assets/Backend Files/Project
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352/app_root
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352/app_root/version
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352/app_root/version/file
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352/insights_database.sqlite
+./assets/Backend Files/Project/Movie_Management__39fb01b3-c2d2-42ef-b95d-5a4d7f02a352.smss
+./assets/Backend Files/README.md
+./assets/Backend Files/SRC
+./assets/Backend Files/SRC/reactors
+./assets/Backend Files/SRC/reactors/CallHardQueryReactor.java
+./assets/Backend Files/SRC/reactors/crud
+./assets/Backend Files/SRC/reactors/crud/AddGenreReactor.java
+./assets/Backend Files/SRC/reactors/crud/AddMovieReactor.java
+./assets/Backend Files/SRC/reactors/crud/DeleteGenreReactor.java
+./assets/Backend Files/SRC/reactors/crud/DeleteMovieReactor.java
+./assets/Backend Files/SRC/reactors/crud/UpdateGenreReactor.java
+./assets/Backend Files/SRC/reactors/crud/UpdateMovieReactor.java
+./assets/Backend Files/SRC/reactors/email
+./assets/Backend Files/SRC/reactors/email/SimpleEmailReactor.java
+./assets/Backend Files/SRC/reactors/email/SIMPLE_EMAIL.html
+./assets/Backend Files/SRC/reactors/email/TutorialEmailBodyUtility.java
+./assets/Backend Files/SRC/reactors/ExportToExcelReactor.java
+./assets/Backend Files/SRC/reactors/FrameCreateAndAddDataReactor.java
+./assets/Backend Files/SRC/reactors/InputReactor.java
+./assets/Backend Files/SRC/reactors/LogMessagesReactor.java
+./assets/Backend Files/SRC/reactors/MessagesReactor.java
+./assets/Backend Files/SRC/reactors/OutputReactor.java
+./assets/Backend Files/SRC/reactors/query
+./assets/Backend Files/SRC/reactors/query/AndOrQueryReactor.java
+./assets/Backend Files/SRC/reactors/query/CaseStatementQueryReactor.java
+./assets/Backend Files/SRC/reactors/query/FunctionQueryReactor.java
+./assets/Backend Files/SRC/reactors/query/HardQueryReactor.java
+./assets/Backend Files/SRC/reactors/query/MathFunctionsReactor.java
+./assets/Backend Files/SRC/reactors/query/QueryFunctionReactor.java
+./assets/Backend Files/SRC/reactors/query/RelationQueryReactor.java
+./assets/Backend Files/SRC/reactors/query/SimpleQueryReactor.java
+./assets/Backend Files/SRC/reactors/RScriptReactor.java
+./assets/Backend Files/Tutorials
+./assets/Backend Files/Tutorials/And Or Filter.md
+./assets/Backend Files/Tutorials/CallReactor.md
+./assets/Backend Files/Tutorials/Case Statement.md
+./assets/Backend Files/Tutorials/CRUD Tutorial.md
+./assets/Backend Files/Tutorials/FileReturn.md
+./assets/Backend Files/Tutorials/FrameAddData.md
+./assets/Backend Files/Tutorials/HardSelectQueryStruct.md
+./assets/Backend Files/Tutorials/Logger.md
+./assets/Backend Files/Tutorials/MathFunctions.md
+./assets/Backend Files/Tutorials/Pixel Output.md
+./assets/Backend Files/Tutorials/Pixel.md
+./assets/Backend Files/Tutorials/PixelInput.md
+./assets/Backend Files/Tutorials/PixelMessages.md
+./assets/Backend Files/Tutorials/QueryFunctions.md
+./assets/Backend Files/Tutorials/Reactor.md
+./assets/Backend Files/Tutorials/Relations.md
+./assets/Backend Files/Tutorials/RScripts.md
+./assets/Backend Files/Tutorials/SelectQueryStruct.md
+./assets/Backend Files/Tutorials/Simple Email Tutorial.md
+./assets/Backend Files/Tutorials/Widgets
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Change-On-Execute
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Change-On-Execute/changeOnExecute.json
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Change-On-Execute/img.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Change-On-Execute/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Custom-Filter
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Custom-Filter/changeOnExecute.json
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Custom-Filter/img.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Custom-Filter/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/DefaultWidget.md
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/img1.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/img2.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/img3.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/img4.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/img5.PNG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Master-Example/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Required-Fields
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Required-Fields/img.JPG
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Required-Fields/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Required-Fields/requiredFields.json
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Run-R-Algorithm
+./assets/Backend Files/Tutorials/Widgets/Default-Widgets/Run-R-Algorithm/runRalgorithm.jsonc
+./assets/Backend Files/Tutorials/Widgets/README.md
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Dot-Legend
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Dot-Legend/dotLegend.html
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Dot-Legend/img.png
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Dot-Legend/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Download-CSV
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Download-CSV/downloadCSV.html
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Download-CSV/img.png
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Download-CSV/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Download-CSV/SEMOSS_Export_2022-11-04 11-43-35.csv
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Flip-Card
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Flip-Card/Flipcard ClickEvent MovieDB.html
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Flip-Card/img.png
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Flip-Card/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Instructions-List
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Instructions-List/img.PNG
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Instructions-List/instructionsList.html
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Instructions-List/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/KPI-Top-Bar
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/KPI-Top-Bar/img.png
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/KPI-Top-Bar/KPI Top Bar MovieDB.html
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/KPI-Top-Bar/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Single-KPI
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Single-KPI/HoverKPI.png
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Single-KPI/pixel.txt
+./assets/Backend Files/Tutorials/Widgets/Text-Widgets/Single-KPI/Single-KPI-MovieDB.html
+./assets/BE Installation
+./assets/BE Installation/settings.zip
+./assets/BE Installation/test
+./assets/CustomReactorAppZips
+./assets/CustomReactorAppZips/CustomReactor_TodoList_App.zip
+./assets/CustomReactorAppZips/CustomReactor_TodoList_DB.zip
+./assets/CustomReactorAppZips/MyTodoReactor.java
+./assets/CustomReactorGuide.zip
+./assets/FrameAddData.md
+./assets/Pixel Output.md
+./assets/Pixel.md
+./assets/PixelInput.md
+./assets/PixelMessages.md
+./assets/Simple Email Tutorial.md
+./assets/windows_docker_starter_scripts
+./assets/windows_docker_starter_scripts/cloneAIServer.bat
+./assets/windows_docker_starter_scripts/init.bat
+./assets/windows_docker_starter_scripts/semoss_init.sh
+./assets/windows_docker_starter_scripts/startAIServer.bat
+./assets/windows_docker_starter_scripts/stopAIServer.bat
+./assets/windows_docker_starter_scripts.zip
+./autoImg
+./autoImg/PlatformNavigation
+./autoImg/PlatformNavigation/Admin Query
+./autoImg/PlatformNavigation/Admin Query/adddetails.png
+./autoImg/PlatformNavigation/Admin Query/addengine.png
+./autoImg/PlatformNavigation/Admin Query/addingprojectdetails.png
+./autoImg/PlatformNavigation/Admin Query/addingprojects.png
+./autoImg/PlatformNavigation/Admin Query/addteam.png
+./autoImg/PlatformNavigation/Admin Query/Admin On.png
+./autoImg/PlatformNavigation/Admin Query/Admin Query.png
+./autoImg/PlatformNavigation/Admin Query/editteam.png
+./autoImg/PlatformNavigation/Admin Query/editteamdetails.png
+./autoImg/PlatformNavigation/Admin Query/enginedetails.png
+./autoImg/PlatformNavigation/Admin Query/LocalMasterDatabase.png
+./autoImg/PlatformNavigation/Admin Query/LocalMasterDatabaseQuery Results.png
+./autoImg/PlatformNavigation/Admin Query/scheduler.png
+./autoImg/PlatformNavigation/Admin Query/schedulerQuery Results.png
+./autoImg/PlatformNavigation/Admin Query/security.png
+./autoImg/PlatformNavigation/Admin Query/securityQuery Results.png
+./autoImg/PlatformNavigation/Admin Query/Settings.png
+./autoImg/PlatformNavigation/Admin Query/TeamPermissions.png
+./autoImg/PlatformNavigation/Admin Query/teamtypes.png
+./autoImg/PlatformNavigation/Admin Query/themes.png
+./autoImg/PlatformNavigation/Admin Query/themesQuery Results.png
+./autoImg/PlatformNavigation/App Library
+./autoImg/PlatformNavigation/App Library/Access Control.png
+./autoImg/PlatformNavigation/App Library/App Edit Options.png
+./autoImg/PlatformNavigation/App Library/App Settings Page.png
+./autoImg/PlatformNavigation/App Library/App Settings.png
+./autoImg/PlatformNavigation/App Library/Apps.png
+./autoImg/PlatformNavigation/App Library/Copy.png
+./autoImg/PlatformNavigation/App Library/CopyURL.png
+./autoImg/PlatformNavigation/App Library/Create New App.png
+./autoImg/PlatformNavigation/App Library/Delete.png
+./autoImg/PlatformNavigation/App Library/Discoverable.png
+./autoImg/PlatformNavigation/App Library/Edit.png
+./autoImg/PlatformNavigation/App Library/Export.png
+./autoImg/PlatformNavigation/App Library/New App Popup.png
+./autoImg/PlatformNavigation/App Library/Pending Requests.png
+./autoImg/PlatformNavigation/App Library/Preview App.png
+./autoImg/PlatformNavigation/App Library/Save App.png
+./autoImg/PlatformNavigation/App Library/Search.png
+./autoImg/PlatformNavigation/App Library/Settings.png
+./autoImg/PlatformNavigation/App Library/Share App.png
+./autoImg/PlatformNavigation/App Library/Start build with a template.png
+./autoImg/PlatformNavigation/App Library/Upload App.png
+./autoImg/PlatformNavigation/App Library/Uploading App.png
+./autoImg/PlatformNavigation/Configuration
+./autoImg/PlatformNavigation/Configuration/Admin On.png
+./autoImg/PlatformNavigation/Configuration/Configuration.png
+./autoImg/PlatformNavigation/Configuration/ConfigurationPage.png
+./autoImg/PlatformNavigation/Configuration/Settings.png
+./autoImg/PlatformNavigation/Database Catalog
+./autoImg/PlatformNavigation/Database Catalog/Access Control.png
+./autoImg/PlatformNavigation/Database Catalog/Access Request.png
+./autoImg/PlatformNavigation/Database Catalog/Add Database.png
+./autoImg/PlatformNavigation/Database Catalog/Database Edit Options.png
+./autoImg/PlatformNavigation/Database Catalog/Database Options.png
+./autoImg/PlatformNavigation/Database Catalog/Database Resource.png
+./autoImg/PlatformNavigation/Database Catalog/Database.png
+./autoImg/PlatformNavigation/Database Catalog/Discoverable Databases.png
+./autoImg/PlatformNavigation/Database Catalog/Edit.png
+./autoImg/PlatformNavigation/Database Catalog/Export.png
+./autoImg/PlatformNavigation/Database Catalog/Pending Requests.png
+./autoImg/PlatformNavigation/Database Catalog/Postgres Database.png
+./autoImg/PlatformNavigation/Database Catalog/Postgres.png
+./autoImg/PlatformNavigation/Database Catalog/Request Access.png
+./autoImg/PlatformNavigation/Database Catalog/Usage.png
+./autoImg/PlatformNavigation/Function Catalog
+./autoImg/PlatformNavigation/Function Catalog/Access Control.png
+./autoImg/PlatformNavigation/Function Catalog/Access Request.png
+./autoImg/PlatformNavigation/Function Catalog/Add Function.png
+./autoImg/PlatformNavigation/Function Catalog/Create function.png
+./autoImg/PlatformNavigation/Function Catalog/Discoverable Functions.png
+./autoImg/PlatformNavigation/Function Catalog/Edit Function Options.png
+./autoImg/PlatformNavigation/Function Catalog/Edit.png
+./autoImg/PlatformNavigation/Function Catalog/Export.png
+./autoImg/PlatformNavigation/Function Catalog/Function Options.png
+./autoImg/PlatformNavigation/Function Catalog/Function ZIP.png
+./autoImg/PlatformNavigation/Function Catalog/Function.png
+./autoImg/PlatformNavigation/Function Catalog/Pending Requests.png
+./autoImg/PlatformNavigation/Function Catalog/Request Access.png
+./autoImg/PlatformNavigation/Function Catalog/Usage.png
+./autoImg/PlatformNavigation/Jobs Management
+./autoImg/PlatformNavigation/Jobs Management/AddJobForm.png
+./autoImg/PlatformNavigation/Jobs Management/Jobs Page.png
+./autoImg/PlatformNavigation/Jobs Management/Jobs.png
+./autoImg/PlatformNavigation/Jobs Management/Settings Page.png
+./autoImg/PlatformNavigation/Jobs Management/Settings.png
+./autoImg/PlatformNavigation/Member Settings
+./autoImg/PlatformNavigation/Member Settings/Add Member.png
+./autoImg/PlatformNavigation/Member Settings/AddMemberform.png
+./autoImg/PlatformNavigation/Member Settings/Admin On.png
+./autoImg/PlatformNavigation/Member Settings/Member Settings.png
+./autoImg/PlatformNavigation/Member Settings/MemberSettingsPage.png
+./autoImg/PlatformNavigation/Member Settings/Settings.png
+./autoImg/PlatformNavigation/Model Catalog
+./autoImg/PlatformNavigation/Model Catalog/Access Control.png
+./autoImg/PlatformNavigation/Model Catalog/Access Request.png
+./autoImg/PlatformNavigation/Model Catalog/Add Model.png
+./autoImg/PlatformNavigation/Model Catalog/Chat Example.png
+./autoImg/PlatformNavigation/Model Catalog/Chat.png
+./autoImg/PlatformNavigation/Model Catalog/Discoverable Models.png
+./autoImg/PlatformNavigation/Model Catalog/Edit Model Options.png
+./autoImg/PlatformNavigation/Model Catalog/Edit.png
+./autoImg/PlatformNavigation/Model Catalog/Export.png
+./autoImg/PlatformNavigation/Model Catalog/Model Options.png
+./autoImg/PlatformNavigation/Model Catalog/Model.png
+./autoImg/PlatformNavigation/Model Catalog/Pending Requests.png
+./autoImg/PlatformNavigation/Model Catalog/Request Access.png
+./autoImg/PlatformNavigation/Model Catalog/Usage.png
+./autoImg/PlatformNavigation/Settings Overview
+./autoImg/PlatformNavigation/Settings Overview/App Details.png
+./autoImg/PlatformNavigation/Settings Overview/App Settings Page.png
+./autoImg/PlatformNavigation/Settings Overview/App Settings.png
+./autoImg/PlatformNavigation/Settings Overview/Data Apps.png
+./autoImg/PlatformNavigation/Settings Overview/Delete.png
+./autoImg/PlatformNavigation/Settings Overview/Pending Requests.png
+./autoImg/PlatformNavigation/Settings Overview/Settings.png
+./autoImg/PlatformNavigation/Settings Overview/Update Project.png
+./autoImg/PlatformNavigation/Settings-My Profile
+./autoImg/PlatformNavigation/Settings-My Profile/Generate New Key.png
+./autoImg/PlatformNavigation/Settings-My Profile/Generate.png
+./autoImg/PlatformNavigation/Settings-My Profile/My Profile Page.png
+./autoImg/PlatformNavigation/Storage Catalog
+./autoImg/PlatformNavigation/Storage Catalog/Access Control.png
+./autoImg/PlatformNavigation/Storage Catalog/Access Request.png
+./autoImg/PlatformNavigation/Storage Catalog/Add Storage.png
+./autoImg/PlatformNavigation/Storage Catalog/Amazon S3.png
+./autoImg/PlatformNavigation/Storage Catalog/Create storage.png
+./autoImg/PlatformNavigation/Storage Catalog/Discoverable Storages.png
+./autoImg/PlatformNavigation/Storage Catalog/Edit Storage Options.png
+./autoImg/PlatformNavigation/Storage Catalog/Edit.png
+./autoImg/PlatformNavigation/Storage Catalog/Export.png
+./autoImg/PlatformNavigation/Storage Catalog/Pending Requests.png
+./autoImg/PlatformNavigation/Storage Catalog/Request Access.png
+./autoImg/PlatformNavigation/Storage Catalog/Storage Catalog.png
+./autoImg/PlatformNavigation/Storage Catalog/Storage.png
+./autoImg/PlatformNavigation/Storage Catalog/Usage.png
+./autoImg/PlatformNavigation/System Apps
+./autoImg/PlatformNavigation/System Apps/Add Data form.png
+./autoImg/PlatformNavigation/System Apps/Add Panel.png
+./autoImg/PlatformNavigation/System Apps/BI.png
+./autoImg/PlatformNavigation/System Apps/Color option selected.png
+./autoImg/PlatformNavigation/System Apps/Create the first insight.png
+./autoImg/PlatformNavigation/System Apps/Data selection tab.png
+./autoImg/PlatformNavigation/System Apps/Export Insight options.png
+./autoImg/PlatformNavigation/System Apps/New Project form.png
+./autoImg/PlatformNavigation/System Apps/New project.png
+./autoImg/PlatformNavigation/System Apps/Presenting.png
+./autoImg/PlatformNavigation/System Apps/Save Insight form.png
+./autoImg/PlatformNavigation/System Apps/Selected Columns section.png
+./autoImg/PlatformNavigation/System Apps/VISUAL.png
+./autoImg/PlatformNavigation/System Apps/Visualization type options.png
+./autoImg/PlatformNavigation/Vector Catalog
+./autoImg/PlatformNavigation/Vector Catalog/Access Control.png
+./autoImg/PlatformNavigation/Vector Catalog/Access Request.png
+./autoImg/PlatformNavigation/Vector Catalog/Add Vector.png
+./autoImg/PlatformNavigation/Vector Catalog/Create vector.png
+./autoImg/PlatformNavigation/Vector Catalog/Edit Options.png
+./autoImg/PlatformNavigation/Vector Catalog/Edit.png
+./autoImg/PlatformNavigation/Vector Catalog/Embed New Document.png
+./autoImg/PlatformNavigation/Vector Catalog/Export.png
+./autoImg/PlatformNavigation/Vector Catalog/FAISS.png
+./autoImg/PlatformNavigation/Vector Catalog/Pending Requests.png
+./autoImg/PlatformNavigation/Vector Catalog/Request Access.png
+./autoImg/PlatformNavigation/Vector Catalog/Usage.png
+./autoImg/PlatformNavigation/Vector Catalog/Vector.png
+./demos
+./img
+./img/AccessKeysImages
+./img/AccessKeysImages/Picture1.png
+./img/AccessKeysImages/Picture2.PNG
+./img/AccessKeysImages/Picture3.png
+./img/AccessKeysImages/Picture4.png
+./img/AccessKeysImages/Picture5.PNG
+./img/AccessKeysImages/Picture6.png
+./img/AccessKeysImages/SEMOSSLanding.jpg
+./img/AdminQuery
+./img/AdminQuery/admin_query_tile.png
+./img/AdminQuery/execute_localmaster.png
+./img/AdminQuery/execute_scheduler.png
+./img/AdminQuery/execute_security.png
+./img/AdminQuery/execute_themes.png
+./img/AdminQuery/select_localmaster.png
+./img/AdminQuery/select_scheduler.png
+./img/AdminQuery/select_security.png
+./img/AdminQuery/select_themes.png
+./img/AdminQuery/select_usertracking.png
+./img/AdminQuery/settings_gear.png
+./img/AdminQuery/successful_localmaster.png
+./img/AdminQuery/successful_query.png
+./img/AdminQuery/successful_scheduler.png
+./img/AdminQuery/successful_security.png
+./img/AdminSettings
+./img/AdminSettings/AddAdminDetails.png
+./img/AdminSettings/AdminMode.png
+./img/AdminSettings/Configuration.png
+./img/AdminSettings/EditMembers.png
+./img/AdminSettings/ModelLimit.png
+./img/Advanced
+./img/Advanced/BuilderBlocks.PNG
+./img/Advanced/copyClone.PNG
+./img/Advanced/CreateNewApp.png
+./img/Advanced/CtrlD.png
+./img/Advanced/GitClone.PNG
+./img/Advanced/NewFolder.PNG
+./img/Advanced/templatePic.PNG
+./img/AppSharing
+./img/AppSharing/IframeSharing.png
+./img/AppSharing/UrlSharing.png
+./img/AppUseCaseImages
+./img/AppUseCaseImages/add app.png
+./img/AppUseCaseImages/adding.PNG
+./img/AppUseCaseImages/AppBuildingOptionsNew.png
+./img/AppUseCaseImages/app_building_options.png
+./img/AppUseCaseImages/asset_upload_dialog.png
+./img/AppUseCaseImages/Capture.PNG
+./img/AppUseCaseImages/code_editor_asset_upload.png
+./img/AppUseCaseImages/final_page.PNG
+./img/AppUseCaseImages/folderstructure.png
+./img/AppUseCaseImages/model.PNG
+./img/AppUseCaseImages/policy bot.png
+./img/AppUseCaseImages/portals.PNG
+./img/AppUseCaseImages/report_gen.PNG
+./img/AppUseCaseImages/Structure.PNG
+./img/AppUseCaseImages/useInsight.PNG
+./img/AppUseCaseImages/zip.PNG
+./img/awardgenerator
+./img/awardgenerator/award0.png
+./img/awardgenerator/award10.png
+./img/awardgenerator/award3.png
+./img/awardgenerator/award5.png
+./img/awardgenerator/award9.png
+./img/awardgenerator/awardafterfeedback.png
+./img/awardgenerator/awarddraft.png
+./img/awardgenerator/awardprevcopy.png
+./img/awardgenerator/awardrecomend.png
+./img/awardgenerator/awardupdate.png
+./img/BELocalInstall
+./img/BELocalInstall/apache-tomcat-folder.png
+./img/BELocalInstall/AppConfigJS.png
+./img/BELocalInstall/AppConfigJS2.png
+./img/BELocalInstall/App_Constant.png
+./img/BELocalInstall/App_Constant2.png
+./img/BELocalInstall/CatalinaProperties.png
+./img/BELocalInstall/CheckPyInstallTwo.png
+./img/BELocalInstall/d
+./img/BELocalInstall/DockerRPython.png
+./img/BELocalInstall/eclipse-workspace.png
+./img/BELocalInstall/Eclispe_workspace.png
+./img/BELocalInstall/EditPyEnvVariablesThree.png
+./img/BELocalInstall/EnvVariables1.png
+./img/BELocalInstall/EnvVariables2.png
+./img/BELocalInstall/EnvVariables3.png
+./img/BELocalInstall/ImportSemoss2.png
+./img/BELocalInstall/JavaBuildPathOrder.png
+./img/BELocalInstall/MacInstall
+./img/BELocalInstall/MacInstall/appConfigChanges.png
+./img/BELocalInstall/MacInstall/appConstantsChanges.png
+./img/BELocalInstall/MacInstall/EclipseImport.png
+./img/BELocalInstall/MacInstall/HomebrewOutput.png
+./img/BELocalInstall/MacInstall/MacAdmin.png
+./img/BELocalInstall/MacInstall/OhMyZsh.png
+./img/BELocalInstall/MacInstall/serverXmlChanges.png
+./img/BELocalInstall/ManualMaven2.png
+./img/BELocalInstall/ManualMaven3.png
+./img/BELocalInstall/Manual_MavenInstall.png
+./img/BELocalInstall/MavenError.jpg
+./img/BELocalInstall/ModulePathCheck.png
+./img/BELocalInstall/MonolithCheckout.png
+./img/BELocalInstall/PythonInstallPptOne.png
+./img/BELocalInstall/PythonLibraries.png
+./img/BELocalInstall/PythonProps.png
+./img/BELocalInstall/RPackages.png
+./img/BELocalInstall/RTerminal.png
+./img/BELocalInstall/R_EnvVariable.png
+./img/BELocalInstall/semoss-ui-env-local.png
+./img/BELocalInstall/SemossCheckout.png
+./img/BELocalInstall/SemossHome.png
+./img/BELocalInstall/SemossWebAppUI.png
+./img/BELocalInstall/SemossWebAPPUICheckout.png
+./img/BELocalInstall/ServerXML.png
+./img/BELocalInstall/Socialproperties.png
+./img/BELocalInstall/SVNCheckout.png
+./img/BELocalInstall/TomcatServer.png
+./img/BELocalInstall/TomcatServer2.png
+./img/BELocalInstall/TomcatServer3.png
+./img/BELocalInstall/TomcatServer4.png
+./img/BELocalInstall/TomcatServer5.png
+./img/BELocalInstall/TomcatServer6.png
+./img/BELocalInstall/ts1.png
+./img/BELocalInstall/ts2.png
+./img/BELocalInstall/UpdateMaven.png
+./img/BELocalInstall/UpdateRDFMap.png
+./img/BELocalInstall/WebXML.png
+./img/BELocalInstall/Workspace.png
+./img/CodeEditor
+./img/CodeEditor/AppDirectory.png
+./img/CodeEditor/CodeEditorHomeScreen.png
+./img/CodeEditor/MemberPermissions.png
+./img/CodeEditor/OpenCodeEditor.png
+./img/CodeEditor/PublishFiles.png
+./img/CodeEditor/SaveEdits.png
+./img/CodeEditor/Settings.png
+./img/CodeEditor/UploadFiles.png
+./img/CodeModifier
+./img/CodeModifier/AppSetup.png
+./img/CodeModifier/BlockTextEdit.png
+./img/CodeModifier/CellOutput.png
+./img/CodeModifier/CodeOutput.png
+./img/CodeModifier/Drag and Drop.png
+./img/CodeModifier/InputLabels.png
+./img/CodeModifier/LanguageOptions.png
+./img/CodeModifier/MarkdownSelect.png
+./img/CodeModifier/ModelID.png
+./img/CodeModifier/OnPageLoad.png
+./img/CodeModifier/Output.png
+./img/CodeModifier/SubmitAction.png
+./img/CodeModifier/VariableNames.png
+./img/CreateDiabetesRecord
+./img/CreateDiabetesRecord/AddRecordButton.png
+./img/CreateDiabetesRecord/ClickOpenDiabetesRecord.png
+./img/CreateDiabetesRecord/DatabaseSetup.png
+./img/CreateDiabetesRecord/DbResponse.png
+./img/CreateDiabetesRecord/FormFieldsAndVariables.png
+./img/CreateDiabetesRecord/InsertQuery.png
+./img/CreateDiabetesRecord/PreProcessValidation.png
+./img/CreateDiabetesRecord/SelectQuery.png
+./img/Creating a custom reactor
+./img/Creating a custom reactor/AddNewProjectButton.PNG
+./img/Creating a custom reactor/ConsoleCommandstoSetProjectContextandTestReactor.PNG
+./img/Creating a custom reactor/CreateNewProjectPanel.PNG
+./img/Creating a custom reactor/CreatingJavaFolder.PNG
+./img/Creating a custom reactor/Enter pixel call.PNG
+./img/Creating a custom reactor/highLevelDevelopmentArchitecture.png
+./img/Creating a custom reactor/Inside Terminal.PNG
+./img/Creating a custom reactor/InsideBI.PNG
+./img/Creating a custom reactor/movie-metamodel.PNG
+./img/Creating a custom reactor/Terminal.PNG
+./img/CustomReactor
+./img/CustomReactor/AppID.jpg
+./img/CustomReactor/AppLanding.jpg
+./img/CustomReactor/AppSettings.jpg
+./img/CustomReactor/AppVariables.jpg
+./img/CustomReactor/FolderTree.jpg
+./img/CustomReactor/InsightObject.png
+./img/CustomReactor/MyTodoNotebook.jpg
+./img/CustomReactor/NetworkPixel.png
+./img/CustomReactor/NewTaskTable.jpg
+./img/CustomReactor/SubmitNewTask.jpg
+./img/CustomReactor/Task1.jpg
+./img/CustomReactor/Task1Output.jpg
+./img/CustomReactor/Task3.jpg
+./img/CustomReactor/Task3Output.jpg
+./img/CustomReactor/TerminalCommands.png
+./img/Database
+./img/Database/AddDatabase1.png
+./img/Database/AddDatabase2.png
+./img/Database/AddDatabase3.png
+./img/Datatabwithqueries.PNG
+./img/DockerBEInstall
+./img/DockerBEInstall/AdminUsername.png
+./img/DockerBEInstall/AppLibraryLanding.png
+./img/DockerBEInstall/BashCommands.png
+./img/DockerBEInstall/cloneAndStartBat.png
+./img/DockerBEInstall/DockerExec.png
+./img/DockerBEInstall/DockerImages.png
+./img/DockerBEInstall/DockerRun.png
+./img/DockerBEInstall/DockerStart.png
+./img/DockerBEInstall/DockerStop.png
+./img/DockerBEInstall/DockerTag.png
+./img/DockerBEInstall/genaiproject.png
+./img/DockerBEInstall/initBatOutput.png
+./img/DockerBEInstall/InitialLogin.png
+./img/DockerBEInstall/NativeLogin.png
+./img/DockerBEInstall/NativeLoginEntry.png
+./img/DockerBEInstall/NativeRegistrationButton.png
+./img/DockerBEInstall/RegisterUser.png
+./img/DockerBEInstall/repo.png
+./img/DockerBEInstall/repo2.png
+./img/DockerBEInstall/repo3.png
+./img/DockerBEInstall/secretkey.png
+./img/DockerBEInstall/SemossDockerDir.png
+./img/DockerBEInstall/TomcatRestart.png
+./img/docusaurus-social-card.jpg
+./img/docusaurus.png
+./img/DragAndDrop
+./img/DragAndDrop/Accordion.jpg
+./img/DragAndDrop/AccordionBlockSettings.png
+./img/DragAndDrop/AccordionBorder.png
+./img/DragAndDrop/AccordionColor.png
+./img/DragAndDrop/AccordionContent.png
+./img/DragAndDrop/AccordionDimensions.png
+./img/DragAndDrop/AccordionLanding.jpeg
+./img/DragAndDrop/AccordionSpacing.png
+./img/DragAndDrop/AppLanding.jpg
+./img/DragAndDrop/BlockSettings.png
+./img/DragAndDrop/BlocksMenu.jpg
+./img/DragAndDrop/CreateApp.png
+./img/DragAndDrop/CreateNewApp.jpg
+./img/DragAndDrop/DragAndDropLanding.jpg
+./img/DragAndDrop/EditApp.png
+./img/DragAndDrop/LayersLanding.jpg
+./img/DragAndDrop/NestBlock.jpg
+./img/DragAndDrop/NewPage.jpg
+./img/DragAndDrop/OneContainer.jpg
+./img/DragAndDrop/ReorderBlock.jpg
+./img/DragAndDrop/ReorderBlock2.jpg
+./img/DragAndDrop/SwitchPage.jpg
+./img/DragAndDrop/TwoContainers.jpg
+./img/DragAndDrop/UnnestBlock.jpg
+./img/favicon.ico
+./img/FELocalInstall
+./img/FELocalInstall/choosingTomcat.png
+./img/FELocalInstall/cloning.PNG
+./img/FELocalInstall/env.png
+./img/FELocalInstall/envlocal.png
+./img/FELocalInstall/finalPage.PNG
+./img/FELocalInstall/gitClone.png
+./img/FELocalInstall/registering.png
+./img/FELocalInstall/semossuiterminal.PNG
+./img/FELocalInstall/terminal.png
+./img/FELocalInstall/webapps.png
+./img/FunctionEngines
+./img/FunctionEngines/add_func.png
+./img/FunctionEngines/add_zip.png
+./img/FunctionEngines/azure.png
+./img/FunctionEngines/create_func.png
+./img/FunctionEngines/customPyFunctionPixel.png
+./img/FunctionEngines/discoverableFunction.png
+./img/FunctionEngines/Edit.png
+./img/FunctionEngines/EditInterface.png
+./img/FunctionEngines/Export.png
+./img/FunctionEngines/FCsettingsOne.png
+./img/FunctionEngines/FCsettingsThree.png
+./img/FunctionEngines/FCsettingsTwo.png
+./img/FunctionEngines/func-prop.png
+./img/FunctionEngines/functionAccessControl.png
+./img/FunctionEngines/functionRequestAccess.png
+./img/FunctionEngines/functionTabs.png
+./img/FunctionEngines/function_assets.png
+./img/FunctionEngines/myPyFunction.png
+./img/FunctionEngines/open_func.png
+./img/FunctionEngines/zip_custom_py_function_engine.png
+./img/HowtoPublishanApp
+./img/HowtoPublishanApp/1.png
+./img/HowtoPublishanApp/2.1.png
+./img/HowtoPublishanApp/2.png
+./img/HowtoPublishanApp/3.png
+./img/HowtoPublishanApp/4.png
+./img/HowtoPublishanApp/5.1.png
+./img/HowtoPublishanApp/5.png
+./img/HowtoPublishanApp/add-tags.png
+./img/HowtoPublishanApp/ts1.png
+./img/HowtoPublishanApp/ts2.png
+./img/logo.svg
+./img/Mac1.png
+./img/Mac10.png
+./img/Mac11.png
+./img/Mac12.png
+./img/Mac13.png
+./img/Mac14.png
+./img/Mac2.png
+./img/Mac3.png
+./img/Mac4.png
+./img/Mac5.png
+./img/Mac6.png
+./img/Mac7.png
+./img/Mac8.png
+./img/Mac9.png
+./img/MigratingtoGithub
+./img/MigratingtoGithub/Cloningprocesscompleted.png
+./img/MigratingtoGithub/Insidemonolithdevfolder.png
+./img/MigratingtoGithub/Insidesemossdevfolder.png
+./img/MigratingtoGithub/InsideWorkspace.png
+./img/MigratingtoGithub/Localfoldermonolith.png
+./img/MigratingtoGithub/Monolithfolderaftercloning.png
+./img/MigratingtoGithub/Monolithfolderongithub.png
+./img/MigratingtoGithub/MonolithinEclipse.png
+./img/MigratingtoGithub/Sign into Github.PNG
+./img/ModelCatalogImages
+./img/ModelCatalogImages/Add.PNG
+./img/ModelCatalogImages/AddingAMember.PNG
+./img/ModelCatalogImages/Add_Model.PNG
+./img/ModelCatalogImages/AdminMode.PNG
+./img/ModelCatalogImages/App_Library.png
+./img/ModelCatalogImages/Local_Model_Folder.PNG
+./img/ModelCatalogImages/Model_Catalog.png
+./img/ModelCatalogImages/Settings_page.PNG
+./img/MooseAI
+./img/MooseAI/AddAssistant.png
+./img/MooseAI/f
+./img/MooseAI/MooseAI.png
+./img/MooseAI/PythonFrame.png
+./img/MooseAI/RDFMap.png
+./img/MooseAI/SVNUpdate.png
+./img/Navigating
+./img/Navigating/A LLM Model.PNG
+./img/Navigating/Action.PNG
+./img/Navigating/Add Database Screenshot.png
+./img/Navigating/Add Storage details.PNG
+./img/Navigating/All Apps cloned.PNG
+./img/Navigating/App Layout.PNG
+./img/Navigating/App Library.PNG
+./img/Navigating/App Name.PNG
+./img/Navigating/App Settings.PNG
+./img/Navigating/AppLibrary_BI.png
+./img/Navigating/Application in App Library.PNG
+./img/Navigating/Apps Folder Created.PNG
+./img/Navigating/ArrayVariable.png
+./img/Navigating/BI Tool in homepage.PNG
+./img/Navigating/BI1.png
+./img/Navigating/BI10.png
+./img/Navigating/BI11.png
+./img/Navigating/BI12.png
+./img/Navigating/BI13.png
+./img/Navigating/BI2.png
+./img/Navigating/BI3.png
+./img/Navigating/BI4.png
+./img/Navigating/BI5.png
+./img/Navigating/BI6.png
+./img/Navigating/BI7.png
+./img/Navigating/BI8.png
+./img/Navigating/BI9.png
+./img/Navigating/Block Variable.png
+./img/Navigating/BlockGuideApp.PNG
+./img/Navigating/Brackets.PNG
+./img/Navigating/BrowseTemplateBlockGuide.PNG
+./img/Navigating/CFG AI Apps
+./img/Navigating/SEMOSS AI Apps/nh
+./img/Navigating/SEMOSS AI Apps/Playground.PNG
+./img/Navigating/SEMOSS AI Apps/PolicyVectorEngine.PNG
+./img/Navigating/SEMOSS AI Apps/Report_Generator_Response.PNG
+./img/Navigating/SEMOSS AI Apps/Text to SQL.PNG
+./img/Navigating/CFG AI Walkthrough
+./img/Navigating/SEMOSS AI Walkthrough/Add Database.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Add Model.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Add Storage.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Add Vector Details.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Add Vector.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Add_Model.PNG
+./img/Navigating/SEMOSS AI Walkthrough/CfGAI Settings_2.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Choose a connection.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Connect_To_Model.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Database Details required.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Database icon.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Database Options.PNG
+./img/Navigating/SEMOSS AI Walkthrough/DCsettingsOne.png
+./img/Navigating/SEMOSS AI Walkthrough/DCsettingsThree.png
+./img/Navigating/SEMOSS AI Walkthrough/DCsettingsTwo.png
+./img/Navigating/SEMOSS AI Walkthrough/Discoverable Items.PNG
+./img/Navigating/SEMOSS AI Walkthrough/MCsettingsOne.png
+./img/Navigating/SEMOSS AI Walkthrough/MCsettingsThree.png
+./img/Navigating/SEMOSS AI Walkthrough/MCsettingsTwo.png
+./img/Navigating/SEMOSS AI Walkthrough/Model Catalog.png
+./img/Navigating/SEMOSS AI Walkthrough/ModelCatalogIconHighlight.PNG
+./img/Navigating/SEMOSS AI Walkthrough/NewDataFiles.png
+./img/Navigating/SEMOSS AI Walkthrough/NewEmbedData.png
+./img/Navigating/SEMOSS AI Walkthrough/NewQ&ATab.png
+./img/Navigating/SEMOSS AI Walkthrough/NewUploadData.png
+./img/Navigating/SEMOSS AI Walkthrough/NewVectorCatalog.png
+./img/Navigating/SEMOSS AI Walkthrough/Permission Levels.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Request Access.PNG
+./img/Navigating/SEMOSS AI Walkthrough/SCsettingsOne.png
+./img/Navigating/SEMOSS AI Walkthrough/SCsettingsThree.png
+./img/Navigating/SEMOSS AI Walkthrough/SCsettingsTwo.png
+./img/Navigating/SEMOSS AI Walkthrough/Settings Tool icon.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Storage Catalogue.png
+./img/Navigating/SEMOSS AI Walkthrough/Storage Details.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Storage Options.PNG
+./img/Navigating/SEMOSS AI Walkthrough/StorageCatalogIcon.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Various Database type.PNG
+./img/Navigating/SEMOSS AI Walkthrough/Vector Catalog Icon.PNG
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew.png
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew2.png
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew5.png
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew6.png
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew7.png
+./img/Navigating/SEMOSS AI Walkthrough/vectordbnew9.png
+./img/Navigating/CfGAI Settings.PNG
+./img/Navigating/choose_data.PNG
+./img/Navigating/colors.PNG
+./img/Navigating/Connect Query.png
+./img/Navigating/Connect to Database.png
+./img/Navigating/Copy Apps Folder code.PNG
+./img/Navigating/Create New App
+./img/Navigating/Create New App/AB1.png
+./img/Navigating/Create New App/AB10.png
+./img/Navigating/Create New App/AB11.png
+./img/Navigating/Create New App/AB12.png
+./img/Navigating/Create New App/AB13.png
+./img/Navigating/Create New App/AB14.png
+./img/Navigating/Create New App/AB15.png
+./img/Navigating/Create New App/AB16.png
+./img/Navigating/Create New App/AB17.png
+./img/Navigating/Create New App/AB18.png
+./img/Navigating/Create New App/AB19.png
+./img/Navigating/Create New App/AB2.png
+./img/Navigating/Create New App/AB20.png
+./img/Navigating/Create New App/AB21.png
+./img/Navigating/Create New App/AB3.png
+./img/Navigating/Create New App/AB4.png
+./img/Navigating/Create New App/AB5.png
+./img/Navigating/Create New App/AB6.png
+./img/Navigating/Create New App/AB7.png
+./img/Navigating/Create New App/AB8.png
+./img/Navigating/Create New App/AB9.png
+./img/Navigating/Create New App/Addingvariables.png
+./img/Navigating/Create New App/App Edit Mode.png
+./img/Navigating/Create New App/AppHomepage.png
+./img/Navigating/Create New App/AskCSV1.png
+./img/Navigating/Create New App/AskCSV2.png
+./img/Navigating/Create New App/AskCSV3.png
+./img/Navigating/Create New App/AskCSV4.png
+./img/Navigating/Create New App/AskCSV5.png
+./img/Navigating/Create New App/AskCSV6.png
+./img/Navigating/Create New App/askLLM.png
+./img/Navigating/Create New App/AskLLM1.png
+./img/Navigating/Create New App/AskLLM2.png
+./img/Navigating/Create New App/AskLLM3.png
+./img/Navigating/Create New App/AskLLM4.png
+./img/Navigating/Create New App/AskLLM5.png
+./img/Navigating/Create New App/askLLMclick.png
+./img/Navigating/Create New App/AskLLMcreation.png
+./img/Navigating/Create New App/AskLLMError.png
+./img/Navigating/Create New App/Connect Query.png
+./img/Navigating/Create New App/creatediabetes1.png
+./img/Navigating/Create New App/cv
+./img/Navigating/Create New App/Database drop-down list.png
+./img/Navigating/Create New App/Dataframe.png
+./img/Navigating/Create New App/Divider1.png
+./img/Navigating/Create New App/DND10.png
+./img/Navigating/Create New App/DND11.png
+./img/Navigating/Create New App/DND12.png
+./img/Navigating/Create New App/DND13.png
+./img/Navigating/Create New App/DND14.png
+./img/Navigating/Create New App/DND15.png
+./img/Navigating/Create New App/DND2.png
+./img/Navigating/Create New App/DND3.png
+./img/Navigating/Create New App/DND4.png
+./img/Navigating/Create New App/DND5.png
+./img/Navigating/Create New App/DND6.png
+./img/Navigating/Create New App/DND7.png
+./img/Navigating/Create New App/DND8.png
+./img/Navigating/Create New App/DND9.png
+./img/Navigating/Create New App/DNDdivider.png
+./img/Navigating/Create New App/DNDhtml.png
+./img/Navigating/Create New App/DNDinput.png
+./img/Navigating/Create New App/DNDlayers.png
+./img/Navigating/Create New App/DNDlayout.png
+./img/Navigating/Create New App/DNDnew.png
+./img/Navigating/Create New App/DNDtext.png
+./img/Navigating/Create New App/DNDtheme.png
+./img/Navigating/Create New App/Drag and Drop UI.PNG
+./img/Navigating/Create New App/Drag and Drop.png
+./img/Navigating/Create New App/Edit the App.png
+./img/Navigating/Create New App/editblocks.png
+./img/Navigating/Create New App/editnotebook.png
+./img/Navigating/Create New App/editvariables.png
+./img/Navigating/Create New App/Element.png
+./img/Navigating/Create New App/Elementsnew.jpg
+./img/Navigating/Create New App/HTML.png
+./img/Navigating/Create New App/Icon.png
+./img/Navigating/Create New App/Iframe.png
+./img/Navigating/Create New App/Image.png
+./img/Navigating/Create New App/Input.png
+./img/Navigating/Create New App/Inputnew.jpg
+./img/Navigating/Create New App/landingmain.png
+./img/Navigating/Create New App/landingone.png
+./img/Navigating/Create New App/LandingPage1.png
+./img/Navigating/Create New App/LandingPage2.png
+./img/Navigating/Create New App/LandingPage3.png
+./img/Navigating/Create New App/LandingPage4.png
+./img/Navigating/Create New App/LandingPage5.png
+./img/Navigating/Create New App/LandingPage6.png
+./img/Navigating/Create New App/landingpagecreation.png
+./img/Navigating/Create New App/Layers.png
+./img/Navigating/Create New App/Layersnew.jpg
+./img/Navigating/Create New App/Layoutnew.jpg
+./img/Navigating/Create New App/llmfour.png
+./img/Navigating/Create New App/llmone.png
+./img/Navigating/Create New App/llmthree.png
+./img/Navigating/Create New App/llmtwo.png
+./img/Navigating/Create New App/modelchange.png
+./img/Navigating/Create New App/Multiple cells.png
+./img/Navigating/Create New App/NB1.png
+./img/Navigating/Create New App/NB2.png
+./img/Navigating/Create New App/NB3.png
+./img/Navigating/Create New App/NB4.png
+./img/Navigating/Create New App/NB5.png
+./img/Navigating/Create New App/NB6.png
+./img/Navigating/Create New App/NB7.png
+./img/Navigating/Create New App/Pagequery.png
+./img/Navigating/Create New App/Query linked to action.png
+./img/Navigating/Create New App/Scripting Language.png
+./img/Navigating/Create New App/Settings.png
+./img/Navigating/Create New App/Text.png
+./img/Navigating/Create New App/Textnew.jpg
+./img/Navigating/Create New App/Theme.png
+./img/Navigating/Create New App/Transformation.png
+./img/Navigating/Create New App/Transformationuppercase.png
+./img/Navigating/Create New App/UI Building Blocks.png
+./img/Navigating/Create New App/VAR1.png
+./img/Navigating/Create New App/VAR2.png
+./img/Navigating/Create New App/VAR3.png
+./img/Navigating/Create New App/VAR4.png
+./img/Navigating/Create New App/VAR5.png
+./img/Navigating/Create New App/VAR6.png
+./img/Navigating/Create New App/VAR7.png
+./img/Navigating/Create New App/Variableinquery.png
+./img/Navigating/Create New App/Visualization.png
+./img/Navigating/CreateInsight.png
+./img/Navigating/CreateProject.png
+./img/Navigating/CreateVectorDB.png
+./img/Navigating/Database Connection double click.png
+./img/Navigating/Database Drop Down List.PNG
+./img/Navigating/Database icon highlight.png
+./img/Navigating/Database metadata section.png
+./img/Navigating/Database Metadata tab.PNG
+./img/Navigating/Database Overview Section.png
+./img/Navigating/Database Overview Tab.PNG
+./img/Navigating/Database Permission Levels.PNG
+./img/Navigating/Database Request Access.png
+./img/Navigating/Database Section .png
+./img/Navigating/Database Settings.png
+./img/Navigating/Database Usage Tab.PNG
+./img/Navigating/Database Usage.png
+./img/Navigating/Datatabwithqueries.PNG
+./img/Navigating/Delete Block.PNG
+./img/Navigating/Display.PNG
+./img/Navigating/domainName.png
+./img/Navigating/Downloaded Zip File.PNG
+./img/Navigating/editNotepad.png
+./img/Navigating/encodingCSV.png
+./img/Navigating/Engine variable edit.png
+./img/Navigating/Engine Variables.png
+./img/Navigating/exporting.png
+./img/Navigating/File Explorer Screenshot.png
+./img/Navigating/filename.png
+./img/Navigating/Github Folder.PNG
+./img/Navigating/ImportData.png
+./img/Navigating/Insight2.png
+./img/Navigating/Insight3.png
+./img/Navigating/Insight4.png
+./img/Navigating/Insight5.png
+./img/Navigating/Into the resource.PNG
+./img/Navigating/Layer.PNG
+./img/Navigating/ModelCatalogIconHighlight.PNG
+./img/Navigating/Modifying Block.PNG
+./img/Navigating/Multiple cells.PNG
+./img/Navigating/Navigating1.png
+./img/Navigating/Navigating2.png
+./img/Navigating/Navigating3.PNG
+./img/Navigating/Navigating4.png
+./img/Navigating/NewAppThroughBlockGuide.PNG
+./img/Navigating/NoteBookVarsAfter.png
+./img/Navigating/NoteBookVarsBefore.png
+./img/Navigating/panel.png
+./img/Navigating/parsing.png
+./img/Navigating/Permission Access.PNG
+./img/Navigating/PolicyBot.PNG
+./img/Navigating/Presentation.png
+./img/Navigating/Pythonprefixforuploadblock.png
+./img/Navigating/Query Linked to action.PNG
+./img/Navigating/Resource Usage Tab.PNG
+./img/Navigating/Run Query.PNG
+./img/Navigating/Scripting Language.PNG
+./img/Navigating/Semoss screenshot.png
+./img/Navigating/Settings.PNG
+./img/Navigating/settingspage.png
+./img/Navigating/Sign into Github.PNG
+./img/Navigating/Storage Catalogue.png
+./img/Navigating/Storage Options.PNG
+./img/Navigating/Storage Settings.PNG
+./img/Navigating/Storage usage.PNG
+./img/Navigating/Successfully Cloned.PNG
+./img/Navigating/UI Built Application.PNG
+./img/Navigating/unzipped folder.PNG
+./img/Navigating/UploadBlockApp.PNG
+./img/Navigating/User Input.PNG
+./img/Navigating/varDelete.png
+./img/Navigating/varGuideCreation.png
+./img/Navigating/VariablesExample.png
+./img/Navigating/VariablesGuide.jpeg
+./img/Navigating/Various Model Options.PNG
+./img/Navigating/vartwo.png
+./img/Navigating/Vector2.png
+./img/Navigating/vectorDB1.PNG
+./img/Navigating/Workspace screenshot.png
+./img/OverviewImages
+./img/OverviewImages/AppLibrary.PNG
+./img/OverviewImages/Insight.PNG
+./img/OverviewImages/PolicyBot.png
+./img/OverviewImages/StorageCatalogue.PNG
+./img/Pixel Calls
+./img/Pixel Calls/Help1.PNG
+./img/Pixel Calls/help2.png
+./img/PlatformNavigation
+./img/PlatformNavigation/appaccessnew.png
+./img/PlatformNavigation/AppLibrary
+./img/PlatformNavigation/AppLibrary/AppAccess.png
+./img/PlatformNavigation/AppLibrary/AppSettings.png
+./img/PlatformNavigation/AppLibrary/BrowseTemplates.png
+./img/PlatformNavigation/AppLibrary/CreateNewAppButton.png
+./img/PlatformNavigation/AppLibrary/CreateNewAppOptions.png
+./img/PlatformNavigation/AppLibrary/NewAppPopup.png
+./img/PlatformNavigation/AppLibrary/PreviewApp.png
+./img/PlatformNavigation/AppLibrary/SaveApp.png
+./img/PlatformNavigation/AppLibrary/SearchAppLibrary.png
+./img/PlatformNavigation/AppLibrary/ShareApp.png
+./img/PlatformNavigation/AppLibrary/ShowApp.png
+./img/PlatformNavigation/AppsearchPN.png
+./img/PlatformNavigation/Browsetemplates.png
+./img/PlatformNavigation/CreateNewAppbuttonPN.png
+./img/PlatformNavigation/CreatenewappPN.png
+./img/PlatformNavigation/Editbutton.png
+./img/PlatformNavigation/HomepagePN.png
+./img/PlatformNavigation/Settings.png
+./img/Policy Bot
+./img/Policy Bot/CopyAppId.png
+./img/Policy Bot/policyBot.png
+./img/Policy Bot/VSCode.png
+./img/Policy Bot/zip.png
+./img/policyapp
+./img/policyapp/polic15pic.PNG
+./img/policyapp/policy10pic.png
+./img/policyapp/policy11pic.PNG
+./img/policyapp/policy12pic.PNG
+./img/policyapp/policy13pic.PNG
+./img/policyapp/policy14pic.PNG
+./img/policyapp/policy16.PNG
+./img/policyapp/policy1pic.PNG
+./img/policyapp/Policy2pic.PNG
+./img/policyapp/policy3pic.png
+./img/policyapp/policy4pic.PNG
+./img/policyapp/policy5pic.png
+./img/policyapp/policy6pic.PNG
+./img/policyapp/policy7pic.PNG
+./img/policyapp/policy8pic.png
+./img/policyapp/policy9pic.PNG
+./img/Pro Code
+./img/Pro Code/AccessSettings.png
+./img/Pro Code/AppPageBookmark.png
+./img/Pro Code/AppSettings.png
+./img/Pro Code/Bookmark.png
+./img/Pro Code/CreateApp.png
+./img/Pro Code/CreateNewFile.png
+./img/Pro Code/CreateNewFolder.png
+./img/Pro Code/CreateProCode.png
+./img/Pro Code/CreateSave.png
+./img/Pro Code/DeleteApp.png
+./img/Pro Code/desktop.ini
+./img/Pro Code/Discoverable.png
+./img/Pro Code/EditApp.png
+./img/Pro Code/EditFile.png
+./img/Pro Code/FileStructure.png
+./img/Pro Code/MemberSettings.png
+./img/Pro Code/NonDiscoverable.png
+./img/Pro Code/Pending.png
+./img/Pro Code/PortalsUpload.png
+./img/Pro Code/Private.png
+./img/Pro Code/PublishFiles.png
+./img/Pro Code/PublishProject.png
+./img/Pro Code/Reactors.png
+./img/Pro Code/RecompileReactors.png
+./img/Pro Code/Redeployed.png
+./img/Pro Code/SaveFile.png
+./img/Pro Code/Settings.png
+./img/Pro Code/ShareIFrame.png
+./img/Pro Code/ShareToggle.png
+./img/Pro Code/ShareURL.png
+./img/Pro Code/SuccessfullyRecompiled.png
+./img/Pro Code/Terminal.png
+./img/Pro Code/UploadFiles.png
+./img/Pro Code/UploadFilesOptions.png
+./img/ProvenSolutions
+./img/ProvenSolutions/GovConnectaiart.png
+./img/ProvenSolutions/sampleapplication.png
+./img/RAG
+./img/RAG/AddVectorDB.png
+./img/RAG/ConstructAnAgent.png
+./img/RAG/HomeMenu.png
+./img/RAG/HRAppConstraints.png
+./img/RAG/HRAppCreation.png
+./img/RAG/HRAppTest.png
+./img/RAG/HRAppView.png
+./img/RAG/PreviewPrompt.png
+./img/RAG/SelectingDBConnection.png
+./img/RAG/SelectingRAGInput.png
+./img/RAG/SettingPrompt.png
+./img/RAG/VectorDetails.png
+./img/RAG/VectorPreview.png
+./img/SemossDevInstallation
+./img/SemossDevInstallation/.m2folder.png
+./img/SemossDevInstallation/AddandRemove.png
+./img/SemossDevInstallation/BuildPath.png
+./img/SemossDevInstallation/cataline.propertiesfile.png
+./img/SemossDevInstallation/semossai-uifolder.png
+./img/SemossDevInstallation/Changeinnotepad++.png
+./img/SemossDevInstallation/CheckoutPopup.png
+./img/SemossDevInstallation/CheckoutPopupMonolith.png
+./img/SemossDevInstallation/CommandPrompt.png
+./img/SemossDevInstallation/CommandPromptAnaconda.png
+./img/SemossDevInstallation/CommandPrompttoinstallmaven.png
+./img/SemossDevInstallation/EclipseDownloadLink.png
+./img/SemossDevInstallation/EditPath.png
+./img/SemossDevInstallation/Editsourcefolder.png
+./img/SemossDevInstallation/EditwithNotepad++.png
+./img/SemossDevInstallation/EnvironmentVariables.png
+./img/SemossDevInstallation/Error.jpg
+./img/SemossDevInstallation/ExpandedServer.png
+./img/SemossDevInstallation/file
+./img/SemossDevInstallation/FrontEndCommandPrompt.png
+./img/SemossDevInstallation/GitPullConflict.jpg
+./img/SemossDevInstallation/GitPullOutput.jpg
+./img/SemossDevInstallation/GitStashPopConflict.jpg
+./img/SemossDevInstallation/GitStashPopOutput.jpg
+./img/SemossDevInstallation/GitStatusOutput.jpg
+./img/SemossDevInstallation/Import Maven Projects.png
+./img/SemossDevInstallation/Importmaveninmonolith.png
+./img/SemossDevInstallation/ImportMavenProject_Projects.png
+./img/SemossDevInstallation/java21-1.png
+./img/SemossDevInstallation/java21.png
+./img/SemossDevInstallation/JavaBuildPath-Monolith.png
+./img/SemossDevInstallation/LegacyFolder.png
+./img/SemossDevInstallation/Lineincommandprompt.png
+./img/SemossDevInstallation/Mac1.png
+./img/SemossDevInstallation/Mac10.png
+./img/SemossDevInstallation/Mac11.png
+./img/SemossDevInstallation/Mac12.png
+./img/SemossDevInstallation/Mac13.png
+./img/SemossDevInstallation/Mac14.png
+./img/SemossDevInstallation/Mac2.png
+./img/SemossDevInstallation/Mac3.png
+./img/SemossDevInstallation/Mac4.png
+./img/SemossDevInstallation/Mac5.png
+./img/SemossDevInstallation/Mac6.png
+./img/SemossDevInstallation/Mac7.png
+./img/SemossDevInstallation/Mac8.png
+./img/SemossDevInstallation/Mac9.png
+./img/SemossDevInstallation/MavenProgress.png
+./img/SemossDevInstallation/Moduletab.png
+./img/SemossDevInstallation/Monolithfolderinjava.png
+./img/SemossDevInstallation/NewServer.png
+./img/SemossDevInstallation/nodeversions.png
+./img/SemossDevInstallation/OptionalLibrariesAnaconda.png
+./img/SemossDevInstallation/OptionalLibraryvisualstudio.png
+./img/SemossDevInstallation/Pathvariable.png
+./img/SemossDevInstallation/Pathvariable2.png
+./img/SemossDevInstallation/Pic1.png
+./img/SemossDevInstallation/Pic2.png
+./img/SemossDevInstallation/Pic3.png
+./img/SemossDevInstallation/Pic4.png
+./img/SemossDevInstallation/Picture 1.png
+./img/SemossDevInstallation/Picture10.png
+./img/SemossDevInstallation/Picture11.png
+./img/SemossDevInstallation/Picture12.png
+./img/SemossDevInstallation/Picture13.png
+./img/SemossDevInstallation/Picture14.png
+./img/SemossDevInstallation/Picture2.png
+./img/SemossDevInstallation/Picture3.png
+./img/SemossDevInstallation/Picture4.png
+./img/SemossDevInstallation/Picture5.png
+./img/SemossDevInstallation/Picture6.png
+./img/SemossDevInstallation/Picture7.png
+./img/SemossDevInstallation/Picture8.png
+./img/SemossDevInstallation/Picture9.png
+./img/SemossDevInstallation/ProjectExplorer.png
+./img/SemossDevInstallation/ProjectExplorer_updatemaven.png
+./img/SemossDevInstallation/Pythonterminal.png
+./img/SemossDevInstallation/RDF_map.propAnaconda.png
+./img/SemossDevInstallation/RDF_MapPython.png
+./img/SemossDevInstallation/RDP_MapinFolder.png
+./img/SemossDevInstallation/REnvironmentVariables.png
+./img/SemossDevInstallation/ResolveConflict.jpg
+./img/SemossDevInstallation/RTerminal.png
+./img/SemossDevInstallation/RunCommand.png
+./img/SemossDevInstallation/SemossStarted.jpg
+./img/SemossDevInstallation/server.xml.png
+./img/SemossDevInstallation/ServerModule.png
+./img/SemossDevInstallation/Servers.png
+./img/SemossDevInstallation/Servertab.png
+./img/SemossDevInstallation/SetupR.png
+./img/SemossDevInstallation/SVNCheckout.png
+./img/SemossDevInstallation/SVNCheckoutMonolith.png
+./img/SemossDevInstallation/SystemExplorer.png
+./img/SemossDevInstallation/SystemVariable.png
+./img/SemossDevInstallation/Systemvariable2.png
+./img/SemossDevInstallation/tomcat error.png
+./img/SemossDevInstallation/Trick1.png
+./img/SemossDevInstallation/Trick10.png
+./img/SemossDevInstallation/Trick11.png
+./img/SemossDevInstallation/Trick12.png
+./img/SemossDevInstallation/Trick13.png
+./img/SemossDevInstallation/Trick14.png
+./img/SemossDevInstallation/Trick15.png
+./img/SemossDevInstallation/Trick16.png
+./img/SemossDevInstallation/Trick17.png
+./img/SemossDevInstallation/Trick18.png
+./img/SemossDevInstallation/Trick19.png
+./img/SemossDevInstallation/Trick2.png
+./img/SemossDevInstallation/Trick20.jpg
+./img/SemossDevInstallation/Trick21.png
+./img/SemossDevInstallation/Trick22.png
+./img/SemossDevInstallation/Trick23.png
+./img/SemossDevInstallation/Trick24.png
+./img/SemossDevInstallation/Trick25.png
+./img/SemossDevInstallation/Trick3.png
+./img/SemossDevInstallation/Trick4.png
+./img/SemossDevInstallation/Trick5.png
+./img/SemossDevInstallation/Trick6.png
+./img/SemossDevInstallation/Trick7.png
+./img/SemossDevInstallation/Trick8.png
+./img/SemossDevInstallation/Trick9.png
+./img/SemossDevInstallation/VisualStudioInstallerAnanconda.png
+./img/SemossDevInstallation/web.xml.png
+./img/SemossDevInstallation/webappsappconstant.png
+./img/SemossDevInstallation/WebappsPath.png
+./img/SemossDevInstallation/Webmodule.png
+./img/SemossDevInstallation/WorkspaceFolder.png
+./img/SemossDevInstallation/WorkspaceLauncher.png
+./img/SemossDevInstallation/WorkspacePath.png
+./img/SemossDevInstallation/WorkspacePathMonolith.png
+./img/SemossDevInstallation/WSSAgent.png
+./img/Settings
+./img/Settings/codesample.png
+./img/Settings/generatekey.png
+./img/Settings/Settings1.png
+./img/Settings/Settings11.png
+./img/Settings/Settings12.png
+./img/Settings/Settings13.png
+./img/Settings/Settings14.png
+./img/Settings/Settings2.png
+./img/Settings/Settings3.png
+./img/Settings/Settings4.png
+./img/Settings/Settings5.png
+./img/Settings/Settings6.png
+./img/SidebarMenu
+./img/SidebarMenu/BlockSettingsPanel.jpg
+./img/SidebarMenu/BlocksMenu.jpg
+./img/SidebarMenu/DragLink.jpg
+./img/SidebarMenu/NestedLinks.jpg
+./img/SidebarMenu/OpenState.jpg
+./img/SidebarMenu/SidebarLanding.jpg
+./img/SidebarMenu/SidebarSettings.jpg
+./img/SidebarMenu/VisualOptions.jpg
+./img/SimpleModelInteraction
+./img/SimpleModelInteraction/GPTModel.png
+./img/SimpleModelInteraction/ModelCatalog.png
+./img/SimpleModelInteraction/PromptResponse.png
+./img/SimpleModelInteraction/ReactAppUI.png
+./img/SimpleModelInteraction/VSCodeExample.png
+./img/StreamlitImages
+./img/StreamlitImages/ai-server-chatbot-app.png
+./img/StreamlitImages/update-steps.png
+./img/Systemcomponents
+./img/Systemcomponents/Audio1.png
+./img/Systemcomponents/Audio2.png
+./img/Systemcomponents/Audioplayer.png
+./img/Systemcomponents/Block.png
+./img/Systemcomponents/Blocksettings.jpg
+./img/Systemcomponents/Change.png
+./img/Systemcomponents/Checkbox1.png
+./img/Systemcomponents/Chip1.png
+./img/Systemcomponents/Chip2.png
+./img/Systemcomponents/Chip3.png
+./img/Systemcomponents/Icon1.png
+./img/Systemcomponents/Icon2.png
+./img/Systemcomponents/Icon3.png
+./img/Systemcomponents/Iframe.png
+./img/Systemcomponents/Image.png
+./img/Systemcomponents/Progress.png
+./img/Systemcomponents/Query.jpg
+./img/Systemcomponents/Query1.png
+./img/Systemcomponents/Query2.png
+./img/Systemcomponents/Select.png
+./img/Systemcomponents/Value.png
+./img/Text2Sql
+./img/Text2Sql/AppCatalog.jpg
+./img/Text2Sql/CsvData.jpg
+./img/Text2Sql/ModelDropdown.jpg
+./img/Text2Sql/QueryOutput1.jpg
+./img/Text2Sql/QueryOutput2.jpg
+./img/Text2Sql/Text2Sql-Landing-Page.jpg
+./img/Text2Sql/UploadFile.jpg
+./img/undraw_docusaurus_mountain.svg
+./img/undraw_docusaurus_react.svg
+./img/undraw_docusaurus_tree.svg
+./img/UpdateApp
+./img/UpdateApp/DemoApp_data.PNG
+./img/UpdateApp/demoAPP_edit.PNG
+./img/UpdateApp/DemoApp_settings.PNG
+./img/UpdateApp/DemoApp_update.PNG
+./img/UpdateApp/Iframe.png
+./img/UploadApp
+./img/UploadApp/modal1.png
+./img/UploadApp/modal2.png
+./img/UploadApp/modal3.png
+./img/UploadApp/modal4.png
+./img/UploadApp/upload-app-button.png
+./img/UseCases
+./img/UseCases/OutputDashboard.jpeg
+./img/UseCases/SemossUrlCheck.jpeg
+./img/UseCases/UrlFinding.jpeg
+./img/VanillaJS
+./img/VanillaJS/Adding_Demo_App.PNG
+./img/VanillaJS/Add_App.png
+./img/VanillaJS/Demo
+./img/VanillaJS/Demo App.png
+./img/VanillaJS/DemoApp_Added.PNG
+./img/VanillaJS/Demo_App.png
+./img/VanillaJS/Engine_ID.PNG
+./img/VanillaJS/ImportingInsight.PNG
+./img/VanillaJS/ModelCatalog.png
+./img/VanillaJS/ModelID.PNG
+./img/VanillaJS/Portals_folder.png
+./img/VanillaJS/RequestingAccess.PNG
+./img/VanillaJS/Zip_file.png
+./img/VectorDatabase
+./img/VectorDatabase/AddVectorUI.png
+./img/VectorDatabase/SEMOSSTerminal.png
+./img/VectorDatabase/CreateVectorDB.png
+./img/VectorDatabase/EmbedDB.png
+./img/VectorDatabase/InsightWorkspace.png
+./img/VectorDatabase/TerminalEditor.png
+./img/VectorDatabase/test
+./img/VectorDatabase/UploadDB.png
+./img/VectorDatabase/VCsettingsOne.png
+./img/VectorDatabase/VCsettingsThree.png
+./img/VectorDatabase/VCsettingsTwo.png
+./img/VectorDatabase/Vector2.png
+./img/VectorDatabase/Vector3.png
+./img/VectorDatabase/Vector4.PNG
+./img/VectorDatabase/Vector5.PNG
+./img/VectorDatabase/vector6.PNG
+./img/VectorDatabase/VectorAdded.png
+./img/VectorDatabase/VectorCatalog.png
+./img/VectorDatabase/VectorConnect.png
+./img/VectorDatabase/vectorDB1.PNG
