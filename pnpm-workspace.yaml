@@ -1,3 +1,9 @@
 packages:
   - 'docusaurus'
   - 'packages/*'
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  core-js-pure: true
+  inotify: false
+  postman-code-generators: true

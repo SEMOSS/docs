@@ -9,30 +9,30 @@ on:
 
 jobs:
   build:
-    runs-on: codebuild-semoss-github-runner-${{ github.run_id }}-${{ github.run_attempt }}
-    container:
-      image: public.ecr.aws/docker/library/node:24-bullseye
+    runs-on: self-hosted
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24.4.1'   # use your project's required version
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v2
         with:
           version: latest
 
-      - name: Install libatomic
-        run: apt-get update && apt-get install -y libatomic1
-
-      - name: Install plugin dependencies
-        run: |
-          cd packages/docusaurus-plugin-reactor-docgen
-          pnpm install --frozen-lockfile
+      #- name: Install plugin dependencies
+      #  run: |
+      #    cd packages/docusaurus-plugin-reactor-docgen
+      #    pnpm install --frozen-lockfile
 
       - name: Install dependencies
         run: |
-          cd docusaurus
-          pnpm install --frozen-lockfile
+          pnpm install 
       
 
 
