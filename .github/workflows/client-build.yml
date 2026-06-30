@@ -2,8 +2,7 @@ name: Client Documentation Build
 on:
   push:
     branches:
-      - client
-      - docker-refactor
+      - main
 jobs:
   build:
     runs-on: codebuild-semoss-github-runner-${{ github.run_id }}-${{ github.run_attempt }}
