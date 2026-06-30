@@ -9,19 +9,15 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
-
-    steps:
+      runs-on: codebuild-semoss-github-runner-${{ github.run_id }}-${{ github.run_attempt }}
+      container:
+        image: public.ecr.aws/docker/library/node:24-bullseye
+      steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '24.4.1'   # use your project's required version
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           version: latest
 
