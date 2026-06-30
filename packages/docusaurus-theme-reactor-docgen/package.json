@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@docusaurus/theme-classic": "^3.10.0",
     "@docusaurus/theme-common": "^3.10.0",
