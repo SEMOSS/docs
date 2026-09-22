@@ -5,11 +5,11 @@ slug: "/prerequisites"
 ---
 import AppName from "@site/src/components/CustomFields";
 
-# Packages and Prerequisites for SEMOSSName Apps
+# Packages and Prerequisites for AI Core Apps
 
 ## Overview
 
-In this section we will go through what front end and back end packages are necessary for most SEMOSSName apps.
+In this section we will go through what front end and back end packages are necessary for most <AppName /> apps.
 
 ## Front End Prerequisities
 
@@ -44,7 +44,7 @@ To do so open a terminal and install it using:
 
 #### Installing the SEMOSS SDK
 
-The SEMOSS SDK includes software-building tools for a connecting SEMOSSName to a custom React app. To use the SDK, ensure you have node, node package manager, and code editor installed.
+The SEMOSS SDK includes software-building tools for a connecting <AppName /> to a custom React app. To use the SDK, ensure you have node, node package manager, and code editor installed.
 
 Use PNPM/NPM to install the following packages and add them to your project.
 
@@ -58,43 +58,41 @@ For a deep dive into the directory structure of your project, see the [React App
 
 ### Optional: Fully Local Front End Installation
 
-You **do NOT need a fully local front end installation** to build apps that run on SEMOSSName.
+You **do NOT need a fully local front end installation** to build apps that run on <AppName />.
 
-However, if you wish to contribute to the SEMOSSName project or want visibility into the front end source code, please follow this guide: [Frontend Local Installation Guide](../../Advanced%20Installation/Frontend%20Installation.md)
+However, if you wish to contribute to the <AppName /> project or want visibility into the front end source code, please follow this guide: [Front End Installation Guide](../../Advanced%20Installation/Front%20End%20Installation.md)
 
 ## Back End Prerequisities
 
-Please Note that these are only necessary if you are planning on running a local back end. The majority of projects do not need to do so. Please refer to the [Docker BE Install Guide](../../Advanced%20Installation/Docker%20BE%20Install%20Guide.md) to see if you need to go through a back end installation.
+Please Note that these are only necessary if you are planning on running a local back end. The majority of projects do not need to do so. Please refer to the [Docker Back End Installation guide](../../Advanced%20Installation/Docker%20Back%20End%20Installation.md) to see if you need to go through a back end installation.
 
 ### Back End Setup Overview
 
-Though it is possible to develop apps solely with front end frameworks, SEMOSSName allows you to incorporate custom back end logic using **Java** and **Python**. To get started with custom back end development, follow the [Java Setup](#java-setup) and [Python Setup](#python-setup) sections below.
+Though it is possible to develop apps solely with front end frameworks, <AppName /> allows you to incorporate custom back end logic using **Java** and **Python**. To get started with custom back end development, follow the [Java Setup](#java-setup) and [Python Setup](#python-setup) sections below.
 
 **Optional - Web Server vs. Local Instance: Which should I choose?**
 
-Next, choose whether you want to connect with the **web version** of SEMOSSName, or if you want to run a **local instance** of SEMOSSName instead.
-Note that the primary way that most users will interact with the SEMOSSName back end is through its **[live web server](https://MonoLithURL/SemossWeb/packages/client/dist/#/)**. If you followed the previous section on [generating access and secret keys](./ConnectingToAI.md#generating-access-and-secret-keys), then you already can access this web server.
+Next, choose whether you want to connect with the **web version** of <AppName />, or if you want to run a **local instance** of <AppName /> instead.
+Note that the primary way that most users will interact with the <AppName /> back end is through its **[live web server](https://workshop.cfg.deloitte.com/cfg-ai-demo/SemossWeb/packages/client/dist/#/)**. If you followed the previous section on [generating access and secret keys](./Connecting%20to%20CFG%20AI.md#generating-access-and-secret-keys), then you already can access this web server.
 
-However, if you wish to have **admin privileges** or **greater control of an SEMOSSName instance**, you can choose to run the SEMOSSName server locally. SEMOSSName provides two methods to run a SEMOSSName instance locally, which are:
+However, if you wish to have **admin privileges** or **greater control of an <AppName /> instance**, you can choose to run the <AppName /> server locally. <AppName /> provides two methods to run a <AppName /> instance locally, which are:
 
 1. [Docker Container](#optional-starting-the-dockerized-back-end)
 2. [Fully Local Installation](#optional-fully-local-back-end-installation)
 
 ### Java Setup
 
-#### Java SE Development Kit 8u831 (JDK8) Download
+#### Java Development Kit 25 (JDK 25) Download
 
-> **Important** > _Please note that the specific edition of Java that SEMOSSName requires is **Java SE Development Kit 8u381**. You MUST use this version of Java SE._
+> **Important**
+> Use **JDK 25** for local back end development. Semoss version 6 is compatable with Java 21, the container is built using Java 25.
 
-If you already have **Java SE Development Kit 8u831 (JDK8)** installed, skip to the next section: **[`JAVA_HOME` Environment Variable](#java_home-environment-variable)**.
+If you already have **JDK 25** installed, skip to the next section: **[`JAVA_HOME` Environment Variable](#java_home-environment-variable)**.
 
-1. Click on the following link to access the Java downloads page: [Java SE Development Kit (JDK8)​](https://www.oracle.com/java/technologies/downloads/#java8)
-2. Scroll down to find **‘Java SE Development Kit 8u381’** and select the download that matches your computer's **OS and bit version.**
-3. Accept License Agreement and download​
-   - You will need to create an Oracle account using your email address​
-4. Open up the file once it has finished downloading
-5. Select next, next, next, all the way through;
-   - By default, the installer will place Java into your `C:\Program Files` directory
+1. Download a JDK from [Azul Zulu Builds of OpenJDK](https://www.azul.com/downloads/) (or your organization's preferred JDK distribution).
+2. Select **Java 25**, then download the build that matches your OS and architecture.
+3. Install the JDK.
+   - On Windows, the installer typically places Java under `C:\Program Files\Java`.
 
 #### `JAVA_HOME` Environment Variable
 
@@ -112,8 +110,8 @@ If you already have **Java SE Development Kit 8u831 (JDK8)** installed, skip to 
 
 If you already have **Apache Maven** installed, skip to the next section: **[`MVN_HOME` Environment Variable](#mvn_home-environment-variable)** .
 
-1. Click on the following link to access the Maven downloads page: [Maven​](https://maven.apache.org/download.cgi)
-2. Click the download link beside **Binary zip archive**, and unzip this to your `Documents` folder​
+1. Click on the following link to access the Maven downloads page: [Maven](https://maven.apache.org/download.cgi)
+2. Click the download link beside **Binary zip archive**, and unzip this to your `Documents` folder
 
 #### `MVN_HOME` Environment Variable
 
@@ -160,9 +158,9 @@ If you already have **Python 3.9+** installed, skip to the next section: **[`PYT
 8. Click OK, the OK again to save the System Environment variables.
 9. If you had any open IDEs or processes that use the `PATH` or `PYTHONHOME` variables, you will need to stop those processes and **restart them** to pull in the new paths.
 
-#### Python Packages Available within SEMOSS
+#### Python Packages Available within AI Core
 
-SEMOSSName currently comes bundled with the packages in the below list.
+<AppName /> currently comes bundled with the packages in the below list.
 
 You can choose to install the relevant packages for your project from the below list by running the following command:
 `pip install PACKAGE_NAME==VERSION_NUMBER`
@@ -188,7 +186,7 @@ where `PACKAGE_NAME` and `VERSION_NUMBER` are replaced with the actual name and 
 
 After installing the packages, you can view where they are installed by navigating to the `Lib` folder within your `PYTHON_HOME` directory (ex: `C:\Users\YOUR_USERNAME\AppData\Local\Programs\Python\Python310\Lib`).
 
-If the following packages are not satisfactory for your application, then please email [support-email](mailto:support-email) for support with additional packages.
+If the following packages are not satisfactory for your application, then please email globalaicoreplatform@deloitte.com for support with additional packages.
 
 ```
 accelerate==0.25.0
@@ -512,12 +510,14 @@ const hello = (name) => {
 
 ### Optional: Starting the Dockerized Back End
 
-For users who wish to have **admin privileges** or want to host a **private instance** of SEMOSSName, SEMOSSName has made it possible for users to run SEMOSSName locally by packaging its back end into a **Docker image**. The Docker image allows users to quickly start running SEMOSSName inside of a container. To run the back end, please follow this guide: [Docker BE Install Guide](../../Advanced%20Installation/Docker%20BE%20Install%20Guide.md)
+For users who wish to have **admin privileges** or want to host a **private instance** of <AppName />, <AppName /> has made it possible for users to run <AppName /> locally by packaging its back end into a **Docker image**. The Docker image allows users to quickly start running <AppName /> inside of a container. To run the back end, please follow this guide: [Docker Back End Installation](../../Advanced%20Installation/Docker%20Back%20End%20Installation.md)
 
-If you need **even greater control** over SEMOSSName, including the ability to directly modify core SEMOSSName source code or to bring your own dependencies, please follow the instructions in the next section (Optional: Fully Local Back End Installation).
+If you need **even greater control** over <AppName />, including the ability to directly modify core <AppName /> source code or to bring your own dependencies, please follow the instructions in the next section (Optional: Fully Local Back End Installation).
 
 ### Optional: Fully Local Back End Installation
 
-You **do NOT need to do a full local installation** in order to run SEMOSSName locally. For most users, it is sufficient to simply download **Java** and **Python**, and then run the back end in a **Docker container** as noted in the previous section.
+You **do NOT need to do a full local installation** in order to run <AppName /> locally. For most users, it is sufficient to simply download **Java** and **Python**, and then run the back end in a **Docker container** as noted in the previous section.
 
-However, if you wish to **contribute to the SEMOSSName project** or want **visibility into the back end source code**, please follow the instructions in this guide: [Local BE Install Guide](../../Advanced%20Installation/Local%20BE%20Install%20Guide.md).
+However, if you wish to **contribute to the <AppName /> project** or want **visibility into the back end source code**, please follow the appropriate guide for your OS:
+- [Windows Back End Installation](../../Advanced%20Installation/Windows%20Back%20End%20Installation.md)
+- [Mac Back End Installation](../../Advanced%20Installation/Mac%20Back%20End%20Installation.md)

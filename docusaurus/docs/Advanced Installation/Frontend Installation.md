@@ -1,171 +1,182 @@
 ---
-sidebar_label: 'Frontend Installation'
-sidebar_position: 2
+sidebar_label: 'Front End Installation'
+sidebar_position: 3
+slug: "/advanced-installation/front-end-installation"
 ---
 
-import AppName, {WrapVariable} from "@site/src/components/CustomFields";
+import AppName from "@site/src/components/CustomFields";
 
-# Local Front End Installation Guide
-
-Local SEMOSSName Front End Installation Guide
-
+# Front End Installation Guide
 
 ## Overview
 
-The main way that you'll interact with a Gen AI app is through the SEMOSSName server. By using the SDK you will be able to access the data that you have stored inside your server. However, you can also setup SEMOSSName to run locally. 
+This guide covers how to build and run the <AppName /> frontend locally. The frontend connects to your locally running backend (Tomcat) server.
 
-There are several reasons why this might be useful to you, the main one being that you will have admin privileges back in, and that you can change the SEMOSSName interface to fit your needs more directly. 
+## Before you start
+- **Terminal**: on Windows, use **Command Prompt** (`cmd`) or **PowerShell**. On Mac, use the **Terminal** app.
+- You will run copy/paste commands. If you see “command not found”, double check you reopened your terminal after installing tools.
+- If you run into an error at any point, check the [Troubleshooting Tips](Troubleshooting%20Tips.md) guide before continuing.
 
-This guide will go through what steps to take to get SEMOSSName to run locally as a frontend server.
+Before proceeding, make sure you have completed the backend installation for your platform:
+- [Windows Back End Installation](Windows%20Back%20End%20Installation.md)
+- [Mac Back End Installation](Mac%20Back%20End%20Installation.md)
 
 ## Prerequisites
 
-### Node.js
-You can install Node on your machine by downloading the appropriate installer for your device directly from the Node.js website. Version [v18.16.0](https://nodejs.org/download/release/v18.16.0/) is suggested for our projects (for most Windows machines, you should download `node-v18.16.0-x64.msi`). 
+### Node.js and pnpm
+
+The frontend requires **Node.js v24**.
+
+Verify by running:
+
+```
+node -v
+npm -v
+```
+
+If you do not have Node v24 installed yet, install it with a version manager:
+
+**Windows (nvm-windows):**
+1. Download and run the latest `nvm-setup.exe` from: https://github.com/coreybutler/nvm-windows/releases
+2. Close and reopen your terminal, then verify `nvm -v`
+```
+nvm install 24
+nvm use 24
+node -v
+```
+
+**Mac (nvm):**
+1. Install Homebrew if needed: https://brew.sh/
+2. Install nvm: `brew install nvm`
+3. Add this to your `~/.zshrc`, then restart your terminal:
+```zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+```
+```bash
+nvm install 24
+nvm use 24
+node -v
+```
+
+Enable pnpm via Corepack:
+
+```
+corepack enable
+corepack prepare pnpm@latest --activate
+pnpm -v
+```
+> Note: Corepack ships with modern Node.js (including Node v24). If `corepack` is not found, reinstall/upgrade Node and try again.
 
 ### Code Editor
-You'll need to have your code editor of choice downloaded on your machine. We suggest [Visual Studio Code](https://code.visualstudio.com/)
+You'll need a code editor. We recommend [Visual Studio Code](https://code.visualstudio.com/).
 
+## Step 1: Clone the Frontend Repository
 
-## Setting up a Project Directory
+Navigate to your Tomcat `webapps` folder (replace `xx` with your Tomcat patch version):
 
-In order to have SEMOSSName running locally, you will need to also supplement it with a running backend. You can find a guide to getting your local backend set up using this [link](Docker%20BE%20Install%20Guide.md).
-
-Once you have your backend structure set up we will navigate to your workspace folder, and select our tomcat server:
-![Tomcat Server](../../static/img/FELocalInstall/choosingTomcat.png)
-
-Within the tomcat folder we will navigate to our webapps folder. This is where our UI will reside. 
-
-![Webapps](../../static/img/FELocalInstall/webapps.png)
-
-Now navigate to the webapps folder in your local terminal. 
-
-![Local Terminal](../../static/img/FELocalInstall/terminal.png)
-
-
-Once you have your terminal setup, you can navigate to the SEMOSSName repository in github
-
-[SEMOSSName UI repository](https://github.com/SEMOSS/semoss-ui.git)
-
-If this link does not properly open up for you, then please email [support-email](mailto:support-email) to request access.
-
-Inside of the repository click the green code button and copy the code for cloning the repo. You can click the circled button to copy the link that is there. 
-
-![Cloning](../../static/img/FELocalInstall/gitClone.png)
-
-Once you have this link you can go back to your open terminal and clone the repository into your webapps folder. 
-
-![terminal cloning](../../static/img/FELocalInstall/cloning.PNG)
-
-This will download all of the necessary folder structure into your webapps component. 
-
-# Installation and Server Setup
-
-### Step 1: Node Package Manager (NPM) setup
-You should have Node installed, that will be our package manager of choice. There are instructions for how to install this in our Prerequisites portion. 
-
-You can check that they exist on your machine by typing the following code in a terminal. 
-
+**Windows:**
 ```
-    node -v
-    npm -v
+cd C:\workspace\apache-tomcat-11.0.xx\webapps
 ```
 
-If these output versions, that means that you have a working version of npm on your computer. If you do not go back to prerequisities and make sure to download Node (and npm alongside it). 
-
-We will be using npm to install pnpm, which is a lighter package manager. 
-
-To do so open a terminal and install it using:
-
-```npm install -g pnpm```
-
-### Step 2: Installing SEMOSSName's packages
-
-Now that we have access to pnpm we are ready to install all necessary SEMOSSName packages. 
-
-Navigate to your newly created repository inside of webapps, open the `SEMOSS-ui` folder inside of your code editor of choice. 
-
-![VS Code terminal](../../static/img/FELocalInstall/semossuiterminal.PNG)
-
-We are going to open a new terminal inside of VS code for the next few portions. You can use an external terminal as well, the results will be the same. 
-
-Inside the root folder of SEMOSSName we are going to run 
-
-```pnpm install```
-
-This will go through all of the contents of the `package.lock` file and download them. For reference, here is the [package.lock file](https://github.com/SEMOSS/semoss-ui/blob/dev/package.json)
-
-The install command will also go through and install of the packages that each portion of SEMOSSName uses so it might take some time. 
-
-### Step 3: Setting Up Your .env.local file
-
-When we run the Frontend server we are pointing it to a specific backend route to follow. This will be your locally setup backend server that is outlined in the documentation here: [Backend Install](Docker%20BE%20Install%20Guide.md)
-
-If you followed the same naming conventions as those outlined in the above documentation then you can create a new file in your root folder and name it
-
-`.env.local` 
-
-You will notice that it will live right underneath the already created `.env` file. It should also appear to look greyed out, this is because it will be ignored by git, so your local preferences will not be pushed up with the rest of your work. 
-
-Inside of the newly created local enviornment file you should add these specifications:
-
+**Mac:**
 ```
-ENDPOINT=../../../..
-MODULE=/Monolith_Dev
+cd ~/Documents/SEMOSS/workspace/apache-tomcat-11.*/webapps/
 ```
 
-Your final outcome should look like this:
-
-![local env](../../static/img/FELocalInstall/envlocal.png)
-
-### Step 4: Starting your Frontend Server
-
-Within your package.json you should see several scripts that will help run your server. 
-
-During this process your backend server must be up and running, so please review the [Backend Installation Guide](Docker%20BE%20Install%20Guide.md) to make sure that it is correctly setup. 
-
+Clone the repository and rename it:
 ```
-    "scripts": {
-        "preinstall": "npx only-allow pnpm",
-        "prepare": "husky install",
-        "dev": "pnpm run --filter=@semoss/legacy --filter=@semoss/ui --filter=@semoss/client --stream --parallel dev",
-        "dev:ui-client": "pnpm run --filter=@semoss/ui --filter=@semoss/client --stream --parallel dev",
-        "dev:client": "pnpm run --filter=@semoss/client --stream --parallel dev",
-        "build": "pnpm run --filter=@semoss/legacy --filter=@semoss/ui --filter=@semoss/client build",
-        "fix": "pnpm run --filter=@semoss/legacy --filter=@semoss/ui --filter=@semoss/client fix"
-    },
+git clone https://github.com/SEMOSS/semoss-ui.git SemossWeb
 ```
 
-We are only going to focus on two of them. `dev` and `dev:ui-client`. 
+Verify you are on the `dev` branch:
+```
+cd SemossWeb
+git status
+```
 
-If it is the first time that you are running the server, you must run it using 
+## Step 2: Install Packages
 
-```pnpm run dev```
+Open a terminal in the root of your `SemossWeb` folder and run:
 
-This will go through each individual package, bundle them, and create a local server. Afterwards, you may want to shift over to using 
+```
+pnpm install
+```
 
-```pnpm run dev:ui-client``` since it is slightly lighter-weight. 
+This will go through the `package.json` and download all necessary packages. The install may take some time as it resolves dependencies for all sub-packages.
 
+## Step 3: Build the Frontend
 
-***Please Note*** The server takes a long time to run. If the webpack seems to be compiled, and you get a ui module not found error, that means you need to wait longer. 
+From the root of your `SemossWeb` folder, run:
 
-### Step 5: Accessing your local server
+```
+pnpm build
+```
 
-Once your webpack has compiled you can navigate over to 
+This builds all libraries and packages and generates the `dist` output needed to serve the frontend. It may take a while to complete.
 
-```http://localhost:9090/semoss-ui/packages/client/dist/#/```
+> **Troubleshooting:** If the build fails due to timeout or memory errors, you can build each piece individually instead. Navigate into each of the following directories and run `pnpm build` from within them one at a time: `libs/ui`, `libs/renderer`, `libs/sdk`, then `packages/client`.
 
-Here you will have to register a user using the native registration. 
+## Step 4: Access Your Local Server
 
-![Registering](../../static/img/FELocalInstall/registering.png)
+Before proceeding, ensure your Tomcat backend server is running. You can verify by navigating to:
 
-Once you've registered a user, you can use the credentials to log into SEMOSSName. This will just be a local user, we recommend using a generic name such as Admin or your first name. 
+```
+http://localhost:9090/Monolith/api/config
+```
 
-![Final Page](../../static/img/FELocalInstall/finalPage.PNG)
+If you see a JSON response, your backend is up and running.
 
-Please note that the url here is slightly different than the one shared. This is using an older version of SEMOSSName. 
+With your backend running, seed yourself as an admin. Open your browser and navigate to:
 
-Congratulations! You have everything up and running!
+```
+http://localhost:9090/Monolith/setAdmin/
+```
+
+Type in the username you want to use with <AppName /> and submit.
+
+Once the build has completed, open your browser and navigate to:
+
+```
+http://localhost:9090/SemossWeb/
+```
+
+At the bottom of the page, click **Register new user**:
+- Fill out the required fields
+- Make sure the username you register with matches the username you typed into the admin setup page
+
+Once registered, you can sign in using the same credentials.
+
+Congratulations! You're all set to start using <AppName />!
+
+## Updating the Frontend
+
+We recommend updating your local frontend at least once a week to stay current with the latest features and fixes.
+
+To pull the latest changes and update your local frontend:
+
+1. Navigate to your `SemossWeb` folder and pull the latest code:
+
+```
+cd SemossWeb
+git pull
+```
+
+2. Install any new or updated dependencies:
+
+```
+pnpm install
+```
+
+3. Rebuild:
+
+```
+pnpm build
+```
+
+Once the build completes, refresh your browser to see the updates.
 
 ## What's Next?
 Check out one of the **App Use Case Quick Start guides** linked below to get a hands-on tutorial with your preferred frontend framework!
