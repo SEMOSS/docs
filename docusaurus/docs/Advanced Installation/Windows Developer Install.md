@@ -6,92 +6,133 @@ slug: "/windows-developer-install"
 
 import AppName, { DynamicCodeBlock } from "@site/src/components/CustomFields";
 
-Download softwares and tools from below links to be able to install Semoss.
+## AI Core Installation for Windows
+
+## What you’re installing
+This guide sets up the <AppName /> backend on Windows (Java + Maven projects running on Tomcat). When you are done, this URL should return JSON:
+```
+http://localhost:9090/Monolith/api/config
+```
+
+## Before you start
+- **Terminal**: on Windows, this guide uses either **Command Prompt** (`cmd`) or **PowerShell** (both are apps you can search for in the Start menu).
+- You will be downloading and unzipping several `.zip` files. To unzip: right-click the `.zip` file and choose **Extract All…**.
+- If you run into an error at any point, check the [Troubleshooting Tips](Troubleshooting%20Tips.md) guide before continuing.
+
 ## Create the workspace folder
 The workspace folder is where all the code will sit.
-- Create a folder in your C drive called workspace. The path to this folder should look like this: ```C:\workspace​```
+- Create a folder in your `C:` drive called `workspace`. The path to this folder should look like this: `C:\workspace`
+- Inside `C:\workspace`, create a `tools` folder (for downloads you unzip), so you have: `C:\workspace\tools`
+
+## Recommended editor
+We recommend using Visual Studio Code:
+- Download: https://code.visualstudio.com/Download
 
 ## Software Dependencies
-These are the pre-requisites to be able to install Semoss
+These are the prerequisites to be able to install <AppName />.
 
-### Java JDK 21
+### Java JDK 25
 
-Click on [java21](https://www.azul.com/downloads/?version=java-21-lts&architecture=x86-64-bit&package=jdk-fx#zulu)
+> **Note:** This guide installs Java 25, which matches the latest version of <AppName />. If you're setting up against an older, already-deployed instance, check with your team which version of <AppName /> they're on — for example, v5.x runs on Java 21 instead. Semoss version 6 is compatable with Java 21, the container is built using Java 25.
 
-Scroll down to Java 21 and click on Download next to Windows x86 64-bit
+Click on [Azul Zulu Builds of OpenJDK](https://www.azul.com/downloads/)
 
-Use the MSI installer
+Choose these filters:
+- Java Version: **Java 25**
+- Operating System: **Windows**
+- Architecture: **x86 64-bit**
+- Java Package: **JDK FX**
+
+Download the **.msi** installer and run it.
+
+After installing, open a new terminal and verify:
+```
+java -version
+```
 
 ### Eclipse IDE for Enterprise Java Developers
-Click on [Eclipse IDE](https://www.eclipse.org/downloads/packages/release/2025-06/r/eclipse-ide-enterprise-java-and-web-developers)
-- Select the link under ‘Download Links’ -> ![Eclipse download link](../../static/img/SemossDevInstallation/EclipseDownloadLink.png)
-- Windows 64-bit
-- Unzip this to Desktop or Default location
+Click on [Eclipse Download](https://www.eclipse.org/downloads/packages)
+- Find **Eclipse IDE for Enterprise Java and Web Developers** and select **Windows x86_64**
+- Select the link under ‘Download Links’ -> ![Eclipse download link](/img/SemossDevInstallation/EclipseDownloadLink.png)
+- Unzip this anywhere you like (for example: `C:\\workspace\\tools\\eclipse`)
 
-### Apache Tomcat (v9)
-Click on [Apache Tomacat](https://tomcat.apache.org/download-90.cgi)
-- Choose Binary Distributions, Core, 64 bit Windows .zip file under the latest 9.0 section
-- Unzip the apache-tomcat folder into your workspace
-- The folder will most likely be named apache-tomcat-9.0.## (with ## being the version number!)
-![Workspace Folder](../../static/img/SemossDevInstallation/WorkspaceFolder.png)
+### Apache Tomcat (v11)
+Click on [Apache Tomcat](https://tomcat.apache.org/download-11.cgi)
+- Choose Binary Distributions, Core, 64 bit Windows .zip file under the latest 11.0 section
+- Unzip the apache-tomcat folder into your workspace (`C:\workspace`)
+- The folder will most likely be named apache-tomcat-11.0.xx (with `xx` being your Tomcat patch version)
+![Workspace Folder](/img/SemossDevInstallation/WorkspaceFolder.png)
 
 ### Git
 Download [Git](https://git-scm.com/downloads)
+After installing, open a new terminal and verify:
+```
+git --version
+```
 
 ### Notepad++
 Choose [Notepad++ Installer](https://notepad-plus-plus.org/downloads/v7.8.2/)
 
 > Note: Please download the 64-bit x64 installer version (not the zip file)
 
-### NVM and Node.js
-Click on [nvm-windows](https://github.com/coreybutler/nvm-windows/releases)
-- Download nvm-setup.zip from the assets table. Extract it and run the installation by clicking on the downloaded file.
-
-- To check whether NVM has been successfully installed,
-  - Go to terminal
-  - Type 'nvm -v' and hit enter
-  - This should return the version of the NVM installed
-
-To install Node.js using NVM
-- Run `nvm install latest` in terminal
-- Run `nvm use latest` afterwards
-- Verify installation with `node -v` and `npm -v`
-- If 'npm -v' has an error, run Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
 ### Maven
 Click on [Maven](https://maven.apache.org/download.cgi)
-- Click the download link beside Binary zip archive, and unzip this to your Documents folder
-
-- To check whether Maven has been successfully installed,
-  - Go to terminal
-  - Type 'mvn --version' and hit enter
-  - This should return the version of the node installed
+- Click the download link beside Binary zip archive, and unzip this to your workspace (for example: `C:\\workspace\\tools`)
+- You will verify Maven after you set `MVN_HOME` and update your `Path` below
 
 > **Note**
 > Use Google Chrome for all downloads. Then you can quickly navigate to the downloads folder, right click, and Run as Administrator.
 
-### Visual Studio Code​
-Download [from this link](https://code.visualstudio.com/Download​)
+### Visual Studio Build Tools (C++ compiler)
+Some Python packages require a C++ compiler to install locally on Windows.
+- Download the Visual Studio Installer from: **https://visualstudio.microsoft.com/downloads/**
+  - Install the latest **Visual Studio Community** (or your organization's preferred edition), or **Build Tools for Visual Studio**
+- In the installer, select the **Desktop development with C++** workload (this provides the C++ toolchain)
+- Run the installer as Administrator if prompted
 
-### Visual Studio Installer
-- Download Microsoft Visual Studio Installer from this link: **https://visualstudio.microsoft.com/vs/older-downloads/**
-  - We need to Install the 2022 latest community version
-  - Visual Studio Installer is needed for a C++ compiler (many Python packages require this)
-- To install, find the installation file (likely in your Downloads folder), right click and **Run as administrator**. You’ll need to enter login credentials at least a few times during installation.
+## Environment Variables
+Set these before importing the projects into Eclipse.
+
+### Java (`JAVA_HOME`)
+- In Windows, from your start menu/search bar, navigate to your Control Panel > **System and Security** > System > Advanced system settings.
+- On the Systems Properties window that appears, select **Environment Variables**
+![Environment Variables](/img/SemossDevInstallation/EnvironmentVariables.png)
+- Under system variables (bottom section), select **New...**
+  - For variable name, type **JAVA_HOME**
+  - For variable value, choose **Browse Directory**, go to Program Files, go to Java, and select the JDK folder (wherever you installed it)
+    - For example, **C:\Program Files\Zulu\zulu-25**
+
+### Maven (`MVN_HOME`)
+- Under system variables (bottom section), select **New...**
+  - For variable name, type **MVN_HOME**
+  - For variable value, choose **Browse Directory**, go to your workspace, and select the `apache-maven-#.#.#` folder you unzipped.
+    - For example, **C:\workspace\tools\apache-maven-#.#.#**
+
+### Update `Path`
+- Under system variables (bottom section), locate the **Path** variable, select it, and click Edit.
+- Add these entries if they do not exist:
+  - `%JAVA_HOME%\bin`
+  - `%MVN_HOME%\bin`
+
+### Verify
+Open a new terminal and verify:
+```
+java -version
+mvn --version
+```
 
 ## Clone Code Repos
 ### Clone Semoss Code
 
-1. Navigate to your workspace​ at `C:\workspace`
+1. Navigate to your workspace at `C:\workspace`
 
-2. Open a terminal (cmd, powershell) at this location​
+2. Open a terminal (cmd, powershell) at this location
 
 3. Run the command
 ```
 git clone https://github.com/SEMOSS/Semoss.git
 ```
-4. Ensure you are on the `dev` branch​ by running
+4. Ensure you are on the `dev` branch by running
 ```
 git status
 ```
@@ -99,64 +140,26 @@ within the Semoss folder
 
 ### Clone Monolith Code
 
-1. Navigate to your workspace​ at `C:\workspace`
+1. Navigate to your workspace at `C:\workspace`
 
-2. Open a terminal (cmd, powershell) at this location​
+2. Open a terminal (cmd, powershell) at this location
 
 3. Run the command
 ```
 git clone https://github.com/SEMOSS/Monolith.git
 ```
-4. Ensure you are on the dev branch​ by running
+4. Ensure you are on the dev branch by running
 ```
 git status
 ```
 within the Monolith folder
-
-### Clone semoss-ui code
-
-1. Navigate to your Tomcat webapps folder​
-
-Since we placed the tomcat folder in the workspace, the path is: `C:\workspace\apache-tomcat-9.0.##\webapps​`
-
-2. Open terminal at this location and run the command 
-```
-git clone https://github.com/SEMOSS/semoss-ui.git
-```
-
-3. Ensure you are on the dev branch​ by running
-```
-git status
-```
-within the semoss-ui folder
-
-4. Rename semoss-ui folder to `SemossWeb`​
-
-5. In the SemossWeb folder create a new file named `.env.local`, and copy the following contents into that folder
-
-<DynamicCodeBlock noQuotes>
-```
-ENDPOINT=../../..​
-MODULE=/Monolith​
-
-​
-
-THEME_TITLE={SEMOSSName}
-THEME_FAVICON=./src/assets/favicon.svg​
-
-
-NODE_ENV=development
-```
-</DynamicCodeBlock>
-Your SemossWeb folder should look like this
-![env local file](../../static/img/BELocalInstall/semoss-ui-env-local.png)
 
 ## Eclipse Setup
 ### Setup Eclipse Workspace Folder
 Once your Eclipse & JDK are installed, open Eclipse and specify where you want your workspace to be
    - Specify `C:\workspace` instead of the default name that shows up
 - We recommend that you pin eclipse to your Taskbar and pin your workspace to your Quick Access Bar
-![Workspace Launcher](../../static/img/SemossDevInstallation/WorkspaceLauncher.png)
+![Workspace Launcher](/img/SemossDevInstallation/WorkspaceLauncher.png)
 
 
 ### Import Semoss and Monolith into Eclipse
@@ -170,7 +173,7 @@ Once your Eclipse & JDK are installed, open Eclipse and specify where you want y
    2) Check "Semoss"
    3) Uncheck all others including "SemossWeb"
  
-![Import Maven Projects_Projects](../../static/img/SemossDevInstallation/ImportMavenProject_Projects.png)
+![Import Maven Projects_Projects](/img/SemossDevInstallation/ImportMavenProject_Projects.png)
 
 - At the bottom of the import window, click **Finish** to import your projects
 
@@ -179,19 +182,27 @@ Once your Eclipse & JDK are installed, open Eclipse and specify where you want y
 - Now go to **General** and then go to **Project Explorer**
 - Under the **Project Explorer** tab, right click on the **Monolith** project and select **Build Path >> Configure Build Path**
 
-![Build Path](../../static/img/SemossDevInstallation/BuildPath.png)
+![Build Path](/img/SemossDevInstallation/BuildPath.png)
 
 - Click on the **Source tab**, Select the **Monolith/src** folder and click **Edit**.
   
-![Monolith folder in java](../../static/img/SemossDevInstallation/Monolithfolderinjava.png)
+![Monolith folder in java](/img/SemossDevInstallation/Monolithfolderinjava.png)
 
 - Browse for the correct workspace location under **Linked folder location**: **C:\workspace\Semoss\src**
 - Then, on the Source Folder screen update the Folder Name field to say: `Semosssrc`. Click **Finish** >> **Apply and Close**
 - This may take a few minutes. Please allow the workspace to update.
   
-![Edit source folder](../../static/img/SemossDevInstallation/Editsourcefolder.png)
+![Edit source folder](/img/SemossDevInstallation/Editsourcefolder.png)
 
 ## Setup Tomcat
+
+### Update `server.xml` (ports)
+If your organization blocks port `8080` or you already have something running there, update Tomcat to use `9090`.
+
+- Open `C:\workspace\apache-tomcat-11.0.xx\conf\server.xml` (replace `xx` with your Tomcat patch version)
+- Find the HTTP connector (look for `<Connector port="8080" ... />`) and change it to:
+  - `port="9090"`
+- If you later get a startup error about port `8005` being in use, change the Tomcat shutdown port from `8005` to another unused port (for example `8006`) in the same `server.xml`.
 
 ### Create a Tomcat Server
 - In the top bar of Eclipse, click **Window -> Show View -> Other**
@@ -200,25 +211,27 @@ Once your Eclipse & JDK are installed, open Eclipse and specify where you want y
 > **Note**
 > If you cannot find or search for Servers in the Show View window, revisit which Java you downloaded at the beginning to ensure you have the IDE for Enterprise Java Developers.
 
-![Servers](../../static/img/SemossDevInstallation/Servers.png)
+![Servers](/img/SemossDevInstallation/Servers.png)
 
 - In the New Server window that appears, expand Apache, and select the version of the **Tomcat vX.X Server** you installed and click **Next**.
 > **Note**
 > You may need to expand the pop-up window to view the server options.
+>
+> If you do not see a Tomcat v11 server option, confirm you installed **Eclipse IDE for Enterprise Java and Web Developers** (WTP/server adapters), or install the Apache Tomcat server adapter in Eclipse.
 
 - Expand Server, select Servers and click OK.
 
-![Expanded Servers](../../static/img/SemossDevInstallation/ExpandedServer.png)
+![Expanded Servers](/img/SemossDevInstallation/ExpandedServer.png)
 
-- In the **Tomcat installation directory** field, enter (the location of your tomcat file): **C:\workspace\apache-tomcat-X.X.##** and click **NEXT**.
+- In the **Tomcat installation directory** field, enter (the location of your tomcat file): **C:\workspace\apache-tomcat-11.0.xx** and click **NEXT**.
 
-![New Server](../../static/img/SemossDevInstallation/NewServer.png)
+![New Server](/img/SemossDevInstallation/NewServer.png)
 
 - From the Add/Remove window that appears, under Available, select Monolith, click **Add** to move it to the configured side, then click the **Finish** button at the bottom. This window will then close.
-![Add and Remove](../../static/img/SemossDevInstallation/AddandRemove.png)
+![Add and Remove](/img/SemossDevInstallation/AddandRemove.png)
 
-- Back in Eclipse, in the bottom panel area, on the Servers tab, double-click your new server (Tomcat v9.0 Server at localhost).
-![Servers Tab](../../static/img/SemossDevInstallation/Servertab.png)
+- Back in Eclipse, in the bottom panel area, on the Servers tab, double-click your new server (Tomcat v11.0 Server at localhost).
+![Servers Tab](/img/SemossDevInstallation/Servertab.png)
 
 - In the new window that appears, under Server Locations:
   - Select “Use Tomcat installation”
@@ -227,36 +240,37 @@ Once your Eclipse & JDK are installed, open Eclipse and specify where you want y
 - Under Timeouts, change start time to “900 seconds”
 - Under Ports, ensure the HTTP/1.1 Port Number matches the port number you defined in your server.xml (likely 9090). Leave the other ports as is. Change admin port to 8105.
 - Switch from Overview to Modules tab (at the bottom of the opened window)
-![Module tab](../../static/img/SemossDevInstallation/Moduletab.png)
+![Module tab](/img/SemossDevInstallation/Moduletab.png)
 
 - Select the Monolith Web Module that appears in the table and click Edit on the right
-![Web Module](../../static/img/SemossDevInstallation/Webmodule.png)
+![Web Module](/img/SemossDevInstallation/Webmodule.png)
 
 - Make sure the Path accurately reflects what you named your Monolith Folder 
   - E.g. “/Monolith”
 - Click **Save** in Eclipse
 
-## Change Environment Variables
+## Configure Backend Files
 
 ### Update RDF Map for Semoss
 - In the **Project Explorer** panel on the left, expand Semoss and scroll down to find File.
-![Project Explorer](../../static/img/SemossDevInstallation/ProjectExplorer.png)
+![Project Explorer](/img/SemossDevInstallation/ProjectExplorer.png)
 
 - Right click on **RDF_Map.prop** and Open With Notepad++ or double click and just open in Eclipse
-![RFP_Map in Folder](../../static/img/SemossDevInstallation/RDP_MapinFolder.png)
+![RFP_Map in Folder](/img/SemossDevInstallation/RDP_MapinFolder.png)
 
--Make sure all references to the C drive (i.e. "C:\\...") are the correct file path.
+- Make sure all references to the C drive (i.e. "C:\\...") are the correct file path.
 - Check that all of your paths begin with the path to your workspace. Either **C:\\workspace\\Semoss\\** or **C:\\\\workspace\\\\Semoss\\\\** will work. The last of these should occur on the line which starts with EMAIL_TEMPLATES. This will be around line 58.
-![Edit Path](../../static/img/SemossDevInstallation/EditPath.png)
+![Edit Path](/img/SemossDevInstallation/EditPath.png)
 
 - If you make any changes, save the file and close it.
 
 ### Update Catalina.properties
-- Open catalina.properties in eclipse or Notepad++. It is located in **C:\workspace\apache-tomcat-9.0.56\conf**, your Servers Tomcat folder.
-- Replace line 108 with the following: **tomcat.util.scan.StandardJarScanFilter.jarsToSkip=*.jar,\
-- Resave the file. This will improve the startup time of your server.
+- Open `catalina.properties` in Eclipse or Notepad++. It is located in **`C:\workspace\apache-tomcat-11.0.xx\conf`** (replace `xx` with your Tomcat patch version), in your Tomcat folder.
+- Optional: If Tomcat startup is slow, you can tune JAR scanning.
+  - Find `tomcat.util.scan.StandardJarScanFilter.jarsToSkip` and update it according to your team’s standard settings (avoid deleting the existing value unless you know why).
+  - Save the file and restart Tomcat.
 
-![Cataline.properties file](../../static/img/SemossDevInstallation/cataline.propertiesfile.png)
+![Cataline.properties file](/img/SemossDevInstallation/cataline.propertiesfile.png)
 
 ### Update web.xml for Semoss
 - Navigate to **C:\workspace\Monolith\WebContent\WEB-INF**
@@ -267,52 +281,7 @@ Once your Eclipse & JDK are installed, open Eclipse and specify where you want y
 > **Note**
 > Your exact line numbers may be off. Reference the image below and CTRL+F for **RDF** to find the correct lines.
 
-![web.xml](../../static/img/SemossDevInstallation/web.xml.png)
-
-### General
-- In Windows, from your start menu/search bar, navigate to your Control Panel > **System and Security** > System > Advanced system settings.
-- On the Systems Properties window that appears, select **Environment Variables**
-![Environment Variables](../../static/img/SemossDevInstallation/EnvironmentVariables.png)
-- Under system variables (bottom section), select **New...**
-  - For variable name, type **JAVA_HOME**
-  - For variable value, choose **Browse Directory**, go to Program Files, go to Java, and select the jdk folder (wherever you downloaded/moved it to)
-    - For example, **C:\Program Files\Zulu\zulu-21**
-      
-> Note: Environment variables are case-sensitive
-
-- Click OK
-![System Variables](../../static/img/SemossDevInstallation/SystemVariable.png)
-
-- Next, Under system variables (bottom section), locate the **Path** variable, select it, and click Edit
-  - In the window that appears, click New
-  - In the new row that appears, paste **%JAVA_HOME%\bin** without the quotation marks
-  - Click OK
-
-> Note: Environment variables are case-sensitive
-   
-![Path variable](../../static/img/SemossDevInstallation/Pathvariable.png)
-
-- Keep these windows open for the next steps
-- Under system variables (bottom section), select **New...**
-  - For variable name, type **MVN_HOME**
-  - For variable value, choose **Browse Directory**, go to Documents, and select the apache-maven folder.
-    - For example, **C:\Users\[your username]\Documents\apache-maven-#.#.#**
-      
-> Note: Environment variables are case-sensitive
-   - Click OK
-    
-![System variable 2](../../static/img/SemossDevInstallation/Systemvariable2.png)
-
-- Next, Under system variables (bottom section), locate the **Path** variable, select it, and click Edit
-  - In the window that appears, click New
-  - In the new row that appears, paste **%MVN_HOME%\bin** without the quotation marks
-  - Click OK
-
-  > Note: Environment variables are case-sensitive
-    
-![Path variable 2](../../static/img/SemossDevInstallation/Pathvariable2.png)
-
-- Click Ok to close the window. Close out the remaining Systems Properties windows.
+![web.xml](/img/SemossDevInstallation/web.xml.png)
 
 ## Adding settings.xml to .m2 (maven) repository
 - Navigate to **C:\Users\YOUR_USERNAME**
@@ -361,12 +330,12 @@ Set-Content -Path "$env:USERPROFILE\.m2\settings.xml" -Value $content -Encoding 
 - Go to **C:\Program Files\Symantec\WSS Agent**
   - **If you do not have this folder on your PC, you may skip this section.**
 
-  ![WSS Agent](../../static/img/SemossDevInstallation/WSSAgent.png)
+  ![WSS Agent](/img/SemossDevInstallation/WSSAgent.png)
 
   - Click the file path at the top, and copy it to your clipboard
   - Click the Windows start button and type **CMD**. Select **Run as Administrator**. Note that you will need to provide your admin credentials
  
-  ![Command Prompt](../../static/img/SemossDevInstallation/CommandPrompt.png)
+  ![Command Prompt](/img/SemossDevInstallation/CommandPrompt.png)
 
   - In the command prompt, type: cd
   - Then type a space, a quotation mark: `'`**, right-click to paste the path, another quotation mark:**, and then hit Enter
@@ -374,7 +343,7 @@ Set-Content -Path "$env:USERPROFILE\.m2\settings.xml" -Value $content -Encoding 
 - Copy and paste (by right-clicking) the following line into the command prompt:
   - `keytool -importcert -noprompt -trustcacerts -keystore **%JAVA_HOME%/jre/lib/security/cacerts** -file CertEmulationCA.crt -alias CertEmulationCA -storepass changeit`
   
-  ![line in command prompt](../../static/img/SemossDevInstallation/Lineincommandprompt.png)
+  ![line in command prompt](/img/SemossDevInstallation/Lineincommandprompt.png)
 
 - Hit Enter
 
@@ -387,7 +356,7 @@ Set-Content -Path "$env:USERPROFILE\.m2\settings.xml" -Value $content -Encoding 
 ### In Eclipse
 - In Eclipse, ensure your Project Explorer panel is being displayed (typically on the left-hand side).
   - If you don’t see the “Project Explorer” window, select **Window -> Show View -> Project Explorer** to show them.
-![Project Explorer](../../static/img/SemossDevInstallation/ProjectExplorer_updatemaven.png)
+![Project Explorer](/img/SemossDevInstallation/ProjectExplorer_updatemaven.png)
 
 - Update each project **(first do this for Semoss, then repeat for Monolith)**
   - Right-click on the project in the project explorer panel
@@ -395,11 +364,11 @@ Set-Content -Path "$env:USERPROFILE\.m2\settings.xml" -Value $content -Encoding 
   - Place a checkmark in the “Force Update of Snapshots/Releases” box. Click Ok.
   - The workspace will start updating and you can see the progress in the bottom right corner in Eclipse.  This may take some time to build.**[click on the bottom right icon to see background progress]**
 
-![Maven Progress](../../static/img/SemossDevInstallation/MavenProgress.png)
+![Maven Progress](/img/SemossDevInstallation/MavenProgress.png)
 
   - If you get the following error while maven updating, just click ok and let the update proceed.
 
-![Error](../../static/img/SemossDevInstallation/Error.jpg)
+![Error](/img/SemossDevInstallation/Error.jpg)
 
 > **Note**
 > - If you run into issues of Maven not downloading the dependencies, please see the Tips & Tricks section for downloading a new .m2 folder
@@ -410,49 +379,42 @@ To install Maven for Semoss/Monolith from the CLI, we need to navigate to each p
 - In Eclipse, first for **Semoss project** and then **Monolith project**, do the following:
   - Right-click the project in the project explorer. Choose **Show In > System Explorer**
     
-![System Explorer](../../static/img/SemossDevInstallation/SystemExplorer.png)
+![System Explorer](/img/SemossDevInstallation/SystemExplorer.png)
 
   - Double-click and open the project folder 
   - In the file explorer window, click the file path at the top, and simply type “cmd” and hit enter
     - This will open a command prompt at this location
     
-![Command prompt to install maven](../../static/img/SemossDevInstallation/CommandPrompttoinstallmaven.png)
+![Command prompt to install maven](/img/SemossDevInstallation/CommandPrompttoinstallmaven.png)
 
   - Copy and right-click to paste the following line into the command prompt, and hit enter:
     - mvn clean install -U -DskipTests=true
     
-![Run command](../../static/img/SemossDevInstallation/RunCommand.png)
-
-## Install visual studio installer
-- Download Microsoft Visual Studio Installer from **[this link](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Stable&version=VS18&source=VSLandingPage&cid=2500&passive=false)**
-  - To install, find the installation file (likely in your Downloads folder), right click and **Run as administrator**. You’ll need to enter login credentials at least a few times during installation.
-- Under Windows, select user installer x64, and then click next through all the default options ​
-- Select ASP.NET and Python development then click install
+![Run command](/img/SemossDevInstallation/RunCommand.png)
 
 ## Run the Backend
-### Update Eclipse to Use Java 21​
-- **Go to Preferences > Java > Installed JREs.​**
-- **Add your new Java 21 JDK** if it’s not already listed.​
-- Set Java 21 as the default JRE​
-  ![java update](../../static/img/SemossDevInstallation/java21.png)
-- Click Apply and Close.​
-- Allow SEMOSS to rebuild with the new JDK.​
-- If your eclipse does not allow you to go up to java 21, then you must download the latest version of Eclipse. ​
-- On your project build paths, verify that you see **“JRE System Library [zulu-21].”**
-  - If not, click **“Add Library…”** and add JRE System Library and choose Java 21. Do this for both Monolith and SEMOSS
-![java update](../../static/img/SemossDevInstallation/java21-1.png)
-### Start Semoss Web
+### Update Eclipse to Use Java 25
+- **Go to Preferences > Java > Installed JREs.**
+- **Add your new Java 25 JDK** if it’s not already listed.
+- Set Java 25 as the default JRE
+  ![java update](/img/SemossDevInstallation/java21.png)
+- Click Apply and Close.
+- Allow SEMOSS to rebuild with the new JDK.
+- If your eclipse does not allow you to go up to java 25, then you must download the latest version of Eclipse.
+- On your project build paths, verify that you see **“JRE System Library [zulu-25].”**
+  - If not, click **“Add Library…”** and add JRE System Library and choose Java 25. Do this for both Monolith and SEMOSS
+![java update](/img/SemossDevInstallation/java21-1.png)
+### Start Tomcat (Monolith)
 - Restart Eclipse (so that Eclipse loads the new Environment Variables we’ve added) 
 - Select the Monolith project and make sure under **Project -> Properties -> Java Build Path**, maintain the following order under **Order and Export** tab. You will likely need to select JRE System Library and click **Top** to move it to the top.
-![Java Build Path - Monolith](../../static/img/SemossDevInstallation/JavaBuildPath-Monolith.png)
+![Java Build Path - Monolith](/img/SemossDevInstallation/JavaBuildPath-Monolith.png)
 
 - Apache Tomcat should not be in [unbound] state.  If so, then Select Apache to add to the classpath under Libraries tab.
 - Once completed, click Apply and Close
 - Within Eclipse, in the bottom Servers panel tab, right-click on the **Tomcat Server** and click **Publish**
   - After republishing, double check your modules path to ensure it accurately reflects what you named your Monolith Folder and re-save
     - E.g. “/Monolith” in the screenshot below
-![Server Module](../../static/img/SemossDevInstallation/ServerModule.png)
-  - Double click on the server to open the Overview folder. Find the Port tab and next to the "Tomcat admin port", change the port number to 8105.
+![Server Module](/img/SemossDevInstallation/ServerModule.png)
 
 - Next, click **Start**
   - A progress bar will appear at the bottom of Eclipse.
@@ -460,69 +422,27 @@ To install Maven for Semoss/Monolith from the CLI, we need to navigate to each p
 > **Note**
 > If you have run into any errors that might prevent your server from starting correctly, verify your server Web Module Path is /Monolith
 
-> To ensure the backend is running correctly,
- - Navigate to http://localhost:9090/Monolith/api/config
- - A json file should appear here
+> If there is an error when you click on start due to port `8005`, update the shutdown port in `server.xml` (see the `server.xml` section above).
 
-> If there is error when you click on start due to Port 8005, please change it to 8006 or some other port
-- Now open terminal in Semoss folder and enter pnpm dev to run the front end if its not already running
-- Open Chrome and enter **http://localhost:9090/SemossWeb/packages/client/dist/#/login**
+### Verify the Backend is Running
 
+Before proceeding, confirm your backend is working. Open a browser and navigate to:
 
-## Build and run the Frontend
-### Build the Frontend
-
-- Navigate to the following path in your command prompt/terminal:
 ```
-C:/workspace/apache-tomcat 9.0.##/webapps/SemossWeb (this is your root directory)
-```
-- In the terminal type in: 
-```
-npm install -g pnpm
-```
-- In the same terminal type in: 
-```
-pnpm install
+http://localhost:9090/Monolith/api/config
 ```
 
-- Then, for these three paths: `libs/ui`, `libs/renderer`, `libs/sdk`, navigate to the paths in your command prompt/terminal and type the command 
-```
-pnpm build
-```
-- Then, navigate to `packages/client` in your command prompt/terminal and type the command 
-```
-pnpm build
-```
+**You should see a JSON response.** If you do not get a JSON response, your backend is not running correctly — do not proceed to the frontend installation until this is resolved.
 
-### Run the Frontend
 
-Ensure your tomcat server is running in Eclipse (reminder that http://localhost:9090/Monolith/api/config will have text if the backend is running correctly)
-  
-> Navigate to http://localhost:9090/SemossWeb/
- - If all everything is working properly this should redirect you to a set admin page
- - Type in the username you want to register with
+## Build and Run the Frontend
 
-> Then go back to http://localhost:9090/SemossWeb/ , and at the bottom of the page, hit register new user.
- - Fill out the required fields
- - Make sure the username you register is the same as the one typed into the admin page
-
-> Once the new user is registered, you can sign in using the same information.
- 
-- Congratulations! You’re all set to start using SEMOSSName!
-
-![Semoss Started](../../static/img/SemossDevInstallation/SemossStarted.jpg)
-
-> To ensure the backend is running correctly,
- - Navigate to http://localhost:9090/Monolith/api/config
- - A json file should appear here
-
-> If there is error when you click on start due to Port 8005, please change it to 8006 or some other port
-- Now open terminal in Semoss folder and enter pnpm dev to run the front end if its not already running
-- Open Chrome and enter **http://localhost:9090/SemossWeb/packages/client/dist/#/login**
+Once you have verified the backend is returning JSON at the URL above, follow the [Front End Installation Guide](Front%20End%20Installation.md) to build and run the <AppName /> frontend.
 
 
 ## Install Python
-This uses the `pyproject.toml` file to install the necessary packages for the SEMOSSName Python environment. This setup is intended to be used with the [Astral UV](https://docs.astral.sh/uv/) platform.
+
+This uses the `pyproject.toml` file to install the necessary packages for the <AppName /> Python environment. This setup is intended to be used with the [Astral UV](https://docs.astral.sh/uv/) platform.
 
 ### Install uv 
 Within your command prompt, install [uv](https://docs.astral.sh/uv/getting-started/installation/) with the powershell command:
@@ -532,33 +452,35 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 #### Install Python in uv
 Once you have installed UV run  
 ```
-uv python install 3.12.9 --default --preview
+uv python install 3.13 --default
 ```
 
-If you get an error run this instead
+If the download fails on a corporate network, this is usually because `uv` doesn't read the certificates your organization's proxy already installed in your system's certificate store. Try again with:
 
 ```
-uv python install 3.12.9 --default --preview --allow-insecure-host github.com
-```  
+uv python install 3.13 --default --native-tls
+```
 Check that python was installed by running
 ```
 python --version
 ```
-Afterwards, feel free to test by running `python` to open the Python 3.12.9 Shell. Type in `2+2` and see if it returns the correct response of 4.
+Afterwards, feel free to test by running `python` to open the Python 3.13 Shell. Type in `2+2` and see if it returns the correct response of 4.
 
 #### Create a virtual environment
-In your command line, go to `<SEMOSS_HOME>/py/install_config` and run:
+In your command line, go to `C:\\workspace\\Semoss\\py\\install_config` (this is your `SEMOSS_HOME`) and run:
 ```
-uv venv
+uv venv --python 3.13 .venv
 ``` 
 Install the necessary packages depending on your system's capabilities
 ```
-uv pip install .[cpu]
+uv sync --extra cpu
 ``` 
 OR if you have a GPU enabled system
 ```
-uv pip install .[gpu]
+uv sync --extra gpu
 ```
+> Note: If either command fails on a corporate network with a certificate error, add `--native-tls` as above.
+
 Verify the packages are installed 
 ```
 uv pip list
@@ -573,6 +495,7 @@ TCP_WORKER prerna.tcp.SocketServer
 TCP_CLIENT prerna.tcp.client.NativePySocketClient
 NATIVE_PY_SERVER true
 ```
+Make sure `python.exe` exists under the `PYTHONHOME` path above.
 Additionally make sure the following are also enabled, they are just below above lines:
 ```
 USE_PYTHON true
@@ -604,7 +527,7 @@ Add Python to your system environment variables, this environment will be used f
  - On your machine, search up "Edit your system variables", click on **Environment variables**, under System variables, click on **Path** and click **Edit**
 - Add the path to your virtual environment: `C:\workspace\Semoss\py\install_config\.venv\Scripts` and move it to the top of the list. Click OK once done
 
-![Python Path](../../static/img/SemossDevInstallation/PythonPath.png)
+![Python Path](/img/SemossDevInstallation/PythonPath.png)
 
 ## (OPTIONAL) Install R
 - Navigate to this website: **https://cran.r-project.org/bin/windows/base/old/4.2.3/**
@@ -614,7 +537,7 @@ Add Python to your system environment variables, this environment will be used f
    - Next, create the R folder in Documents to match the variable value. 
    - Click next all the way through
   
-![Setup R](../../static/img/SemossDevInstallation/SetupR.png)
+![Setup R](/img/SemossDevInstallation/SetupR.png)
 
 - Download will result in R being placed in your Documents Folder
 
@@ -637,12 +560,12 @@ Add Python to your system environment variables, this environment will be used f
     - Variable value: **C:\Users\YOUR_USERNAME\Documents\R\R-4.2.3**
   - Create new/edit your R_LIBS variable
     - Variable Name: R_LIBS
-    - Variable Value: **C:\Users\YOUR_USERNAME\Documents\R\win-library\4.1**
+    - Variable Value: **C:\Users\YOUR_USERNAME\Documents\R\win-library\4.2**
       - Change out YOUR_USERNAME with your actual username **(Note that the path above may not exist yet, as the folder has not yet been created. Create this folder to match the variable value. Change the red text to your user name.)**
         
 > Note: Environment variables are case-sensitive
 
-![Environment Variables R](../../static/img/SemossDevInstallation/REnvironmentVariables.png)
+![Environment Variables R](/img/SemossDevInstallation/REnvironmentVariables.png)
 
 - Edit your Path variable under System variables.  Add the following:
   - %R_HOME%\bin
@@ -662,7 +585,7 @@ Add Python to your system environment variables, this environment will be used f
 > This process will take a while to finish
 > Only copy paste small sections of the script to run at a time (~30 lines chunk)
 
-![R Terminal](../../static/img/SemossDevInstallation/RTerminal.png)
+![R Terminal](/img/SemossDevInstallation/RTerminal.png)
 
 **Testing to See if rJava is installed properly**
 
@@ -674,8 +597,4 @@ library(rJava)
 s <- .jnew("java/lang/String", "Hello World")
 .jcall(s, "I", "length")
 ```
-
-This should return 11 and this means that rJava is working
-
-
 

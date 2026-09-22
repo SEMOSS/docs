@@ -2,7 +2,7 @@
   {
     "title": "Award Generator",
     "size": 2764,
-    "lastModified": "2026-04-22T18:58:27.242Z",
+    "lastModified": "2026-09-08T17:15:12.379Z",
     "isDirectory": false,
     "description": "This Award Generator app uses advanced LLMs to automate personalized award citation creation, allowing users to select models, award types, and input candidate details to generate high-quality, consistent recognition text easily",
     "difficulty": "",
@@ -17,7 +17,7 @@
   {
     "title": "Code Modifier",
     "size": 8168,
-    "lastModified": "2026-04-22T18:58:27.247Z",
+    "lastModified": "2026-09-08T17:15:12.380Z",
     "isDirectory": false,
     "description": "A no/low-code app named Code Modifier, which uses AI to transform code snippets based on user instructions and selected programming languages, by offering instant modified code with a simple drag-and-drop UI",
     "difficulty": "",
@@ -33,7 +33,7 @@
   {
     "title": "Creating a Vector Database",
     "size": 6641,
-    "lastModified": "2026-04-22T18:58:27.252Z",
+    "lastModified": "2026-09-08T17:15:12.383Z",
     "isDirectory": false,
     "description": "A step-by-step instructions for setting up a vector database engine in the AI Core platform, including sample code in JavaScript, Python, and Java for creating and connecting vector databases tailored for AI applications",
     "difficulty": "",
@@ -49,7 +49,7 @@
   {
     "title": "Frames",
     "size": 8141,
-    "lastModified": "2026-04-22T18:58:27.257Z",
+    "lastModified": "2026-09-08T17:15:12.385Z",
     "isDirectory": false,
     "description": "The document explains how to use SEMOSS Frames to import, manage, and change the format of datasets within dashboards, using frame types like GRID, PY, R, and GRAPH for flexible data analysis and visualization. It includes step-by-step instructions for creating, updating, and transforming frames using UI actions and command-line pixels",
     "difficulty": "",
@@ -65,7 +65,7 @@
   {
     "title": "Guide for Building a JavaScript App (Node.js)",
     "size": 16403,
-    "lastModified": "2026-04-27T17:41:07.703Z",
+    "lastModified": "2026-09-08T17:15:12.389Z",
     "isDirectory": false,
     "description": "This recipe demonstrates building a GenAI application using React on the AI Core platform. It covers project setup, app structure, front-end architecture, SDK integration, local development with Webpack, bundling, and deploying the app into the AI Core App Catalog.",
     "difficulty": "",
@@ -82,7 +82,7 @@
   {
     "title": "Pixel MCP",
     "size": 4506,
-    "lastModified": "2026-04-22T18:58:27.266Z",
+    "lastModified": "2026-09-08T17:15:12.390Z",
     "isDirectory": false,
     "description": "This recipe explains how to convert a Pro Code app into a Model Context Protocol (MCP) using the MakePixelMCP reactor. It covers MCP concepts, setup, reactor configuration, execution modes, and generating the pixel_mcp.json manifest for AI Core integration.",
     "difficulty": "",
@@ -98,7 +98,7 @@
   {
     "title": "Policy Bot",
     "size": 5324,
-    "lastModified": "2026-04-27T17:41:07.705Z",
+    "lastModified": "2026-09-08T17:15:12.394Z",
     "isDirectory": false,
     "description": "This \"Policy Bot\" app using the React framework and AI Core, enabling automated policy Q&A apps that answer user questions using company documents and LLMs. It covers setup and usage with examples in a Pro-Code Workflow.",
     "difficulty": "",
@@ -114,7 +114,7 @@
   {
     "title": "Python MCP",
     "size": 10968,
-    "lastModified": "2026-04-22T18:58:27.274Z",
+    "lastModified": "2026-09-08T17:15:12.398Z",
     "isDirectory": false,
     "description": "This recipe walks through building a Model Context Protocol (MCP) tool in Python for AI Core. It covers writing MCP-enabled Python functions, using execution decorators, generating the mcp.json manifest, and deploying and testing MCP tools within the platform.",
     "difficulty": "",
@@ -130,7 +130,7 @@
   {
     "title": "RAG MCP",
     "size": 4782,
-    "lastModified": "2026-04-22T18:58:27.278Z",
+    "lastModified": "2026-09-08T17:15:12.399Z",
     "isDirectory": false,
     "description": "",
     "difficulty": "",
@@ -141,7 +141,7 @@
   {
     "title": "RAG",
     "size": 8619,
-    "lastModified": "2026-04-22T18:58:27.281Z",
+    "lastModified": "2026-09-08T17:15:12.401Z",
     "isDirectory": false,
     "description": "This recipe details building an Agent Builder app with Retrieval Augmented Generation (RAG) in AI Core, integrating vector databases to ground LLM answers in enterprise documents for precise, context-aware Q&A.",
     "difficulty": "",
@@ -156,7 +156,7 @@
   {
     "title": "RegressionTestingUsingToPDF",
     "size": 4830,
-    "lastModified": "2026-04-17T19:40:33.864Z",
+    "lastModified": "2026-09-08T17:15:12.402Z",
     "isDirectory": false,
     "description": "The Regression testing using ToPDF does automated visual regression testing for dashboards with ToPDF reactor, which snapshots dashboards as PDFs before and after upgrades for comparison. It describes parameters, workflow steps, HTML templates, and automation tips for reliable UI validation",
     "difficulty": "",
@@ -171,7 +171,7 @@
   {
     "title": "Simple Model Interaction",
     "size": 16726,
-    "lastModified": "2026-04-27T17:41:07.708Z",
+    "lastModified": "2026-09-08T17:15:12.404Z",
     "isDirectory": false,
     "description": "This document guides users through interacting with AI Core models, showing how to send prompts and receive responses using unique model IDs in both code and notebook environments. It includes code examples and workflows for integrating various LLMs into applications for text generation, and various tasks.",
     "difficulty": "",
@@ -187,7 +187,7 @@
   {
     "title": "Streamlit App Quickstart Guide",
     "size": 10810,
-    "lastModified": "2026-04-22T18:58:27.289Z",
+    "lastModified": "2026-09-08T17:15:12.407Z",
     "isDirectory": false,
     "description": "To build a GenAI app with Streamlit, outlining how to integrate AI Core resources and models for local prototyping and data science workflows. It covers setup, authentication, adapting Python code to use AI Core, and provides practical guidance for connecting Streamlit to enterprise AI infrastructure.",
     "difficulty": "",
@@ -202,7 +202,7 @@
   {
     "title": "VanillaJS App Quickstart Guide",
     "size": 5992,
-    "lastModified": "2026-04-22T18:58:27.293Z",
+    "lastModified": "2026-09-08T17:15:12.410Z",
     "isDirectory": false,
     "description": "This guide demonstrates how to rapidly build a GenAI app with VanillaJS on the SEMOSS platform, covering setup, AI Core integration, and calling LLMs for natural language or code generation. Designed for beginners, it details app structure, feature integration, and deployment essentials using plain JavaScript.",
     "difficulty": "",
